@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html{
+  /* overflow-x: hidden; */
+  background-color: black;
+  color: white;
+  
+}
+
+@font-face {
+  font-family: 'popins_medium'; 
+  src: url('./assets/fonts/Poppins-Medium.woff') 
+}
+@font-face {
+  font-family: 'popins_bold'; 
+  src: url('./assets/fonts/Poppins-Bold.woff') 
+}
+@font-face {
+  font-family: 'popins_light'; 
+  src: url('./assets/fonts/Poppins-Light.woff') 
+}
+@font-face {
+  font-family: 'popins_regular'; 
+  src: url('./assets/fonts/Poppins-Regular.woff') 
+}
+@font-face {
+  font-family: 'popins_semibold'; 
+  src: url('./assets/fonts/Poppins-SemiBold.woff') 
+}
+@font-face {
+  font-family: 'popins_thin'; 
+  src: url('./assets/fonts/Poppins-Thin.woff')
+}
+@font-face {
+  font-family: 'popins_extralight'; 
+  src: url('./assets/fonts/Poppins-ExtraLight.woff')
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
