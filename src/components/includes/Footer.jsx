@@ -27,15 +27,14 @@ import youtube from '../../assets/icons/youtuve-icon.svg'
 function Footer() {
   return (
     <>
-
       <section className='hidden lg:block'>
         <div className=' bg-black grid grid-rows-[10rem,1px,1fr]'>
           <div className='flex justify-center items-center'>
             <img src={logo} className='w-56 ' alt="" />
           </div>
           <hr className='xl:mx-auto mx-20 xl:container border border-gray-900' />
-          <div className=' bg-no-repeat bg-cover' style={{ backgroundImage: `url(${FooterBgImg})` }}>
-            <div className='xl:mx-auto mx-20 xl:container grid grid-rows-[1fr,6rem,12rem] '>
+          <div className='bg-no-repeat bg-cover' style={{ backgroundImage: `url(${FooterBgImg})` }}>
+            <Container className='xl:mx-auto ps-2 xl:container grid grid-rows-[1fr,6rem,12rem] '>
               <div className='grid grid-cols-[1fr,5rem,1fr] gap-8'>
                 <Card className='bg-gray-900 grid gap-4 bg-opacity-50 border p-5 text-white opacity-90 border-gray-800 my-10  rounded-[2rem]'>
                   <div className='w-full  pt-7 flex items-end'>
@@ -99,11 +98,11 @@ function Footer() {
                 <img src={Accoladeslogo} alt="" />
                 <p className='flex justify-center items-center'>Privacy Policy | Terms of Service</p>
               </Card>
-            </div>
+            </Container>
           </div>
         </div>
       </section>
-      <Section className='mx-8 sm:mx-14 lg:hidden block'>
+      <Section className='lg:hidden block mt-16 mx-auto'>
         <div className='flex justify-center items-center'>
           <img src={logo} className='w-9/12 sm:w-auto' alt="" />
         </div>
@@ -188,6 +187,15 @@ function Footer() {
 export default Footer
 
 const Section = styled.section`
+    @media(max-width:1400px){
+      width:90%; 
+}
+`
+
+const Container = styled.section`
+    @media(max-width:1400px){
+      width:90%; 
+}
 `
 
 const P = styled.p`
