@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-function Text({text}) {
+function Text({text,mt=''}) {
   return (
-    <Paragraph className='opacity-65 text-justify leading-7 lg:leading-9'>
+    <Paragraph className={`text-justify mt-${mt} `}>
         {text}
     </Paragraph>
   )
@@ -12,8 +12,9 @@ function Text({text}) {
 export default Text
 
 const Paragraph = styled.p`
-  font-family: 'popins_regular';
-  font-size: 1.2rem;
+    opacity: 55%;
+    font-size: 1.2rem;
+    font-family: 'popins_regular';
 
   @media (max-width: 768px) {
     font-size: 1.1rem;
@@ -21,5 +22,4 @@ const Paragraph = styled.p`
 
   @media (max-width: 425px) {
     font-size: 1rem;
-  }
-`;
+  }`

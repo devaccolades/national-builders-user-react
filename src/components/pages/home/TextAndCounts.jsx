@@ -8,7 +8,7 @@ function TextAndCounts({animationConfig}) {
   
     return (
         <Section className='container mx-auto grid grid-rows-[1fr,16rem]'>
-            <div className='flex flex-col lg:flex-row lg:items-start pt-36 py-10 mx-4 lg:mx-5 xl:mx-0' >
+            <div className='flex flex-col lg:flex-row lg:items-start pt-36 py-10  lg:mx-5 xl:mx-0' >
                 <motion.div className='w-full lg:w-8/12 text-white text-2xl md:text-4xl lg:text-6xl mb-5 lg:mb-0 -mt-16 lg:mt-0' {...animationConfig}>
                     <div className='invisible lg:visible h-0 lg:h-full'>
                         {/* For Laptop View */}
@@ -28,7 +28,7 @@ function TextAndCounts({animationConfig}) {
                     <Text text={"A visionary real estate development firm, National Builders specializes in pioneering architecturally distinct residential and mixed-use projects in India's prime metropolitan markets of Navi Mumbai and Kerala."} />
                     <Text text={"The firm has a proven track record of successful real estate development, consistently fulfilling its commitments and exceeding customer expectations. Its stamp of quality and delivery of best-in-class features are visible in each of the 135+ projects of National Builders."} />
 
-                    <div className='lg:w-3/12 flex justify-center lg:justify-start -mt-10 lg:-mt-8'>
+                    <div className='lg:w-3/1 h-24 items-center flex justify-center lg:justify-start'>
                         <AnimationButton text={"Read More"} />
                     </div>
 
@@ -58,4 +58,8 @@ function TextAndCounts({animationConfig}) {
 
 export default TextAndCounts
 
-const Section = styled.div``
+const Section = styled.div`
+@media(max-width:1400px){
+  width:90%;
+}
+`

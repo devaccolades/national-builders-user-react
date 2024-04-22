@@ -34,15 +34,13 @@ function Home() {
           content="At English Cafe, we welcome you to boost your confidence and communication skills through our expertly crafted lessons. Join us now!"
         ></meta>
       </Helmet>
-    <Header/>
-    <HomeBanner animationConfig={animationConfig}/>
+    <HomeBanner/>
     <TextAndCounts animationConfig={animationConfig}/>
     <AwardsAndRecognitions animationConfig={animationConfig}/>
     <Ourpresence />
     <VideoTag animationConfig={animationConfig}/>
     {/* <Testimonials animationConfig={animationConfig}/> */}
     <NewsAndBlogs animationConfig={animationConfig}/>
-    <Footer/>
     </>
   )
 }

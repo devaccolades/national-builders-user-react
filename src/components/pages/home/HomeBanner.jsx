@@ -21,7 +21,7 @@ function HomeBanner() {
   };
     return (
         <Section className='flex justify-center items-start md:items-center' {...animationConfig}>
-            <motion.p className='capitalize w-[70%] ld:w-full lg:text-center text-4xl md:text-5xl lg:text-6xl mt-28 md:-mt-28 bg-gradient-to-r from-white to-gray-600 inline-block text-transparent bg-clip-text' {...animationConfig} >Expression Of Excellent Living</motion.p>
+            <motion.p className='capitalize w-[70%] ld:w-full lg:text-center text-4xl md:text-5xl lg:text-[3.2rem] xl:text-6xl mt-28 md:-mt-28 bg-gradient-to-r from-white to-gray-700 inline-block text-transparent bg-clip-text' {...animationConfig} >Expression Of Excellent Living</motion.p>
         </Section>
     )
 }

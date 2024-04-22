@@ -93,7 +93,7 @@ function Ourpresence() {
                             <H1 className='text-7xl opacity-65 font-bold italic heding-font'>Mumbai</H1>
                             <Text text={"In Mumbai, National Builders offers premium building solutions. Rent or buy, we cater to your needs and budget. With over 50 completed projects, trust us to deliver excellence. Make your dreams a reality with National Builders."} />
 
-                            <div className='flex justify-end items-center -mt-10'>
+                            <div className='flex justify-end items-center mt-10'>
                                 <AnimationButton text={"See Projects"} />
                             </div>
                         </motion.div>
@@ -102,7 +102,7 @@ function Ourpresence() {
                         <motion.div className='w-full ps-14 lg:ps-0 pe-28 -mt-36 lg:mt-0' {...animationConfig}>
                             <H1 className='text-7xl opacity-65 font-bold italic heding-font'>Thane</H1>
                             <Text text={"National Builders, serving the dynamic locale of Thane, presents tailored building solutions. Whether you're in search of rentals or purchases, we accommodate your needs and budget. With our expertise, we've successfully executed 20 landmark projects in Thane. Entrust National Builders to transform your aspirations into architectural marvels."} />
-                            <div className='flex justify-end w-full items-center -mt-10'>
+                            <div className='flex justify-end w-full items-center mt-10'>
                                 <AnimationButton text={"See Projects"} />
                             </div>
                         </motion.div>
@@ -114,7 +114,7 @@ function Ourpresence() {
                         <motion.div className='w-full ps-14 lg:ps-0 pe-28 lg:pe-0 lg:w-5/6 mt-10' {...animationConfig}>
                             <H1 className=' text-7xl opacity-65 font-bold italic heding-font'>Kochi</H1>
                             <Text text={"Discover National Builders, your premier partner in Kochi's thriving landscape. Offering bespoke building solutions, we cater to your every requirement and budget. With an impressive track record, we've completed 40 prestigious projects in Kochi. Choose National Builders and witness your dreams materialize into magnificent realities."} />
-                            <div className='flex justify-end w-full items-center -mt-10'>
+                            <div className='flex justify-end w-full items-center mt-10'>
                                 <AnimationButton text={"See Projects"} />
                             </div>
                         </motion.div>
@@ -123,7 +123,7 @@ function Ourpresence() {
                         <motion.div className='w-5/6 -mt-10' {...animationConfig}>
                             <H1 className='text-7xl opacity-65 font-bold italic heding-font'>Thiruvalla</H1>
                             <Text text={"Introducing National Builders, your trusted ally in the charming locale of Thiruvalla. Specializing in tailor-made building solutions, we cater to diverse needs and budgets. With a rich history of accomplishments, we've successfully delivered 15 esteemed projects in Thiruvalla. Choose National Builders and watch your visions come to life."} />
-                            <div className='flex justify-end w-full items-center -mt-10'>
+                            <div className='flex justify-end w-full items-center mt-10'>
                                 <AnimationButton text={"See Projects"} />
                             </div>
                         </motion.div>

@@ -38,9 +38,9 @@ function Header() {
       <Typography
         as="li"
         variant="small"
-        className={`p-1 ${currentPath === '/project' ? 'font-bold' : 'font-normal'} text-xl text-white hidden lg:block `}
+        className={`p-1 ${currentPath === '/projects' ? 'font-bold' : 'font-normal'} text-xl text-white hidden lg:block `}
       >
-        <Link to={'/project'} className="flex items-center">
+        <Link to={'/projects'} className="flex items-center">
           Project
         </Link>
       </Typography>
@@ -102,7 +102,7 @@ function Header() {
           </Typography>
         </MenuHandler>
         <MenuList className='bg-black border border-gray-900 text-lg text-white text-opacity-50 rounded-xl'>
-          <MenuItem className='my-1'>Project</MenuItem>
+          <MenuItem className='my-1' onClick={()=>navigate('/projects')}>Project</MenuItem>
           <MenuItem className='my-1'>Rentals</MenuItem>
           <MenuItem className='my-1'>Testimontials</MenuItem>
           <MenuItem className='my-1'>Blogs</MenuItem>

@@ -1,6 +1,6 @@
 import * as Yup from "yup";
 const phoneRegExp = /^\d{10}$/;
-export const ContactForm = Yup.object({
+export const contactForm = Yup.object({
   email: Yup.string().trim().email().required("Please enter your email address"),
   phone: Yup.string()
   .trim() 
