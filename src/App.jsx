@@ -7,6 +7,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Projects from './pages/Projects';
 import Layout from './pages/Layout';
+import ProjectDetails from './pages/ProjectDetails';
 
 function App() {
   // const [loader, setloader] = useState(true);
@@ -24,6 +25,7 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/projects' element={<Projects />} />
+        <Route path='/project/details' element={<ProjectDetails />} />
         <Route path='/*' element={<ErrorPage />} />
         </Route>
       </Routes>
