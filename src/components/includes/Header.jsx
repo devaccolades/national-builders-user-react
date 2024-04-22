@@ -121,17 +121,16 @@ function Header() {
          initial={{ opacity: 0 }}
          animate={{ opacity: 1 }}
          exit={{ opacity: 0 }}
-         transition={{ duration: 2 }}
+         transition={{ duration: 1 }}
         >
         <motion.img 
           src={logo} 
           className='lg:w-[15rem]' 
           alt="logo" 
           onClick={() => navigate('/')}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 2.5 }}
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }} 
+            transition={{ delay: 1, duration: .5 }} 
         />
            <div className="flex items-center gap-4">
             <div className="mr-4 xl:mr-32">{navList}</div>
