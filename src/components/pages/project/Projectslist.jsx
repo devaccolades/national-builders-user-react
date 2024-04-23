@@ -26,8 +26,10 @@ import Building10 from '../../../assets/images/project/building10.jpg'
 import Building11 from '../../../assets/images/project/building11.jpg'
 
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 function Projectslist({ animationConfig }) {
+  const navigate =useNavigate()
   const [selected, setSelected] = useState('All')
   const [sort, setSort] = useState('All')
 
@@ -72,18 +74,18 @@ function Projectslist({ animationConfig }) {
       <motion.div className='lg:flex lg:justify-between'  {...animationConfig}>
         <Selection>
           {options.map((option, index) => (
-            <p onClick={() => Filtering(option, sort)} className={`${selected === option ? "text-black bg-white " : "opacity-90"}capitalize py-3 px-4  cursor-pointer border border-gray-800 hover:text-black rounded-[2rem] bg-gray-900 hover:bg-white`} key={index}>
+            <motion.p onClick={() => Filtering(option, sort)} className={`${selected === option ? "text-black bg-white " : "opacity-90"}capitalize py-3 px-4  cursor-pointer border border-gray-800 hover:text-black rounded-[2rem] bg-gray-900 hover:bg-white`} whileHover={{ scale: 1.2 }} key={index}>
               {option}
-            </p>
+            </motion.p>
           ))}
         </Selection>
         <div className='flex flex-row lg:gap-5 mt-10 lg:mt-0 justify-center items-center'>
           <Menu>
-            <MenuHandler>
-              <button className='border flex lg:justify-center w-full lg:w-auto justify-between items-center border-gray-800 p-2 bg-gray-800 bg-opacity-60 rounded-[.3rem]'>
-                <p className='px-5 text-white'>{sort}</p>
+            <MenuHandler >
+              <motion.button whileHover={{ scale: 1.2 }} className='border flex lg:justify-center w-full lg:w-auto justify-between items-center border-gray-800 p-2 bg-gray-800 bg-opacity-60 rounded-[.3rem] hover:bg-white hover:text-black'>
+                <p className='px-5'>{sort}</p>
                 <IoIosArrowDown />
-              </button>
+              </motion.button>
             </MenuHandler>
             <MenuList className='bg-gray-800 text-md text-gray-100  opacity-60 border-0'>
               <MenuItem className='my-1' onClick={() => Filtering(selected, 'All')}>All</MenuItem>
@@ -103,7 +105,8 @@ function Projectslist({ animationConfig }) {
           </div>
         ) :
           Filter.map((project, index) => (
-            <Card key={index} className="w-96 bg-gray-900 bg-opacity-60">
+           <motion.div className='cursor-pointer' whileHover={{ scale: 1.1 }}>
+             <Card key={index} className="w-96 bg-gray-900 bg-opacity-60 ">
               <img
                 className='mt-5 mx-5 rounded-[.8rem]'
                 src={project?.image || "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"}
@@ -120,11 +123,12 @@ function Projectslist({ animationConfig }) {
                 <Typography className=''>
                   {project?.description.split(' ').slice(0, 20).join(' ')} ...
                 </Typography>
-                <div className='w-full mt-5'>
+                <div className='w-full mt-5' onClick={()=>navigate('/project/details')}>
                   <AnimationButton width='full' text={"View Property Details"} />
                 </div>
               </CardBody>
             </Card>
+           </motion.div>
           ))}
 
       </Listing>

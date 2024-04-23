@@ -16,7 +16,7 @@ function MissionAndVision({animationConfig}) {
                 <Container className='container mx-auto'>
                     <div className='lg:flex'>
                         <motion.div className='bg-[#252630] pt-5 lg:pt-10 px-5 lg:px-10 rounded-t-[2rem] rounded-b-[1rem] flex' {...animationConfig}>
-                            <img src={MissionImg} className='rounded-[2rem]' alt="" />
+                            <motion.img src={MissionImg} whileHover={{ scale: 1.1 }}  className='rounded-[2rem] hover:shadow-gray-600 hover:shadow-xl' alt="" />
                             <div className='flex justify-center items-center '>
                                 <div className='w-[2px] hidden lg:block rounded-full bg-red-500 h-20 hidden-div'></div>
                             </div>
@@ -39,7 +39,7 @@ function MissionAndVision({animationConfig}) {
                             <div className='flex justify-center items-center '>
                                 <div className='w-[2px] hidden lg:block rounded-full bg-red-500 h-20'></div>
                             </div>
-                            <img src={VisionImag} className='rounded-[2rem] ' alt="" />
+                            <motion.img src={VisionImag} whileHover={{ scale: 1.1 }} className='rounded-[2rem] hover:shadow-gray-600 hover:shadow-xl' alt="" />
                         </motion.div>
                     </Content>
                 </Container>

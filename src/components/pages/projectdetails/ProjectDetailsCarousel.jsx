@@ -1,28 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react'
 import styled from 'styled-components';
 import { IoLocationSharp } from "react-icons/io5";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { motion } from 'framer-motion';
 
-// Images
-import image1 from '../../../assets/images/projectdetails/image1.jpg';
-import image2 from '../../../assets/images/projectdetails/image2.jpg';
-import image3 from '../../../assets/images/projectdetails/image3.jpg';
-import image4 from '../../../assets/images/projectdetails/image4.jpg';
-import image5 from '../../../assets/images/projectdetails/image5.jpg';
-import image6 from '../../../assets/images/projectdetails/image6.jpg';
-import image7 from '../../../assets/images/projectdetails/image7.jpg';
-import image8 from '../../../assets/images/projectdetails/image8.jpg';
-import image9 from '../../../assets/images/projectdetails/image9.jpg';
 
 import RectangleBlue from '../../../assets/images/projectdetails/Rectangleblue.svg';
 import RectangleWhite from '../../../assets/images/projectdetails/Rectanglewhite.svg';
+import Text from '../../common/Text';
 
-function ProjectDetailsCarousel() {
-    const images = [image1, image2, image3, image4, image5, image6, image7, image8, image9];
+function ProjectDetailsCarousel({images,name,location,reraNumber}) {
     const [startIndex, setStartIndex] = useState(0);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const imageRef = useRef(null);
 
-    const imageCount = images.length -1;
-
+    const imageCount = images.length - 1;
 
     const handleImageClick = (index) => {
         setStartIndex(index);
@@ -31,60 +23,98 @@ function ProjectDetailsCarousel() {
     const handleNext = () => {
         if (startIndex < images.length - 2) {
             setStartIndex(startIndex + 1);
+            // imageRef.current.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
         }
     };
 
     const handlePrev = () => {
         if (startIndex > 0) {
             setStartIndex(startIndex - 1);
+            
         }
     };
 
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
 
     return (
-        <Section className='container mx-auto'>
-            <div className='lg:flex justify-between items-center w-full'>
-                <Heading1 className='hidden lg:block'>National Shalom</Heading1>
-                <Paragraph className='flex bg-gray-900 border border-gray-800 rounded-[2rem] p-3 text-center flex-row gap-3 justify-center items-center'>
+        <Section className='container mx-auto flex flex-col gap-6'>
+            <div className='flex flex-col lg:flex-row gap-2 lg:gap-0 justify-between lg:items-center w-full'>
+                <Heading1 className='hidden lg:block'>{name}</Heading1>
+                <Paragraph className='flex bg-gray-900 w-7/12 md:w-4/12 lg:w-auto border border-gray-800 rounded-[2rem] p-3 text-center flex-row md:gap-3 justify-center items-center'>
                     <IoLocationSharp className='w-6 h-6' />
-                    <span>Thiruvalla, Kerala</span>
+                    <span>{location}</span>
                 </Paragraph>
-                <Heading1 className='lg:hidden block'>National Shalom</Heading1>
+                <Heading1 className='lg:hidden block'>{name}</Heading1>
                 <Paragraph>
                     <span className='span2'>RERA Number : </span>
-                    <span>K-RERA/PRJ/066/2021</span>
+                    <span>{reraNumber}</span>
                 </Paragraph>
             </div>
-
-            <Carousel className='bg-gray-900 bg-opacity-60 p-6 rounded-[1.1rem] flex flex-col gap-5'>
-                <div className='flex  flex-row bg-black p-5 gap-2 justify-center rounded-[1.1rem]'>
-                    {images.map((image, index) => (
-                        <img key={index} src={image} className='w-[8rem] rounded-[.8rem]' alt="" onClick={() => handleImageClick(index)} />
-                    ))}
-                </div>
-                <div className='flex flex-row gap-4 w-full'>
-                    {images.slice(startIndex, startIndex + 2).map((image, index) => (
-                        <img key={index} src={image} className='w-full rounded-[1rem]' alt="" />
-                    ))}
-                </div>
-                <div className='flex justify-center items-center'>
-                    <div className='bg-black flex flex-row p-1 rounded-[.8rem]'>
-                        <button className='bg-gray-900  p-3 rounded-full' onClick={handlePrev}>
-                            <FaArrowLeft />
-                        </button>
-                        <div className='flex flex-row gap-1 px-2'>
-                            {Array.from({ length: imageCount }, (_, index) => (
-                                <>
-                                    <img key={index} src={(startIndex  === index)? RectangleBlue : RectangleWhite} alt="" />
-                                </>
-                            ))}
-                        </div>
-                        <button className='bg-gray-900  p-3 rounded-full' onClick={handleNext}>
-                            <FaArrowRight />
-                        </button>
-                    </div>
-                </div>
-            </Carousel>
+            {images.length > 0 ? (
+                 <Carousel className='bg-gray-900 bg-opacity-60 p-3 md:p-6 rounded-[1.1rem] flex flex-col  gap-5 overflow-hidden'>
+                 <div className='flex flex-col-reverse lg:flex-col gap-6'>
+                     <div className='flex flex-row ps-[32rem] md:ps-96 xl:ps-5 p-3 lg:p-5 bg-black gap-3 justify-center overflow-x-auto xl:overflow-hidden h-[9rem] rounded-[1.1rem]'>
+                         {images.map((image, index) => (
+                             <motion.img key={index} src={image} className={`w-[8rem] max-w-[10rem] rounded-[.6rem] cursor-pointer hover:opacity-80  ${(windowWidth <= 767 && startIndex === index) || (windowWidth > 767 && startIndex <= index && index <= startIndex + 1)
+                                     ? ""
+                                     : "opacity-40"
+                                 }`}
+                                 alt="" onClick={() => handleImageClick(index)}
+                                 whileHover={{ scale: 1.1 }}
+                                 animate={{ x: windowWidth <= 768 ? 140 : windowWidth <= 1024 ? 30 : 0 }}
+                                 transition={{ ease: "easeOut", duration: 2 }}
+                                 ref={index === startIndex ? imageRef : null}
+                             />
+                         ))}
+                     </div>
+                     <div className='flex flex-row gap-4 w-full justify-center pt-2 md:pt-0 px-1 md:px-3'>
+                         {windowWidth <= 767 ? (
+                             // Render one image
+                             images.slice(startIndex, startIndex + 1).map((image, index) => (
+                                 <img key={index} src={image} className='rounded-[1.1rem]' alt="" />
+                             ))
+                         ) : (
+                             // Render two images
+                             images.slice(startIndex, startIndex + 2).map((image, index) => (
+                                 <img key={index} src={image} className='w-6/12 rounded-[1.1rem]' alt="" />
+                             ))
+                         )}
+                     </div>
+                 </div>
+                 <div className='flex justify-center items-center'>
+                     <div className='bg-black flex flex-row p-1 rounded-[1.1rem]'>
+                         <button className='bg-gray-900  p-3 rounded-full' onClick={handlePrev}>
+                             <FaArrowLeft />
+                         </button>
+                         <div className='flex flex-row justify-center gap-1 md:px-2'>
+                             {Array.from({ length: imageCount }, (_, index) => (
+                                 <>
+                                     <img key={index} src={(startIndex === index) ? RectangleBlue : RectangleWhite} className='w-1/12 md:w-2/12' alt="" />
+                                 </>
+                             ))}
+                         </div>
+                         <button className='bg-gray-900  p-3 rounded-full' onClick={handleNext}>
+                             <FaArrowRight />
+                         </button>
+                     </div>
+                 </div>
+             </Carousel>
+            ):(
+                <Carousel className='bg-gray-900 bg-opacity-60 p-3 flex justify-center items-center rounded-[1.1rem] '>
+                        <Text text={"Images Not Found..."}/>
+                </Carousel>
+            )
+           }
         </Section>
     );
 }
@@ -99,14 +129,15 @@ const Section = styled.section`
 
 const Heading1 = styled.p`
     font-size: 3rem;
-    @media(max-width:768px){
-    font-size: 2.4rem;
+    @media(max-width:940px){
+    font-size: 2.2rem;
 }
 @media(max-width:425px){
     font-size: 2.4rem;
 }
 @media (max-width: 375px) {
-    font-size: 1.9rem;
+    font-size: 1.6rem;
+    font-weight: bold;
 }
 `;
 
@@ -116,9 +147,9 @@ const Paragraph = styled.p`
     font-family: 'popins_regular';
     margin: 1rem auto 1rem auto;
 
-    @media (max-width: 768px) {
+    @media (max-width: 940px) {
+        margin: 0;
         font-size: 0.9rem;
-        width: 60%;
     }
 
     @media (max-width: 425px) {
@@ -139,4 +170,5 @@ const Paragraph = styled.p`
     }
 `;
 
-const Carousel = styled.section``;
+const Carousel = styled.section`
+`;

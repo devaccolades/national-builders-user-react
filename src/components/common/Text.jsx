@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-function Text({text,mt=''}) {
+function Text({text,mt='',align = 'justify' }) {
   return (
-    <Paragraph className={`text-justify mt-${mt} `}>
+    <Paragraph className={`text-${align} mt-${mt} `}>
         {text}
     </Paragraph>
   )

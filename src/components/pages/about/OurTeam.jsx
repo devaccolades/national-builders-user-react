@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 // Image
@@ -8,8 +8,15 @@ import Director3 from '../../../assets/images/about/director3.png'
 import Director4 from '../../../assets/images/about/director4.jpeg'
 import RoundAndText from '../../common/RoundAndText'
 import { Card, CardBody, Typography } from '@material-tailwind/react'
+import { DirectorModal } from '../../modal/DirectorModal'
 
 function OurTeam({animationConfig}) {
+  const [data, setdata] = useState('');
+
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => setOpen(!open);
+
     const directors = [
         { 'image': Director1, 'name': 'M.C.Sunny', 'position': 'CMD and Managing Director', 'linkedin': 'ling', 'explain': "An eminent business leader and a real-estate pioneer, Founder-CMD M C Sunny’s leadership with nearly four decades of hands-on professional experience and a strong value system has built National Builders into one of the most reputed real-estate companies in Navi Mumbai and Kerala. A key contributor in making Navi Mumbai a ‘City of the 21 st century’ that it is now, Mr. Sunny is the man behind landmark buildings that house the dreams of thousands of families. After successfully executing prestigious projects in Navi Mumbai in the early years, Mr. Sunny made a strong foray in the real-estate market of his homeland Kerala. Today, some of the finest towers with the most luxurious homes in the cities of Navi Mumbai and Cochin are testaments to the vision and will of Mr. Sunny. A self-made entrepreneur who puts people before profits, Mr. Sunny firmly believes that ethics and integrity are the true foundations of business. A practitioner of the commit-less-and- deliver-more philosophy, Mr. Sunny has built a solid reputation as a stalwart of the business fraternity – and a compassionate member of the community. From holding key posts in Industry Bodies and Developers’ Associations over the years, to being on the Board of Trustees of educational and cultural organizations, Mr. Sunny is a prominent personality and philanthropist for whom giving back to the society is not only a commitment, but a way of life." },
         { 'image': Director2, 'name': 'Sherly', 'position': 'Director', 'linkedin': 'ling', 'explain': "An eminent business leader and a real-estate pioneer, Founder-CMD M C Sunny’s leadership with nearly four decades of hands-on professional experience and a strong value system has built National Builders into one of the most reputed real-estate companies in Navi Mumbai and Kerala. A key contributor in making Navi Mumbai a ‘City of the 21 st century’ that it is now, Mr. Sunny is the man behind landmark buildings that house the dreams of thousands of families. After successfully executing prestigious projects in Navi Mumbai in the early years, Mr. Sunny made a strong foray in the real-estate market of his homeland Kerala. Today, some of the finest towers with the most luxurious homes in the cities of Navi Mumbai and Cochin are testaments to the vision and will of Mr. Sunny. A self-made entrepreneur who puts people before profits, Mr. Sunny firmly believes that ethics and integrity are the true foundations of business. A practitioner of the commit-less-and- deliver-more philosophy, Mr. Sunny has built a solid reputation as a stalwart of the business fraternity – and a compassionate member of the community. From holding key posts in Industry Bodies and Developers’ Associations over the years, to being on the Board of Trustees of educational and cultural organizations, Mr. Sunny is a prominent personality and philanthropist for whom giving back to the society is not only a commitment, but a way of life." },
@@ -17,11 +24,13 @@ function OurTeam({animationConfig}) {
         { 'image': Director4, 'name': 'Anne Sijo Sunny', 'position': 'Director', 'linkedin': 'ling', 'explain': "An eminent business leader and a real-estate pioneer, Founder-CMD M C Sunny’s leadership with nearly four decades of hands-on professional experience and a strong value system has built National Builders into one of the most reputed real-estate companies in Navi Mumbai and Kerala. A key contributor in making Navi Mumbai a ‘City of the 21 st century’ that it is now, Mr. Sunny is the man behind landmark buildings that house the dreams of thousands of families. After successfully executing prestigious projects in Navi Mumbai in the early years, Mr. Sunny made a strong foray in the real-estate market of his homeland Kerala. Today, some of the finest towers with the most luxurious homes in the cities of Navi Mumbai and Cochin are testaments to the vision and will of Mr. Sunny. A self-made entrepreneur who puts people before profits, Mr. Sunny firmly believes that ethics and integrity are the true foundations of business. A practitioner of the commit-less-and- deliver-more philosophy, Mr. Sunny has built a solid reputation as a stalwart of the business fraternity – and a compassionate member of the community. From holding key posts in Industry Bodies and Developers’ Associations over the years, to being on the Board of Trustees of educational and cultural organizations, Mr. Sunny is a prominent personality and philanthropist for whom giving back to the society is not only a commitment, but a way of life." },
       ]
     return (
+       <>
         <Section className='container mx-auto'>
             <RoundAndText headingred={"Our"} headingwhite={"Team"} text={"At National Builders, we have always taken care to pick the best location with ease of accessibility and assured appreciation. The perfect locations make our project truly well connected. All our projects are located at the heart of the city which gives residents access to the most happening lifestyle hubs, the finest hotels, luxury retail stores, premium entertainment centres and major hotspots of work."}/>
             <div className='w-full grid md:grid-cols-2 lg:grid-cols-4 md:gap-8 lg:gap-0 right-auto left-auto '>
           {directors.map((director, index) => (
-            <motion.Card onClick={() => { handleOpen(), setdata(director) }} key={index} className="mt-6 lg:mt-3 lg:w-auto bg-gray-900 lg:me-4 hover:shadow-gray-600 hover:shadow-xl cursor-pointer" {...animationConfig}>
+           <motion.div {...animationConfig} whileHover={{ scale: 1.1 }} >
+             <Card onClick={() => { handleOpen(), setdata(director) }} key={index} className="mt-6 lg:mt-3 lg:w-auto bg-gray-900 lg:me-4 hover:shadow-gray-600 hover:shadow-xl cursor-pointer" >
               <img className='h-4/6 mt-4 px-6 pt-3 lg:pt-2 lg:px-4'
                 src={director.image || "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"}
                 alt="card-image"
@@ -48,10 +57,13 @@ function OurTeam({animationConfig}) {
                   {director.position}
                 </Typography>
               </CardBody>
-            </motion.Card>
+            </Card>
+           </motion.div>
           ))}
         </div>
         </Section>
+        <DirectorModal open={open} handleOpen={handleOpen} data={data} />
+       </>
     )
 }
 
