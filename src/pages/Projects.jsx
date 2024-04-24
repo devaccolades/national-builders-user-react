@@ -1,6 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
-import Header from '../components/includes/Header'
 import { Helmet } from 'react-helmet'
 import RoundAndText from '../components/common/RoundAndText'
 import PageName from '../components/common/PageName'

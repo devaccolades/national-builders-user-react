@@ -123,7 +123,7 @@ function Footer() {
           </div>
           <div className='grid grid-cols-[3rem,1fr]'>
             <IoLocationSharp className='text-red-500 h-7 w-7 mt-2' />
-            <Text text={"National Builders Office, Sea Queen Heritage Buiding, 1st Floor, Plot No, Sector 18, Palm Beach Service Road, Sanpada, Navi Mumbai-400705"} />
+            <Text align='' text={"National Builders Office, Sea Queen Heritage Buiding, 1st Floor, Plot No, Sector 18, Palm Beach Service Road, Sanpada, Navi Mumbai-400705"} />
           </div>
           <div className='grid grid-cols-[3rem,1fr] w-full'>
             <MdEmail className='text-red-500 h-6 w-6' />
@@ -145,7 +145,7 @@ function Footer() {
           </div>
           <div className='grid grid-cols-[3rem,1fr]'>
             <IoLocationSharp className='text-red-500 h-7 w-7 mt-2' />
-            <Text text={"National Pearl Star, 5Th Floor, High School Jn.Edappally, Kochi, Kerala - 682024"} />
+            <Text align='' text={"National Pearl Star, 5Th Floor, High School Jn.Edappally, Kochi, Kerala - 682024"} />
           </div>
           <div className='grid grid-cols-[3rem,1fr] w-full'>
             <MdEmail className='text-red-500 h-6 w-6' />
