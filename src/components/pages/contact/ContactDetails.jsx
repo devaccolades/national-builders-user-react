@@ -7,15 +7,11 @@ import Phonesvg from '../../../assets/icons/phone.svg'
 import Locationsvg from '../../../assets/icons/location.svg'
 
 function ContactDetails({animationConfig}) {
-    const constactDetails = [
-        { name: "Our Mumbai Office", description: "We are here to assist you with any inquiries, requests or feedback you may have.", email: "marketingmumbai@nationalbuilders.in", phone: "+ 91 22 49639871 / 72 / 73 +91 2249737814 +91 9223300950 / +91 9223300960 +91 9004091082", address: "National Builders, Sea Queen Heritage, 1st Floor, Plot No.6, Sector 18, Sanpada, Palm Beach Service Road, Navi Mumbai - 400705" },
-        { name: "Our Kochi Office", description: "We are here to assist you with any inquiries, requests or feedback you may have.", email: "marketingkochi@nationalbuilders.in", phone: "+91 4842340781,2333391, 2534558, +91 98475 33355, +91 98475 44333, +91 98477 17771", address: "National Pearl Star, 5th Floor, High School Jn., Edappally, Kochi, Kerala - 682 024" }
-    ]
 
     return (
         <Section className='container mx-auto'>
             <Maindiv className='grid grid-flow-row-2 lg:grid-cols-2 gap-16'>
-                <motion.div className='bg-gray-900 grid gap-5 text-lg py-10 lg:p-10 rounded-[1.5rem]' {...animationConfig}>
+                <motion.div className='bg-gray-900 bg-opacity-60 grid gap-5 text-lg py-10 lg:p-10 rounded-[1.5rem]' {...animationConfig}>
                     <div className='text-center'>
                         <p className='text-2xl font-bold '>Our <span className='bg-gradient-to-r from-white to-gray-600  text-transparent bg-clip-text'>Mumbai Office</span></p>
                         <Paragraph className='px-4 md:px-10 lg:px-0'></Paragraph>
@@ -49,7 +45,7 @@ function ContactDetails({animationConfig}) {
                         </div>
                     </div>
                 </motion.div>
-                <motion.div className='bg-gray-900 grid gap-5 text-lg py-10 lg:p-10 rounded-[1.5rem]' {...animationConfig}>
+                <motion.div className='bg-gray-900 bg-opacity-60 grid gap-5 text-lg py-10 lg:p-10 rounded-[1.5rem]' {...animationConfig}>
                     <div className='text-center'>
                         <p className='text-2xl font-bold '>Our <span className='bg-gradient-to-r from-white to-gray-600  text-transparent bg-clip-text'>Kochi Office</span></p>
                         <Paragraph className='px-4 md:px-10 lg:px-0'></Paragraph>

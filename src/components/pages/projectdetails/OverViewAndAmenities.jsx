@@ -45,21 +45,21 @@ function OverViewAndAmenities({
                             <img src={bedRommsIcon} alt="icons" />
                             <Text text={"Bedrooms"} />
                         </div>
-                        <Text text={bedrooms.join(', ')} />
+                        <Text align='center' text={bedrooms.join(', ')} />
                     </div>
                     <div>
                         <div className='flex flex-row gap-3 items-center pb-4'>
                             <img src={unitsIcon} className='-mt-[0.5rem]' alt="icons" />
                             <Text text={"Units"} />
                         </div>
-                        <Text text={units} />
+                        <Text  align='center' text={units} />
                     </div>
                     <div className='mt-5 md:mt-0'>
                         <div className='flex flex-row gap-3 items-center pb-4'>
                             <img src={areaIcon} className='-mt-[0.5rem]' alt="icons" />
                             <Text text={"Area"} />
                         </div>
-                        <div className='flex items-center'>
+                        <div className='flex items-center justify-center'>
                             <Text text={area.from} />
                             <hr className='w-5 mx-2' />
                             <Text text={`${area.to} sq. ft.`} />

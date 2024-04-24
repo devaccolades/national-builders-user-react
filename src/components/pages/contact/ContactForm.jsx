@@ -102,7 +102,7 @@ function ContactForm({animationConfig}) {
             </div>
 
           </div>
-          <div className='flex justify-center lg:justify-end items-center'>
+          <div className='flex justify-center w-full lg:justify-end items-center'>
             <AnimationButton hieght='' text={"Send Message"} />
            
           </div>

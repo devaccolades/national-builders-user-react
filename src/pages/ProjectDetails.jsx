@@ -22,6 +22,7 @@ import image10 from '../assets/images/projectdetails/3bed.png';
 import image11 from '../assets/images/projectdetails/2bed.jpg';
 import image12 from '../assets/images/projectdetails/keyplan.jpg';
 import LocationMap from '../components/pages/projectdetails/LocationMap'
+import ContactSection from '../components/pages/projectdetails/ContactSection'
 
 
 function ProjectDetails() {
@@ -57,7 +58,20 @@ function ProjectDetails() {
       { title: '3 Bed Option', image: image11 },
       { title: 'key Plan', image: image12 },
     ],
-    location_map:{distance:"",iframelink:""}
+    iframelink:"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d106.8195613507864!3d-6.194741395493371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5390917b759%3A0x6b45e67356080477!2sPT%20Kulkul%20Teknologi%20Internasional!5e0!3m2!1sen!2sid!4v1601138221085!5m2!1sen!2sid",
+    distance:[
+      {distance_place:"Thiruvalla Railway Station:",distance:6.6},
+      {distance_place:"Chengannur Railway Station:",distance:3.7},
+      {distance_place:"KM Cherian Heart Speciality Hospital:",distance:2.2},
+      {distance_place:"Thiruvalla Bus Stand:",distance:5.5},
+      {distance_place:"Chengannur Bus Stand:",distance:3.6},
+      {distance_place:"Pushpagiri Medical College:",distance:5.0},
+      {distance_place:"Mammen Memorial Hospital:",distance:2.0},
+      {distance_place:"Christian College:",distance:6.3},
+      {distance_place:"Providence College Of Engineering:",distance:4.6},
+      {distance_place:"Believers Hospital:",distance:10},
+      {distance_place:"Mar Thoma College Thiruvalla:",distance:7.2},
+    ]
 
   };
   return (
@@ -87,7 +101,8 @@ function ProjectDetails() {
       />
       <Specifications specifications={data?.specifications} />
       <FloorPlan floorplan={data.floorplan} />
-      <LocationMap />
+      <LocationMap iframelink={data?.iframelink} distance={data.distance} />
+      <ContactSection/>
       <CommonDiv />
     </>
   )
