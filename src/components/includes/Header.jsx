@@ -103,7 +103,7 @@ function Header() {
         </MenuHandler>
         <MenuList className='bg-black border border-gray-900 text-lg text-white text-opacity-50 rounded-xl'>
           <MenuItem className='my-1' onClick={()=>navigate('/projects')}>Project</MenuItem>
-          <MenuItem className='my-1'>Rentals</MenuItem>
+          <MenuItem className='my-1' onClick={()=>navigate('/rentals')}>Rentals</MenuItem>
           <MenuItem className='my-1'>Testimontials</MenuItem>
           <MenuItem className='my-1'>Blogs</MenuItem>
        <MenuItem className='my-1' onClick={()=>navigate('/about')}>About</MenuItem>
