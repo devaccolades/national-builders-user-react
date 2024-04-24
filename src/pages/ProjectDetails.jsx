@@ -26,6 +26,21 @@ import ContactSection from '../components/pages/projectdetails/ContactSection'
 
 
 function ProjectDetails() {
+  const animationConfig = {
+    initial: {
+      opacity: 0,
+      y: 50,
+    },
+    whileInView: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        delay: 0.5,
+      },
+    },
+  };
+
   const data = {
     name: 'National Shalom',
     images: [image1, image2, image3, image4, image5, image6, image7, image8, image9],
@@ -84,8 +99,9 @@ function ProjectDetails() {
         ></meta>
       </Helmet>
       <PageName text={"Project details"} />
-      <ProjectDetailsCarousel images={data?.images} name={data?.name} location={data?.location} reraNumber={data?.rera_number} />
+      <ProjectDetailsCarousel animationConfig={animationConfig} images={data?.images} name={data?.name} location={data?.location} reraNumber={data?.rera_number} />
       <OverViewAndAmenities
+      animationConfig={animationConfig}
         description={data?.description}
         healthClub={data?.health_club}
         roofTopPartyArea={data?.roof_top_party_area}
@@ -99,10 +115,10 @@ function ProjectDetails() {
         units={data?.units}
         area={data?.area}
       />
-      <Specifications specifications={data?.specifications} />
-      <FloorPlan floorplan={data.floorplan} />
-      <LocationMap iframelink={data?.iframelink} distance={data.distance} />
-      <ContactSection/>
+      <Specifications animationConfig={animationConfig} specifications={data?.specifications} />
+      <FloorPlan animationConfig={animationConfig} floorplan={data.floorplan} />
+      <LocationMap animationConfig={animationConfig} iframelink={data?.iframelink} distance={data.distance} />
+      <ContactSection animationConfig={animationConfig}/>
       <CommonDiv />
     </>
   )

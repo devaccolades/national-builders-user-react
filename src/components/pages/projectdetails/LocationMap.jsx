@@ -1,16 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
 import Text from '../../common/Text'
+import { motion } from 'framer-motion'
 
 import roundIcon from '../../../assets/icons/pointicon.svg'
 
-function LocationMap({ iframelink, distance }) {
+function LocationMap({ animationConfig,iframelink, distance }) {
   return (
     <Section className='mx-auto container'>
-      <Container className='bg-gray-900 bg-opacity-60 rounded-[1.1rem] p-8'>
-        <Heading>Location Map</Heading>
+      <Container className='bg-gray-900 bg-opacity-60 rounded-[1.1rem] p-5 lg:p-8' {...animationConfig}>
+        <Heading {...animationConfig}>Location Map</Heading>
         <div className='flex flex-col lg:grid grid-cols-2 gap-10'>
-          <div className='h-full'>
+          <motion.div className='h-full' {...animationConfig}>
             <Heading2> Distances</Heading2>
             {distance && distance.length > 0 ? (
               distance.map((dist, index) => (
@@ -29,8 +30,8 @@ function LocationMap({ iframelink, distance }) {
               <Text mt='10' align='center' text={"Distance Not Found"} />
             )}
 
-          </div>
-          <div className='flex justify-center  items-center'>
+          </motion.div>
+          <motion.div className='flex justify-center  items-center' {...animationConfig}>
             {iframelink !== "" ? (<iframe
               className='rounded-[1.1rem]'
               src={iframelink}
@@ -45,7 +46,7 @@ function LocationMap({ iframelink, distance }) {
               <Text align='center' text={"Map Link Not Provide"} />
             )}
 
-          </div>
+          </motion.div>
         </div>
       </Container>
     </Section>
@@ -62,7 +63,7 @@ margin-bottom: 2rem;
  
 }`
 
-const Container = styled.div`
+const Container = styled(motion.div)`
  @media screen and (max-width: 600px) {
     iframe {
         height: 300px; 
@@ -70,7 +71,7 @@ const Container = styled.div`
 }
 `
 
-const Heading = styled.p`
+const Heading = styled(motion.p)`
     font-size: 1.6rem;
     padding-bottom: 0.6rem;
     @media(max-width:1024px){

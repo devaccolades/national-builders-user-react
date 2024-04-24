@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Text from '../../common/Text'
+import { motion } from 'framer-motion'
 
 // Icons
 import bedRommsIcon from '../../../assets/icons/bedrooms.svg'
@@ -17,6 +18,7 @@ import landscapareaIcon from '../../../assets/icons/landscaped.svg'
 
 
 function OverViewAndAmenities({
+    animationConfig,
     description,
     healthClub,
     roofTopPartyArea,
@@ -32,7 +34,7 @@ function OverViewAndAmenities({
 }) {
     return (
         <Section className='container mx-auto'>
-            <OverView className='bg-gray-900 bg-opacity-60 rounded-[1.1rem] p-8'>
+            <OverView className='bg-gray-900 bg-opacity-60 rounded-[1.1rem] p-5 lg:p-8' {...animationConfig}>
                 <Heading>OverView</Heading>
                 {description ? (
                     <Text text={description} />
@@ -68,7 +70,7 @@ function OverViewAndAmenities({
                 </div>
 
             </OverView>
-            <Amenities className='bg-gray-900 bg-opacity-60 rounded-[1.1rem] p-8 md:pb-20'>
+            <Amenities className='bg-gray-900 bg-opacity-60 rounded-[1.1rem] p-5 lg:p-8 md:pb-20' {...animationConfig}>
                 <Heading>Amenities</Heading>
                 <div className='grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-10 h-full mt-2'>
                     {healthClub && (<div className=''>
@@ -124,11 +126,11 @@ gap: 2rem;
 }
 }`
 
-const OverView = styled.div`
+const OverView = styled(motion.div)`
     width: 100%;
 `
 
-const Amenities = styled.div`
+const Amenities = styled(motion.div)`
     width: 100%;
 
 `

@@ -3,10 +3,10 @@ import styled from 'styled-components'
 import Text from '../../common/Text'
 import { motion } from 'framer-motion'
 
-function FloorPlan({ floorplan }) {
+function FloorPlan({animationConfig, floorplan }) {
     return (
         <Section className='mx-auto container'>
-            <Container className='bg-gray-900 bg-opacity-60 rounded-[1.1rem] p-8'>
+            <Container className='bg-gray-900 bg-opacity-60 rounded-[1.1rem] p-3 lg:p-8' {...animationConfig}>
                 <Heading>Floor Plans</Heading>
                 {floorplan?.length > 0 ? (
                     <div className='bg-black rounded-[1.1rem] p-3 lg:p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
@@ -43,7 +43,7 @@ margin-bottom: 2rem;
  
 }`
 
-const Container = styled.div``
+const Container = styled(motion.div)``
 
 const Heading = styled.p`
     font-size: 1.6rem;

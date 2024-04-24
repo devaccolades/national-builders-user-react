@@ -9,7 +9,7 @@ import RectangleBlue from '../../../assets/images/projectdetails/Rectangleblue.s
 import RectangleWhite from '../../../assets/images/projectdetails/Rectanglewhite.svg';
 import Text from '../../common/Text';
 
-function ProjectDetailsCarousel({images,name,location,reraNumber}) {
+function ProjectDetailsCarousel({animationConfig,images,name,location,reraNumber}) {
     const [startIndex, setStartIndex] = useState(0);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const imageRef = useRef(null);
@@ -48,7 +48,7 @@ function ProjectDetailsCarousel({images,name,location,reraNumber}) {
 
     return (
         <Section className='container mx-auto flex flex-col gap-6'>
-            <div className='flex flex-col lg:flex-row gap-2 lg:gap-0 justify-between lg:items-center w-full'>
+            <motion.div className='flex flex-col lg:flex-row gap-2 lg:gap-0 justify-between lg:items-center w-full' {...animationConfig}>
                 <Heading1 className='hidden lg:block'>{name}</Heading1>
                 <Paragraph className='flex bg-gray-900 w-7/12 md:w-4/12 lg:w-auto border border-gray-800 rounded-[2rem] p-3 text-center flex-row md:gap-3 justify-center items-center'>
                     <IoLocationSharp className='w-6 h-6' />
@@ -59,9 +59,9 @@ function ProjectDetailsCarousel({images,name,location,reraNumber}) {
                     <span className='span2'>RERA Number : </span>
                     <span>{reraNumber}</span>
                 </Paragraph>
-            </div>
+            </motion.div>
             {images.length > 0 ? (
-                 <Carousel className='bg-gray-900 bg-opacity-60 p-3 md:p-6 rounded-[1.1rem] flex flex-col  gap-5 overflow-hidden'>
+                 <Carousel className='bg-gray-900 bg-opacity-60 p-3 md:p-6 rounded-[1.1rem] flex flex-col  gap-5 overflow-hidden' {...animationConfig}>
                  <div className='flex flex-col-reverse lg:flex-col gap-6'>
                      <div className='flex flex-row ps-[32rem] md:ps-96 xl:ps-5 p-3 lg:p-5 bg-black gap-3 justify-center overflow-x-auto xl:overflow-hidden h-[9rem] rounded-[1.1rem]'>
                          {images.map((image, index) => (
@@ -170,5 +170,5 @@ const Paragraph = styled.p`
     }
 `;
 
-const Carousel = styled.section`
+const Carousel = styled(motion.section)`
 `;
