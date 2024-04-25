@@ -3,9 +3,11 @@ import { motion } from 'framer-motion'
 import styled from 'styled-components';
 import Text from '../../common/Text';
 import AnimationButton from '../../common/Button';
+import CounterAnimation from '../../common/CounterAnimation';
 
-function TextAndCounts({animationConfig}) {
-  
+function TextAndCounts({ animationConfig }) {
+
+
     return (
         <Section className='container mx-auto grid grid-rows-[1fr,16rem]'>
             <div className='flex flex-col lg:flex-row lg:items-start pt-36 py-10  lg:mx-5 xl:mx-0' >
@@ -36,20 +38,20 @@ function TextAndCounts({animationConfig}) {
             </div>
             <motion.div className='grid grid-cols-2 lg:grid-cols-4 w-full  lg:mt-0' {...animationConfig}>
                 <div className='my-auto mx-auto text-center'>
-                    <p className='text-5xl lg:text-6xl my-4'>5</p>
-                    <Text text={"Launched"}/>
+                    <CounterAnimation value={5} />
+                    <Text text={"Launched"} />
                 </div>
                 <div className='my-auto mx-auto text-center'>
-                    <p className='text-5xl lg:text-6xl my-4'>135</p>
-                    <Text text={"Project's Completed"}/>
+                    <CounterAnimation value={135} />
+                    <Text text={"Project's Completed"} />
                 </div>
                 <div className='my-auto mx-auto text-center'>
-                    <p className='text-5xl lg:text-6xl my-4'>4</p>
-                    <Text text={"Ready to Move In"}/>
+                    <CounterAnimation value={4} />
+                    <Text text={"Ready to Move In"} />
                 </div>
                 <div className='my-auto mx-auto text-center'>
-                    <p className='text-5xl lg:text-6xl my-4'>4</p>
-                    <Text text={"Ongoing"}/>
+                    <CounterAnimation value={4} />
+                    <Text text={"Ongoing"} />
                 </div>
             </motion.div>
         </Section>

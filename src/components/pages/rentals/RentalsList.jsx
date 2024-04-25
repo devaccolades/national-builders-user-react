@@ -68,7 +68,7 @@ function RentalsList({ animationConfig, data }) {
                 ) :
                     Filter.map((rental, index) => (
                         <motion.div className='cursor-pointer' whileHover={{ scale: 1.1 }}>
-                            <Card key={index} className="bg-gray-900 bg-opacity-60 p-6 flex flex-col md:flex-row w-full">
+                            <Card key={index} className="bg-gray-900 bg-opacity-60 p-4 md:p-6 flex flex-col md:flex-row w-full">
                                 <img
                                     className='md:w-5/12 rounded-[.8rem]'
                                     src={rental?.image || "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"}
@@ -99,8 +99,13 @@ function RentalsList({ animationConfig, data }) {
                                             <p className='text-[1.2rem] pt-2 text-gray-600'>{`${rental.price}/sqft + MMc`}</p>
                                         </div>
                                     </div>
-                                    <div className='w-full flex justify-end items-center -mb-3 mt-6' onClick={() =>{setRentalData(rental), handleOpen(!open)}}>
+                                    <div className='w-full flex flex-row  justify-end items-center -mb-3 mt-6' onClick={() =>{setRentalData(rental), handleOpen(!open)}}>
+                                        {window.innerWidth < 768 ?(
+                                            <AnimationButton width='full' text={"Enquire now"} />
+                                        ):
+                                        (
                                             <AnimationButton width='' text={"Enquire now"} />
+                                        )}
                                         </div>
                                 </CardBody>
                             </Card>

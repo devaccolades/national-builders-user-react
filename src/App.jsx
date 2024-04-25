@@ -13,6 +13,7 @@ const Projects = React.lazy(() => import('./pages/Projects'));
 const ProjectDetails = React.lazy(() => import('./pages/ProjectDetails'));
 const RentalProperties = React.lazy(() => import('./pages/RentalProperties'));
 const Testimonials = React.lazy(() => import('./pages/Testimonials'));
+const NewsAndEvents = React.lazy(() => import('./pages/NewsAndEvents'));
 
 
 
@@ -36,6 +37,7 @@ function App() {
           <Route path="/project/details" element={<ProjectDetails />} />
           <Route path="/rentals" element={<RentalProperties />} />
           <Route path="/testimonials" element={<Testimonials />} />
+          <Route path="/news-and-events" element={<NewsAndEvents />} />
           <Route path="/*" element={<ErrorPage />} />
         </Route>
       </Routes>

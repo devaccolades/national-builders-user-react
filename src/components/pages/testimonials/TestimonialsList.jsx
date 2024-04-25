@@ -38,7 +38,7 @@ function TestimonialsList({ animationConfig, data }) {
           <Text align='center' text={"No Data Found..."} />
         )}
       </div>
-      <div className='flex justify-center items-center'>
+      <motion.div className='flex justify-center items-center' {...animationConfig}>
         <div className='bg-black flex flex-row p-1 rounded-[1.1rem]'>
           <button className='bg-gray-900  p-3 rounded-full' >
             <FaArrowLeft />
@@ -54,7 +54,7 @@ function TestimonialsList({ animationConfig, data }) {
             <FaArrowRight />
           </button>
         </div>
-      </div>
+      </motion.div>
     </Section>
   )
 }

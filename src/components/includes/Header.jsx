@@ -12,12 +12,14 @@ import {
 import { motion } from "framer-motion";
 
 // Images
-import logo from '../../assets/images/logo/national-builders-logo.png';
+// import logo from '../../assets/images/logo/national-builders-logo.png';
+import logo from '../../assets/images/logo/logo.png';
+import text from '../../assets/images/logo/text.png';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 function Header() {
   const navigate = useNavigate()
-    const [openMenu, setOpenMenu] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
 
   const location = useLocation();
   const currentPath = location.pathname;
@@ -29,7 +31,7 @@ function Header() {
         as="li"
         variant="small"
         className={`p-1 ${currentPath === '/' ? 'font-bold' : 'font-normal'} text-xl text-white hidden lg:block`}
-       >
+      >
         <Link to={'/'} className="flex items-center">
           Home
         </Link>
@@ -57,7 +59,7 @@ function Header() {
       <Typography
         as="li"
         variant="small"
-        className={`p-1 ${currentPath === '/about' ? 'font-bold' : 'font-normal'} text-xl text-white hidden lg:block`} 
+        className={`p-1 ${currentPath === '/about' ? 'font-bold' : 'font-normal'} text-xl text-white hidden lg:block`}
       >
         <Link to={'/about'} className="flex items-center">
           About
@@ -102,12 +104,13 @@ function Header() {
           </Typography>
         </MenuHandler>
         <MenuList className='bg-black border border-gray-900 text-lg text-white text-opacity-50 rounded-xl'>
-          <MenuItem className='my-1' onClick={()=>navigate('/projects')}>Project</MenuItem>
-          <MenuItem className='my-1' onClick={()=>navigate('/rentals')}>Rentals</MenuItem>
-          <MenuItem className='my-1' onClick={()=>navigate('/testimonials')}>Testimontials</MenuItem>
+          <MenuItem className='my-1' onClick={() => navigate('/projects')}>Project</MenuItem>
+          <MenuItem className='my-1' onClick={() => navigate('/rentals')}>Rentals</MenuItem>
+          <MenuItem className='my-1' onClick={() => navigate('/testimonials')}>Testimontials</MenuItem>
           <MenuItem className='my-1'>Blogs</MenuItem>
-       <MenuItem className='my-1' onClick={()=>navigate('/about')}>About</MenuItem>
-          <MenuItem className='my-1' onClick={()=>navigate('/contact')}>Contact</MenuItem>
+          <MenuItem className='my-1' onClick={() => navigate('/news-and-events')}>News & Events</MenuItem>
+          <MenuItem className='my-1' onClick={() => navigate('/about')}>About</MenuItem>
+          <MenuItem className='my-1' onClick={() => navigate('/contact')}>Contact</MenuItem>
         </MenuList>
       </Menu>
 
@@ -118,21 +121,33 @@ function Header() {
     <div className={`top-0 sticky z-10 w-full h-full overflow-x-hidden bg-transparent`}>
       <Navbar className={` border-0 bg-transparent z-10 h-max max-w-full rounded-none px-4 py-6  lg:px-8 lg:py-8`}>
         <motion.div className="flex ps-16 items-center justify-between text-blue-gray-900"
-         initial={{ opacity: 0 }}
-         animate={{ opacity: 1 }}
-         exit={{ opacity: 0 }}
-         transition={{ duration: 1 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1 }}
         >
-        <motion.img 
-          src={logo} 
-          className='lg:w-[15rem]' 
-          alt="logo" 
-          onClick={() => navigate('/')}
-            initial={{ opacity: 0 }} 
-            animate={{ opacity: 1 }} 
-            transition={{ delay: 1, duration: .5 }} 
-        />
-           <div className="flex items-center gap-4">
+          <div className='flex flex-row justify-center items-center -ms-10 lg:ms-0'>
+            <motion.img
+              src={logo}
+              className='h-[3rem] lg:h-[3.5rem]'
+              alt="logo"
+              onClick={() => navigate('/')}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1, duration: .5 }}
+            />
+            <motion.img
+              src={text}
+              className='h-[3rem] lg:h-[4rem]'
+
+              alt="logo"
+              onClick={() => navigate('/')}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 2, duration: .5 }}
+            />
+          </div>
+          <div className="flex items-center gap-4">
             <div className="mr-4 xl:mr-32">{navList}</div>
           </div>
         </motion.div>

@@ -34,7 +34,7 @@ function Footer() {
           </div>
           <hr className='xl:mx-auto mx-20 xl:container border border-gray-900' />
           <div className='bg-no-repeat bg-cover' style={{ backgroundImage: `url(${FooterBgImg})` }}>
-            <Container className='xl:mx-auto ps-2 xl:container grid grid-rows-[1fr,6rem,12rem] '>
+            <Container className='mx-auto ps-2 container grid grid-rows-[1fr,6rem,12rem] '>
               <div className='grid grid-cols-[1fr,5rem,1fr] gap-8'>
                 <Card className='bg-gray-900 grid gap-4 bg-opacity-50 border p-5 text-white opacity-90 border-gray-800 my-10  rounded-[2rem]'>
                   <div className='w-full  pt-7 flex items-end'>
@@ -47,7 +47,7 @@ function Footer() {
                   </div>
                   <div className='grid grid-cols-[3rem,1fr] w-full'>
                     <MdEmail className='text-red-500 h-6 w-6' />
-                    <p className='whitespace-normal text-[1.2rem] break-words'><a href="mailto:marketingmumbai@nationalbuilders.in" >marketingmumbai@nationalbuilders.in</a></p>
+                    <p className='whitespace-normal text-[1.2rem] w-[80%] break-words'><a href="mailto:marketingmumbai@nationalbuilders.in" >marketingmumbai@nationalbuilders.in</a></p>
                   </div>
                   <div className='grid grid-cols-[3rem,1fr] w-full'>
                     <FaPhoneAlt className='text-red-500 h-6 w-6' />
@@ -73,7 +73,7 @@ function Footer() {
                   </div>
                   <div className='grid grid-cols-[3rem,1fr] w-full'>
                     <MdEmail className='text-red-500 h-6 w-6' />
-                    <p className='whitespace-normal text-[1.2rem] break-words'><a href="mailto:marketingkochi@nationalbuilders.in" >marketingkochi@nationalbuilders.in</a></p>
+                    <p className='whitespace-normal w-[80%] text-[1.2rem] break-words'><a href="mailto:marketingkochi@nationalbuilders.in" >marketingkochi@nationalbuilders.in</a></p>
                   </div>
                   <div className='grid grid-cols-[3rem,1fr] w-full'>
                     <FaPhoneAlt className='text-red-500 h-6 w-6' />
@@ -81,18 +81,18 @@ function Footer() {
                   </div>
                 </Card>
               </div>
-              <Card className='rounded-[2rem] flex-row justify-between items-center px-10 py-4 lg:py-0 bg-opacity-50 text-white font-bold lg:text-xl bg-gray-900 border border-gray-800'>
+              <Card className='rounded-[2rem] flex-row justify-between items-center px-10 py-4 lg:py-0 bg-opacity-50 text-white font-bold text-md xl:text-xl bg-gray-900 border border-gray-800'>
                 <Link to={'/'}>Home</Link>
                 <Link to={'/project'}>Projects</Link>
                 <Link to={'/rentals'}>Rentals</Link>
                 <Link to={'/about'}>About</Link>
                 <Link to={'/contact'}>Contact</Link>
                 <Link to={'/testimonials'}>Testimonials</Link>
-                <Link to={'/new-events'}>News & Events</Link>
+                <Link to={'/new-and-events'}>News & Events</Link>
                 <Link to={'/blogs'}>Blogs</Link>
                 <Link to={'/key-handover'}>Key handover</Link>
               </Card>
-              <Card className='flex-row justify-between items-center px-20 rounded-[2rem] lg:h-20 mt-10  text-white mb-10 lg:mb-0 lg:text-xl bg-gray-900 bg-opacity-50 border border-gray-800'>
+              <Card className='flex-row justify-between items-center px-20 rounded-[2rem] lg:h-20 mt-10  text-white mb-10 lg:mb-0 xl:text-xl bg-gray-900 bg-opacity-50 border border-gray-800'>
                 <p className='flex justify-center items-center '><MdCopyright className='w-6 h-6' /> National Builders All Rights Reseved
                 </p>
                 <img src={Accoladeslogo} alt="" />
@@ -160,7 +160,7 @@ function Footer() {
             </div>
           </div>
         </div>
-        <div className='bg-gray-900 border border-gray-800 rounded-[1rem] flex flex-col p-5 mb-10 justify-center items-center'>
+        <div className='bg-[#262626] opacity-50 border border-gray-800 rounded-[1rem] flex flex-col p-5 mb-10 justify-center items-center'>
           <div className='grid grid-cols-4 gap-4 sm:gap-20'>
             <img src={facebook} alt="" />
             <img src={instagram} alt="" />

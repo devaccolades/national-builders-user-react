@@ -106,9 +106,9 @@ function Projectslist({ animationConfig }) {
         ) :
           Filter.map((project, index) => (
            <motion.div className='cursor-pointer' whileHover={{ scale: 1.1 }}>
-             <Card key={index} className="w-96 bg-gray-900 bg-opacity-60 ">
+             <Card key={index} className="md:w-96 bg-gray-900 bg-opacity-60 ">
               <img
-                className='mt-5 mx-5 rounded-[.8rem]'
+                className='mt-4 mx-4 lg:mt-5 lg:mx-5 rounded-[.8rem]'
                 src={project?.image || "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"}
                 alt="card-image"
               />
