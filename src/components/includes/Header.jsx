@@ -107,8 +107,9 @@ function Header() {
           <MenuItem className='my-1' onClick={() => navigate('/projects')}>Project</MenuItem>
           <MenuItem className='my-1' onClick={() => navigate('/rentals')}>Rentals</MenuItem>
           <MenuItem className='my-1' onClick={() => navigate('/testimonials')}>Testimontials</MenuItem>
-          <MenuItem className='my-1'>Blogs</MenuItem>
+          <MenuItem className='my-1' onClick={() => navigate('/blogs')}>Blogs</MenuItem>
           <MenuItem className='my-1' onClick={() => navigate('/news-and-events')}>News & Events</MenuItem>
+          <MenuItem className='my-1' onClick={() => navigate('/key-handover')}>Key handover</MenuItem>
           <MenuItem className='my-1' onClick={() => navigate('/about')}>About</MenuItem>
           <MenuItem className='my-1' onClick={() => navigate('/contact')}>Contact</MenuItem>
         </MenuList>
@@ -119,7 +120,7 @@ function Header() {
 
   return (
     <div className={`top-0 sticky z-10 w-full h-full overflow-x-hidden bg-transparent`}>
-      <Navbar className={` border-0 bg-transparent z-10 h-max max-w-full rounded-none px-4 py-6  lg:px-8 lg:py-8`}>
+      <Navbar className={` border-0 bg-transparent z-10 h-max max-w-full rounded-none px-4 py-5  lg:px-8 lg:py-6`}>
         <motion.div className="flex ps-16 items-center justify-between text-blue-gray-900"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

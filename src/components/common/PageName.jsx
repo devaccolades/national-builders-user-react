@@ -32,6 +32,9 @@ const Section = styled.div`
     justify-content: center;
     align-items: center;
     height: 30vh;
+    @media(max-width:768px){
+      height: 10rem;
+}
 `
 
 const Headding = styled(motion.h1)`
