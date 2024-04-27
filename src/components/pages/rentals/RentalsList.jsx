@@ -16,7 +16,7 @@ function RentalsList({ animationConfig, data }) {
     const [selected, setSelected] = useState('All')
     const [sort, setSort] = useState('All')
     const [Filter, setFilter] = useState(data)
-    const [rentalsData,setRentalData] = useState({})
+    const [rentalsData, setRentalData] = useState({})
 
     const options = ['All', 'Navi Mumbai', 'Thane', 'Kochi', 'Thiruvalla', 'Ernakulam']
 
@@ -99,20 +99,20 @@ function RentalsList({ animationConfig, data }) {
                                             <p className='text-[1.2rem] pt-2 text-gray-600'>{`${rental.price}/sqft + MMc`}</p>
                                         </div>
                                     </div>
-                                    <div className='w-full flex flex-row  justify-end items-center -mb-3 mt-6' onClick={() =>{setRentalData(rental), handleOpen(!open)}}>
-                                        {window.innerWidth < 768 ?(
+                                    <div className='w-full flex flex-row  justify-end items-center -mb-3 mt-6' onClick={() => { setRentalData(rental), handleOpen(!open) }}>
+                                        {window.innerWidth < 768 ? (
                                             <AnimationButton width='full' text={"Enquire now"} />
-                                        ):
-                                        (
-                                            <AnimationButton width='' text={"Enquire now"} />
-                                        )}
-                                        </div>
+                                        ) :
+                                            (
+                                                <AnimationButton width='' text={"Enquire now"} />
+                                            )}
+                                    </div>
                                 </CardBody>
                             </Card>
                         </motion.div>
                     ))}
             </Listing>
-            <EnquireModal open={open} handleOpen={handleOpen} rentalsData={rentalsData}/>
+            <EnquireModal open={open} handleOpen={handleOpen} rentalsData={rentalsData} />
         </Section>
     )
 }

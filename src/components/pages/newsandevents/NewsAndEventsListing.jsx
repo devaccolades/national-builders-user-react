@@ -1,84 +1,120 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
-import Text from '../../common/Text'
-import { Typography } from '@material-tailwind/react';
 import { motion } from 'framer-motion';
-
-// Icons
+import {
+  Card,
+  CardBody,
+  CardFooter,
+  Typography,
+} from "@material-tailwind/react";
 import chevronsrightIcon from '../../../assets/icons/chevrons-right.svg'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import RectangleBlue from '../../../assets/images/projectdetails/Rectangleblue.svg';
 import RectangleWhite from '../../../assets/images/projectdetails/Rectanglewhite.svg';
+import Text from '../../common/Text';
 
-function NewsAndEventsListing({ animationConfig,data }) {
+function NewsAndEventsListing({ animationConfig, data }) {
+  const [mobileView, setMobileView] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      setMobileView(window.innerWidth > 720);
+    };
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   return (
     <Section className='mx-auto container'>
-      <Listing className='grid col-2 gap-5'>
-        {data && data.length === 0 ? (
-          <Text align='center' text={"No Data Found"} />
+      <Listing {...animationConfig}>
+        {data && data?.length === 0 ? (
+          <div className='-mt-20'>
+            <Text align='center' text={"Blogs Not Found"} />
+          </div>
         ) : (
           <>
             {data[0] &&
-              <motion.div className={`lg:grid grid-cols-2 gap-10 bg-gray-900 bg-opacity-60 p-6 rounded-[1.1rem] mb-2`} {...animationConfig}>
-                <img src={data[0].image} className='rounded-[1.1rem]' alt="new image" />
-                <div className='flex flex-col items-start'>
-                    <p className='p-3 mt-5 lg:mt-0 capitalize text-xs border opacity-80 border-gray-800 rounded-[2rem]'>{data[0].date}</p>
-                  <Typography variant="h5" color="white" className="mt-5 mb-3 text-opacity-90">
-                    {data[0]?.title}
-                  </Typography>
-                  <Text align='' text={truncateText(data[0].description)} />
-                  <div className='flex pt-5 justify-end cursor-pointer items-end w-full'>
+              <Card className="bg-gray-900 bg-opacity-60 lg:grid lg:grid-cols-2 w-full mb-6">
+                <img
+                  className='mt-4 mx-4 lg:hidden block lg:mt-5 lg:mx-5 rounded-[.8rem] '
+                  src={data[0]?.image || "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"}
+                  alt="card-image"
+                />
+                <div className='hidden lg:block m-5 rounded-[1.1rem] bg-no-repeat bg-center bg-cover' style={{ backgroundImage: `url(${data[0]?.image})` }}>
+                </div>
+                <div>
+                  <CardBody>
+                    <div className='flex'>
+                      <p className='p-2 text-g border border-gray-800 rounded-[2rem]'>{data[0]?.date}</p>
+                    </div>
+                    <Typography variant="h5" color="blue-gray" className="mt-4 mb-3 text-white">
+                      {data[0]?.title}
+                    </Typography>
+                    <Typography className='lg:text-lg text-justify'>
+                    {truncateText(mobileView, data[0]?.description)}
+                    </Typography>
+                  </CardBody>
+                  <CardFooter className=" pt-0 -my-2 lg:my-0 flex flex-row gap-1 cursor-pointer">
                     <p className='text-red-500'>Read more</p>
                     <img src={chevronsrightIcon} alt="" />
-                  </div>
+                  </CardFooter>
                 </div>
-              </motion.div>
+              </Card>
             }
-            <div className='grid grid-cols-1 lg:grid-cols-2 gap-5'>
-              {data?.map((news, index) => {
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+              {data?.map((blogs, index) => {
                 if (index !== 0) {
                   return (
-                    <motion.div key={index} className='flex flex-col gap-6 justify-between  bg-gray-900 bg-opacity-60 p-6 rounded-[1.1rem]' {...animationConfig}>
-                      <img src={news.image} className='rounded-[1.1rem] w-full h-[16rem] lg:h-[16rem]' alt="new image" />
-                      <div className='flex flex-col items-start'>
-                        <p className='p-3 capitalize text-xs border opacity-80 border-gray-800 rounded-[2rem]'>{news.date}</p>
-                        <Typography variant="h5" color="white" className="mt-5 mb-3 text-opacity-90">
-                          {truncateHeadding(news?.title)}
-                        </Typography>
-                        <Text align='' text={truncateText(news.description)} />
-                        <div className='flex justify-end lg:justify-start items-end w-full mt-4'>
-                          <p className='text-red-500'>Read more</p>
-                          <img src={chevronsrightIcon} alt="" />
+                    <Card className="bg-gray-900 bg-opacity-60">
+                      <img
+                        className='mt-4 mx-4 lg:mt-5 lg:mx-5 rounded-[.8rem]'
+                        src={blogs?.image || "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"}
+                        alt="card-image"
+                      />
+                      <CardBody>
+                        <div className='flex mb-4'>
+                          <p className='p-2 text-g border border-gray-800 rounded-[2rem]'>{data[0].date}</p>
                         </div>
-                      </div>
-                    </motion.div>
+                        <Typography variant="h5" color="blue-gray" className="mb-2 text-white">
+                          {blogs?.title}
+                        </Typography>
+                        <Typography className='lg:text-lg'>
+                        {truncateText(mobileView,blogs?.description)}
+                        </Typography>
+                      </CardBody>
+                      <CardFooter className=" pt-0 -my-2 lg:my-0 flex flex-row gap-1 cursor-pointer">
+                        <p className='text-red-500'>Read more</p>
+                        <img src={chevronsrightIcon} alt="" />
+                      </CardFooter>
+                    </Card>
                   );
                 }
                 return null;
               })}
             </div>
-
           </>
         )}
-
-      </Listing>
-      <motion.div className='flex justify-center items-center my-10' {...animationConfig}>
-        <div className='bg-black flex flex-row p-1 rounded-[1.1rem]'>
-          <button className='bg-gray-900  p-3 rounded-full' >
-            <FaArrowLeft />
-          </button>
-          <div className='flex flex-row justify-center gap-1 md:px-2'>
-            {Array.from({ length: 6 }, (_, index) => (
-              <>
-                <img key={index} src={(2 === index) ? RectangleBlue : RectangleWhite} className='w-1/12 md:w-2/12' alt="" />
-              </>
-            ))}
+        <motion.div className='flex justify-center items-center my-10' {...animationConfig}>
+          <div className='bg-black flex flex-row p-1 rounded-[1.1rem]'>
+            <button className='bg-gray-900  p-3 rounded-full' >
+              <FaArrowLeft />
+            </button>
+            <div className='flex flex-row justify-center gap-1 md:px-2'>
+              {Array.from({ length: 6 }, (_, index) => (
+                <>
+                  <img key={index} src={(2 === index) ? RectangleBlue : RectangleWhite} className='w-1/12 md:w-2/12' alt="" />
+                </>
+              ))}
+            </div>
+            <button className='bg-gray-900  p-3 rounded-full' >
+              <FaArrowRight />
+            </button>
           </div>
-          <button className='bg-gray-900  p-3 rounded-full' >
-            <FaArrowRight />
-          </button>
-        </div>
-      </motion.div>
+        </motion.div>
+      </Listing>
     </Section>
   )
 }
@@ -86,6 +122,8 @@ function NewsAndEventsListing({ animationConfig,data }) {
 export default NewsAndEventsListing
 
 const Section = styled.section`
+margin-top: 1rem;
+
 @media(max-width:1400px){
   width:90%;
 }
@@ -93,20 +131,15 @@ const Section = styled.section`
 
 const Listing = styled.div``
 
-function truncateHeadding(text) {
+function truncateText(mobileView, text) {
   const words = text.split(' ');
-  if (words.length > 11) {
-    return words.slice(0, 11).join(' ') + ' ...';
+  if (words.length > 30) {
+      if (mobileView) {
+          return words.slice(0, 75).join(' ') + '...';
+      } else {
+          return words.slice(0, 30).join(' ') + '...';
+      }
   } else {
-    return text;
-  }
-}
-
-function truncateText(text) {
-  const words = text.split(' ');
-  if (words.length > 48) {
-    return words.slice(0, 56).join(' ') + '...';
-  } else {
-    return text;
+      return text;
   }
 }

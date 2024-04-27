@@ -6,13 +6,13 @@ import {
     CardBody,
     CardFooter,
     Typography,
-    Button,
 } from "@material-tailwind/react";
+import Text from '../../common/Text';
+// Icons
 import chevronsrightIcon from '../../../assets/icons/chevrons-right.svg'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import RectangleBlue from '../../../assets/images/projectdetails/Rectangleblue.svg';
 import RectangleWhite from '../../../assets/images/projectdetails/Rectanglewhite.svg';
-import Text from '../../common/Text';
 
 function BlogsListing({ animationConfig, data }) {
     const [mobileView, setMobileView] = useState(false);
@@ -30,7 +30,7 @@ function BlogsListing({ animationConfig, data }) {
     }, []);
     return (
         <Section className='mx-auto container'>
-            <Listing>
+            <Listing {...animationConfig}>
                 {data && data?.length === 0 ? (
                     <div className='-mt-20'>
                         <Text align='center' text={"Blogs Not Found"} />
@@ -38,7 +38,6 @@ function BlogsListing({ animationConfig, data }) {
                 ) : (
                     <>
                         {data[0] &&
-                            <motion.div {...animationConfig}>
                                 <Card className="bg-gray-900 bg-opacity-60 lg:grid lg:grid-cols-2 w-full mb-6">
                                     <img
                                         className='mt-4 mx-4 lg:hidden block lg:mt-5 lg:mx-5 rounded-[.8rem] '
@@ -65,36 +64,33 @@ function BlogsListing({ animationConfig, data }) {
                                         </CardFooter>
                                     </div>
                                 </Card>
-                            </motion.div>
                         }
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                             {data?.map((blogs, index) => {
                                 if (index !== 0) {
                                     return (
-                                        <motion.div {...animationConfig}>
-                                            <Card className="bg-gray-900 bg-opacity-60">
-                                                <img
-                                                    className='mt-4 mx-4 lg:mt-5 lg:mx-5 rounded-[.8rem]'
-                                                    src={blogs?.image || "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"}
-                                                    alt="card-image"
-                                                />
-                                                <CardBody>
-                                                    <div className='flex mb-4'>
-                                                        <p className='p-2 text-g border border-gray-800 rounded-[2rem]'>{data[0].date}</p>
-                                                    </div>
-                                                    <Typography variant="h5" color="blue-gray" className="mb-2 text-white">
-                                                        {blogs?.title}
-                                                    </Typography>
-                                                    <Typography className='lg:text-lg'>
-                                                        {truncateText2(data[0]?.description)}
-                                                    </Typography>
-                                                </CardBody>
-                                                <CardFooter className=" pt-0 -my-2 lg:my-0 flex flex-row gap-1 cursor-pointer">
-                                                    <p className='text-red-500'>Read more</p>
-                                                    <img src={chevronsrightIcon} alt="" />
-                                                </CardFooter>
-                                            </Card>
-                                        </motion.div>
+                                        <Card className="bg-gray-900 bg-opacity-60">
+                                            <img
+                                                className='mt-4 mx-4 lg:mt-5 lg:mx-5 rounded-[.8rem]'
+                                                src={blogs?.image || "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"}
+                                                alt="card-image"
+                                            />
+                                            <CardBody>
+                                                <div className='flex mb-4'>
+                                                    <p className='p-2 text-g border border-gray-800 rounded-[2rem]'>{data[0].date}</p>
+                                                </div>
+                                                <Typography variant="h5" color="blue-gray" className="mb-2 text-white">
+                                                    {blogs?.title}
+                                                </Typography>
+                                                <Typography className='lg:text-lg'>
+                                                    {truncateText2(data[0]?.description)}
+                                                </Typography>
+                                            </CardBody>
+                                            <CardFooter className=" pt-0 -my-2 lg:my-0 flex flex-row gap-1 cursor-pointer">
+                                                <p className='text-red-500'>Read more</p>
+                                                <img src={chevronsrightIcon} alt="" />
+                                            </CardFooter>
+                                        </Card>
                                     );
                                 }
                                 return null;
@@ -127,14 +123,14 @@ function BlogsListing({ animationConfig, data }) {
 export default BlogsListing
 
 const Section = styled.section`
-margin-top: 4rem;
+margin-top: 1rem;
 margin-bottom: 4rem;
 @media(max-width:1400px){
   width:90%;
 }
 `;
 
-const Listing = styled.div``
+const Listing = styled(motion.div)``
 
 function truncateText(mobileView, text) {
     const words = text.split(' ');
