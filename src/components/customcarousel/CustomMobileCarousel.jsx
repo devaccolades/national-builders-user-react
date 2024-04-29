@@ -28,7 +28,7 @@ const sliderTransition = {
   duration: 1,
 }
 
-const CustomCarousel = ({ data }) => {
+const CustomMobileCarousel = ({ data }) => {
   const [[imageCount, direction], setImageCount] = useState([0, 0]);
   const activeImageIndex = wrap(0, data.length, imageCount);
   const thumbnailsRef = useRef(null);
@@ -73,8 +73,8 @@ const CustomCarousel = ({ data }) => {
   };
 
   return (
-    <Section>
-      <Main className="grid grid-rows-[1fr,3rem,8rem,2rem] bg-gray-900 bg-opacity-90 rounded-[1.1rem] p-5 gap-5">
+    <Section className="lg:hidden block">
+      <Main className={`grid ${data[activeImageIndex].name? "grid-rows-[1fr,3rem,8rem,2rem]" : "grid-rows-[1fr8rem,2rem]"} bg-gray-900 bg-opacity-90 rounded-[1.1rem] p-5 gap-5`}>
         <SliderContainer>
           <AnimatePresence initial={false} custom={direction}>
             <motion.img src={data[activeImageIndex].image}
@@ -94,18 +94,21 @@ const CustomCarousel = ({ data }) => {
             />
           </AnimatePresence>
         </SliderContainer>
+        {data[activeImageIndex].name &&
         <div className="flex justify-center items-center">
-          <Typography variant="h6" color="white" className=" text-center text-opacity-90">
-            {data[activeImageIndex].name}
-          </Typography>
-        </div>
+        <Typography variant="h6" color="white" className=" text-center text-opacity-90">
+          {data[activeImageIndex].name}
+        </Typography>
+      </div>
+        }
+        
         <Thumbnails ref={thumbnailsRef} className="rounded-[1.1rem]">
           {data.map((image, index) => (
             <motion.img
               key={index}
               src={image.image}
               alt=""
-              onClick={() => skipToImage(index)}
+              // onClick={() => skipToImage(index)}
               className={`rounded-[.6rem] cursor-pointer`}
               initial={{ width: "6rem", maxWidth: "6rem" }}
               animate={{
@@ -136,7 +139,7 @@ const CustomCarousel = ({ data }) => {
   )
 }
 
-export default CustomCarousel;
+export default CustomMobileCarousel;
 
 const Section = styled.section``;
 

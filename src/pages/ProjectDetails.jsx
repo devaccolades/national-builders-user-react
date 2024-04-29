@@ -43,7 +43,17 @@ function ProjectDetails() {
 
   const data = {
     name: 'National Shalom',
-    images: [image1, image2, image3, image4, image5, image6, image7, image8, image9],
+    images: [
+      { id: 1, image: image1 },
+      { id: 2, image: image2 },
+      { id: 3, image: image3 },
+      { id: 4, image: image4 },
+      { id: 5, image: image5 },
+      { id: 6, image: image6 },
+      { id: 7, image: image7 },
+      { id: 8, image: image8 },
+      { id: 9, image: image9 }
+    ],
     location: 'Thiruvalla, Kerala',
     rera_number: 'K-RERA/PRJ/066/2021',
     description: "Spread over half an acre, Shalom has everything that takes for a life style you deserve. Shalom stands for convenience and luxury in tranquility. Shalom offers you the life style you deserve it’s time to indulge and embrace innovation. Book your apartment and a blissful future at National Shalom. Flats and apartments with world class standards and near to Thiruvalla town. Among this ambitious project’s major specialities is the convenient access it offers to Thiruvalla town which is just 4 kms away. This much sought-after town is also the district’s largest in terms of stature. A cut above the rest, Shalom offers an ingenious blend of greenery and luxury. The flats are now available for sale in Thiruvalla, make sure that you carve a space for yourself here.",

@@ -2,14 +2,13 @@ import { Card, CardBody, CardHeader, Typography } from '@material-tailwind/react
 import React, { useState } from 'react'
 import styled from 'styled-components';
 import Text from '../../common/Text';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { KayHandoverModal } from '../../modal/KayHandoverModal';
 // Icons
-import chevronsrightIcon from '../../../assets/icons/chevrons-right.svg'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import RectangleBlue from '../../../assets/images/projectdetails/Rectangleblue.svg';
 import RectangleWhite from '../../../assets/images/projectdetails/Rectanglewhite.svg';
-import CustomCarousel from '../../customcarousel/CustomCarousel';
+import CustomMobileCarousel from '../../customcarousel/CustomMobileCarousel';
 
 function KeyhandoverLisitng({ data, animationConfig }) {
     const [startIndex, setStartIndex] = useState(0);
@@ -90,55 +89,9 @@ function KeyhandoverLisitng({ data, animationConfig }) {
             </Section>
             {/* Moobile View */}
             <Section className='mx-auto container md:hidden block'>
-                {/* {data.length > 0 ? (
-                    <Carousel className='bg-gray-900 bg-opacity-60 p-3 md:p-6 rounded-[1.1rem] flex flex-col  gap-5 overflow-hidden' {...animationConfig}>
-                        <div className='flex flex-col-reverse lg:flex-col gap-6'>
-                            <div className='flex flex-row ps-[36rem] pe-[146rem]  md:ps-96 xl:ps-5 p-3 lg:p-5 bg-black gap-3 justify-center overflow-x-auto h-[9rem] rounded-[1.1rem]'>
-                                {data.map((image, index) => (
-                                    <motion.img key={index} src={image.image} className={`w-[8rem] max-w-[10rem] rounded-[.6rem] cursor-pointer hover:opacity-80  ${startIndex === index ? "" : "opacity-40"}`}
-                                        alt={image.name} onClick={() => handleImageClick(index)}
-                                        whileHover={{ scale: 1.1 }}
-                                        animate={{ x: 140}}
-                                        transition={{ ease: "easeOut", duration: 1.1 }}
-                                    />
-                                ))}
-                            </div>
-                            <div className='flex flex-col gap-4 w-full justify-center pt-2 md:pt-0 px-1 md:px-3'>
-                                {data.slice(startIndex, startIndex + 1).map((image, index) => (
-                                    <AnimatePresence key={index}>
-                                        <img key={index} src={image.image} className='rounded-[1.1rem]' alt={image.name} />
-                                        <Typography variant="h6" color="white" className="-my-2 text-center text-opacity-90">
-                                            {image.name}
-                                        </Typography>
-                                    </AnimatePresence>
-                                ))}
-                            </div>
-                        </div>
-                        <div className='flex justify-center items-center'>
-                            <div className='bg-black flex flex-row p-1 rounded-[1.1rem]'>
-                                <button className='bg-gray-900  p-3 rounded-full' onClick={handlePrev}>
-                                    <FaArrowLeft />
-                                </button>
-                                <div className='flex flex-row justify-center gap-1 md:px-2'>
-                                    {Array.from({ length: imageCount }, (_, index) => (
-                                        <>
-                                            <img key={index} src={(startIndex === index) ? RectangleBlue : RectangleWhite} className='w-1/12 md:w-2/12' alt="" />
-                                        </>
-                                    ))}
-                                </div>
-                                <button className='bg-gray-900  p-3 rounded-full' onClick={handleNext}>
-                                    <FaArrowRight />
-                                </button>
-                            </div>
-                        </div>
-                    </Carousel>
-                ) : (
-                    <Carousel className='bg-gray-900 bg-opacity-60 p-3 flex justify-center items-center rounded-[1.1rem] '>
-                        <Text text={"Images Not Found..."} />
-                    </Carousel>
-                )
-                } */}
-                <CustomCarousel data={data}/>
+                <motion.div {...animationConfig}>
+                <CustomMobileCarousel data={data}/>
+                </motion.div>
             </Section>
         </>
     )
@@ -157,4 +110,3 @@ const Listing = styled.div`
     justify-content: center;
 
 }`
-const Carousel = styled(motion.section)``;
