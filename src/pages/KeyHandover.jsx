@@ -31,15 +31,15 @@ function KeyHandover() {
       };
 
     const data = [
-      {image:image1,name:"Mr. Shyamaprasad – Film Director & Actor"},
-      {image:image2,name:"Angel Susan Varghese"},
-      {image:image3,name:"Dr. Mohan Joseph Modayil"},
-      {image:image4,name:"Dr. Manoj P Samuel and Anu Cherian"},
-      {image:image5,name:"Capt. Unnikrishnan"},
-      {image:image6,name:"Mr. Sunil"},
-      {image:image7,name:"Mr. Jimmy Abraham"},
-      {image:image8,name:"Mr. Akshay Ankush Patil – National Harmony"},
-      {image:image9,name:"Mr. Arun Koli – National Harmony"},
+      {id:1,image:image1,name:"Mr. Shyamaprasad – Film Director & Actor"},
+      {id:2,image:image2,name:"Angel Susan Varghese"},
+      {id:3,image:image3,name:"Dr. Mohan Joseph Modayil"},
+      {id:4,image:image4,name:"Dr. Manoj P Samuel and Anu Cherian"},
+      {id:5,image:image5,name:"Capt. Unnikrishnan"},
+      {id:6,image:image6,name:"Mr. Sunil"},
+      {id:7,image:image7,name:"Mr. Jimmy Abraham"},
+      {id:8,image:image8,name:"Mr. Akshay Ankush Patil – National Harmony"},
+      {id:9,image:image9,name:"Mr. Arun Koli – National Harmony"},
     ]
 
   return (

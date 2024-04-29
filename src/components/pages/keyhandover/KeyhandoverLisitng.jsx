@@ -9,6 +9,7 @@ import chevronsrightIcon from '../../../assets/icons/chevrons-right.svg'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import RectangleBlue from '../../../assets/images/projectdetails/Rectangleblue.svg';
 import RectangleWhite from '../../../assets/images/projectdetails/Rectanglewhite.svg';
+import CustomCarousel from '../../customcarousel/CustomCarousel';
 
 function KeyhandoverLisitng({ data, animationConfig }) {
     const [startIndex, setStartIndex] = useState(0);
@@ -89,7 +90,7 @@ function KeyhandoverLisitng({ data, animationConfig }) {
             </Section>
             {/* Moobile View */}
             <Section className='mx-auto container md:hidden block'>
-                {data.length > 0 ? (
+                {/* {data.length > 0 ? (
                     <Carousel className='bg-gray-900 bg-opacity-60 p-3 md:p-6 rounded-[1.1rem] flex flex-col  gap-5 overflow-hidden' {...animationConfig}>
                         <div className='flex flex-col-reverse lg:flex-col gap-6'>
                             <div className='flex flex-row ps-[36rem] pe-[146rem]  md:ps-96 xl:ps-5 p-3 lg:p-5 bg-black gap-3 justify-center overflow-x-auto h-[9rem] rounded-[1.1rem]'>
@@ -136,7 +137,8 @@ function KeyhandoverLisitng({ data, animationConfig }) {
                         <Text text={"Images Not Found..."} />
                     </Carousel>
                 )
-                }
+                } */}
+                <CustomCarousel data={data}/>
             </Section>
         </>
     )
