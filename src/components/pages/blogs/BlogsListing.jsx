@@ -13,8 +13,10 @@ import chevronsrightIcon from '../../../assets/icons/chevrons-right.svg'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import RectangleBlue from '../../../assets/images/projectdetails/Rectangleblue.svg';
 import RectangleWhite from '../../../assets/images/projectdetails/Rectanglewhite.svg';
+import { useNavigate } from 'react-router-dom';
 
 function BlogsListing({ animationConfig, data }) {
+    const navigate = useNavigate()
     const [mobileView, setMobileView] = useState(false);
     useEffect(() => {
         const handleResize = () => {
@@ -58,9 +60,11 @@ function BlogsListing({ animationConfig, data }) {
                                                 {truncateText(mobileView, data[0]?.description)}
                                             </Typography>
                                         </CardBody>
-                                        <CardFooter className=" pt-0 -my-2 lg:my-0 flex flex-row gap-1 cursor-pointer">
+                                        <CardFooter className=" pt-0 -my-2 lg:my-0 gap-1 cursor-pointer">
+                                            <div className='flex flex-row' onClick={()=>navigate('/blog/details')}>
                                             <p className='text-red-500'>Read more</p>
                                             <img src={chevronsrightIcon} alt="" />
+                                            </div>
                                         </CardFooter>
                                     </div>
                                 </Card>
@@ -86,9 +90,11 @@ function BlogsListing({ animationConfig, data }) {
                                                     {truncateText2(data[0]?.description)}
                                                 </Typography>
                                             </CardBody>
-                                            <CardFooter className=" pt-0 -my-2 lg:my-0 flex flex-row gap-1 cursor-pointer">
+                                            <CardFooter className=" pt-0 -my-2 lg:my-0 gap-1 cursor-pointer">
+                                                <div className='flex flex-row'onClick={()=>navigate('/blog/details')}>
                                                 <p className='text-red-500'>Read more</p>
                                                 <img src={chevronsrightIcon} alt="" />
+                                                </div>
                                             </CardFooter>
                                         </Card>
                                     );

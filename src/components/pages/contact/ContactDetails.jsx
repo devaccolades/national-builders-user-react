@@ -78,7 +78,6 @@ function ContactDetails({animationConfig}) {
                     </div>
                 </motion.div>
             </Maindiv>
-
         </Section>
     )
 }

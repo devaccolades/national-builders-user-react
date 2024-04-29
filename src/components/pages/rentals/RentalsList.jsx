@@ -60,7 +60,7 @@ function RentalsList({ animationConfig, data }) {
                     </Menu>
                 </div>
             </motion.div>
-            <Listing {...animationConfig} className={`grid ${Filter.length > 0 ? "grid-cols-1 xl:grid-cols-2" : "grid-cols-1"} gap-6`}>
+            <Listing {...animationConfig} className={`grid ${Filter.length > 0 ? "grid-cols-1 xl:grid-cols-2" : "grid-cols-1"} gap-6 lg:gap-10`}>
                 {Filter.length === 0 ? (
                     <div className='flex justify-center items-center w-full text-gray-600'>
                         <p className='text-center'>NO MATCHES FOUND ...</p>
@@ -86,15 +86,15 @@ function RentalsList({ animationConfig, data }) {
                                         <div>
                                             <div className='flex flex-row gap-2 items-center'>
                                                 <img src={areaIcon} className='' alt="" />
-                                                <p className='text-[1.3rem] text-gray-600'>Area</p>
+                                                <p className='text-[1.1rem] lg:text-[1.3rem] text-gray-600'>Area</p>
                                             </div>
-                                            <p className='text-[1.3rem] pt-2 text-gray-600'>{`${rental.area} sq. ft.`}</p>
+                                            <p className='text-[1.1rem] lg:text-[1.3rem] pt-2 text-gray-600'>{`${rental.area} sq. ft.`}</p>
                                         </div>
 
                                         <div>
                                             <div className='flex flex-row gap-2 items-center'>
-                                                <img src={rupeesIcon} alt="" />
-                                                <p className='text-[1.3rem] text-gray-600'>Area</p>
+                                                <img src={rupeesIcon} className='' alt="" />
+                                                <p className='text-[1.1rem] lg:text-[1.3rem] text-gray-600'>Area</p>
                                             </div>
                                             <p className='text-[1.2rem] pt-2 text-gray-600'>{`${rental.price}/sqft + MMc`}</p>
                                         </div>

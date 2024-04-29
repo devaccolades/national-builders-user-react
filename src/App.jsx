@@ -16,7 +16,7 @@ const Testimonials = React.lazy(() => import('./pages/Testimonials'));
 const NewsAndEvents = React.lazy(() => import('./pages/NewsAndEvents'));
 const Blogs = React.lazy(() => import('./pages/Blogs'));
 const KeyHandover = React.lazy(() => import('./pages/KeyHandover'));
-
+const BlogDetails = React.lazy(() => import('./pages/BlogDetails'));
 
 
 function App() {
@@ -41,6 +41,7 @@ function App() {
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/news-and-events" element={<NewsAndEvents />} />
           <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blog/details" element={<BlogDetails />} />
           <Route path="/key-handover" element={<KeyHandover />} />
           <Route path="/*" element={<ErrorPage />} />
         </Route>

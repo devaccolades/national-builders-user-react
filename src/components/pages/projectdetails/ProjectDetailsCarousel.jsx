@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react'
 import styled from 'styled-components';
 import { IoLocationSharp } from "react-icons/io5";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { motion } from 'framer-motion';
+import { motion ,AnimatePresence} from 'framer-motion';
 
 
 import RectangleBlue from '../../../assets/images/projectdetails/Rectangleblue.svg';
@@ -81,12 +81,23 @@ function ProjectDetailsCarousel({animationConfig,images,name,location,reraNumber
                          {windowWidth <= 767 ? (
                              // Render one image
                              images.slice(startIndex, startIndex + 1).map((image, index) => (
+                                <AnimatePresence  key={index}>
+
                                  <img key={index} src={image} className='rounded-[1.1rem]' alt="" />
+                                 </AnimatePresence>
+
                              ))
                          ) : (
                              // Render two images
+                             
                              images.slice(startIndex, startIndex + 2).map((image, index) => (
-                                 <img key={index} src={image} className='w-6/12 rounded-[1.1rem]' alt="" />
+                                <AnimatePresence  key={index}>
+                                 <motion.img key={index} src={image} className='w-6/12 rounded-[1.1rem]' alt=""
+                                   initial={{ x: 300, opacity: 0 }}
+                                   animate={{ x: 0, opacity: 1 }}
+                                   exit={{ x: -300, opacity: 0 }}
+                                 />
+                                 </AnimatePresence>
                              ))
                          )}
                      </div>

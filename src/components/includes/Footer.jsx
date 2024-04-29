@@ -83,12 +83,12 @@ function Footer() {
               </div>
               <Card className='rounded-[2rem] flex-row justify-between items-center px-10 py-4 lg:py-0 bg-opacity-50 text-white font-bold text-md xl:text-xl bg-gray-900 border border-gray-800'>
                 <Link to={'/'}>Home</Link>
-                <Link to={'/project'}>Projects</Link>
+                <Link to={'/projects'}>Projects</Link>
                 <Link to={'/rentals'}>Rentals</Link>
                 <Link to={'/about'}>About</Link>
                 <Link to={'/contact'}>Contact</Link>
                 <Link to={'/testimonials'}>Testimonials</Link>
-                <Link to={'/new-and-events'}>News & Events</Link>
+                <Link to={'/news-and-events'}>News & Events</Link>
                 <Link to={'/blogs'}>Blogs</Link>
                 <Link to={'/key-handover'}>Key handover</Link>
               </Card>

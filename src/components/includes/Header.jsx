@@ -20,6 +20,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 function Header() {
   const navigate = useNavigate()
   const [openMenu, setOpenMenu] = useState(false);
+  console.log(openMenu);
 
   const location = useLocation();
   const currentPath = location.pathname;
