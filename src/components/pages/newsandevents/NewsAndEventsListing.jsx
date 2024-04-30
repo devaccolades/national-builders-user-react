@@ -7,13 +7,18 @@ import {
   CardFooter,
   Typography,
 } from "@material-tailwind/react";
+import Text from '../../common/Text';
+import { useNavigate } from 'react-router-dom';
+
+// Icons
 import chevronsrightIcon from '../../../assets/icons/chevrons-right.svg'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import RectangleBlue from '../../../assets/images/projectdetails/Rectangleblue.svg';
 import RectangleWhite from '../../../assets/images/projectdetails/Rectanglewhite.svg';
-import Text from '../../common/Text';
+
 
 function NewsAndEventsListing({ animationConfig, data }) {
+  const navigate = useNavigate()
   const [mobileView, setMobileView] = useState(false);
   useEffect(() => {
     const handleResize = () => {
@@ -54,12 +59,14 @@ function NewsAndEventsListing({ animationConfig, data }) {
                       {data[0]?.title}
                     </Typography>
                     <Typography className='lg:text-lg text-justify'>
-                    {truncateText(mobileView, data[0]?.description)}
+                      {truncateText(mobileView, data[0]?.description)}
                     </Typography>
                   </CardBody>
-                  <CardFooter className=" pt-0 -my-2 lg:my-0 flex flex-row gap-1 cursor-pointer">
-                    <p className='text-red-500'>Read more</p>
-                    <img src={chevronsrightIcon} alt="" />
+                  <CardFooter className=" pt-0 -my-2 lg:my-0 cursor-pointer">
+                    <div className='flex flex-row gap-1' onClick={()=>navigate('/news-and-events/details')}>
+                      <p className='text-red-500'>Read more</p>
+                      <img src={chevronsrightIcon} alt="" />
+                    </div>
                   </CardFooter>
                 </div>
               </Card>
@@ -82,12 +89,14 @@ function NewsAndEventsListing({ animationConfig, data }) {
                           {blogs?.title}
                         </Typography>
                         <Typography className='lg:text-lg'>
-                        {truncateText(mobileView,blogs?.description)}
+                          {truncateText(mobileView, blogs?.description)}
                         </Typography>
                       </CardBody>
-                      <CardFooter className=" pt-0 -my-2 lg:my-0 flex flex-row gap-1 cursor-pointer">
-                        <p className='text-red-500'>Read more</p>
-                        <img src={chevronsrightIcon} alt="" />
+                      <CardFooter className=" pt-0 -my-2 lg:my-0 cursor-pointer">
+                        <div className='flex flex-row gap-1' onClick={()=>navigate('/news-and-events/details')}>
+                          <p className='text-red-500'>Read more</p>
+                          <img src={chevronsrightIcon} alt="" />
+                        </div>
                       </CardFooter>
                     </Card>
                   );
@@ -134,12 +143,12 @@ const Listing = styled.div``
 function truncateText(mobileView, text) {
   const words = text.split(' ');
   if (words.length > 30) {
-      if (mobileView) {
-          return words.slice(0, 75).join(' ') + '...';
-      } else {
-          return words.slice(0, 30).join(' ') + '...';
-      }
+    if (mobileView) {
+      return words.slice(0, 75).join(' ') + '...';
+    } else {
+      return words.slice(0, 30).join(' ') + '...';
+    }
   } else {
-      return text;
+    return text;
   }
 }

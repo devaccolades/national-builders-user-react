@@ -30,7 +30,7 @@ function TextAndCounts({ animationConfig }) {
                     <Text text={"A visionary real estate development firm, National Builders specializes in pioneering architecturally distinct residential and mixed-use projects in India's prime metropolitan markets of Navi Mumbai and Kerala."} />
                     <Text text={"The firm has a proven track record of successful real estate development, consistently fulfilling its commitments and exceeding customer expectations. Its stamp of quality and delivery of best-in-class features are visible in each of the 135+ projects of National Builders."} />
 
-                    <div className='lg:w-3/1 h-24 items-center flex justify-center lg:justify-start'>
+                    <div className='lg:w-3/1 mt-4 h-24 items-center flex justify-center lg:justify-start'>
                         <AnimationButton text={"Read More"} />
                     </div>
 

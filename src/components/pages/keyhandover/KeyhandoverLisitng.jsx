@@ -11,31 +11,10 @@ import RectangleWhite from '../../../assets/images/projectdetails/Rectanglewhite
 import CustomMobileCarousel from '../../customcarousel/CustomMobileCarousel';
 
 function KeyhandoverLisitng({ data, animationConfig }) {
-    const [startIndex, setStartIndex] = useState(0);
     // Modal for image showing
     const [open, setOpen] = React.useState(false);
     const [signleData, setSignledata] = useState({})
     const handleOpen = () => setOpen(!open);
-
-    const imageCount = data.length;
-
-    const handleImageClick = (index) => {
-        setStartIndex(index);
-    };
-
-    const handleNext = () => {
-        if (startIndex < data.length - 1) {
-            setStartIndex(startIndex + 1);
-            // imageRef.current.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
-        }
-    };
-
-    const handlePrev = () => {
-        if (startIndex > 0) {
-            setStartIndex(startIndex - 1);
-
-        }
-    };
 
 
     return (

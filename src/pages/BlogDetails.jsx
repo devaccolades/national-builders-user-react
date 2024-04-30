@@ -1,8 +1,8 @@
 import React from 'react'
 import BlogDetailsCom from '../components/pages/blogdetails/BlogDetailsCom'
 import { Helmet } from 'react-helmet'
+import CommonDiv from '../components/common/CommonDiv';
 
-// After connecting to backend remove this images
 function BlogDetails() {
   
   return (
@@ -15,6 +15,7 @@ function BlogDetails() {
         ></meta>
       </Helmet>
     <BlogDetailsCom/>
+    <CommonDiv />
     </>
   )
 }

@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet';
-import Header from '../components/includes/Header';
-import Footer from '../components/includes/Footer';
 import Heading from '../components/pages/about/Heading';
 import AboutContent from '../components/pages/about/AboutContent';
 import CommonDiv from '../components/common/CommonDiv';

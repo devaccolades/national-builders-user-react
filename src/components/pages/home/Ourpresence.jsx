@@ -56,7 +56,6 @@ function Ourpresence() {
             if (svgPath) {
                 const pathLength = svgPath.getTotalLength();
                 const scrollPosition = (window.scrollY / svgPath.getBBox().height);
-                console.log(scrollPosition);
                 svgPath.style.strokeDasharray = `${pathLength}px ${pathLength}px`;
                 svgPath.style.strokeDashoffset = `${pathLength - (scrollPosition - -1.2115630596060374) * pathLength}px`;
 
