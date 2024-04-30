@@ -120,7 +120,8 @@ export function EnquireModal({ open, handleOpen, rentalsData }) {
                             </div>
 
                         </div>
-                        <div className='flex justify-center w-full lg:justify-end items-center'>
+                        <div className='flex justify-between w-full lg:justify-end items-center'>
+                            <button onClick={handleOpen} className="px-6 py-3 border md:hidden block border-gray-700 rounded-[2rem]">Back</button>
                             <AnimationButton hieght='' text={"Send Message"} />
                         </div>
                     </div>

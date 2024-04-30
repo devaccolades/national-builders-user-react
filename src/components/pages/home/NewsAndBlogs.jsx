@@ -4,8 +4,10 @@ import { Card } from "@material-tailwind/react";
 import { IoIosArrowForward } from 'react-icons/io';
 import AnimationButton from '../../common/Button';
 import styled from 'styled-components';
-import round from '../../../assets/images/common/round.svg'
 import { useNavigate } from 'react-router-dom';
+
+// Icons
+import roundIcons from '../../../assets/icons/round.svg'
 
   
 function NewsAndBlogs({ data, animationConfig }) {
@@ -35,7 +37,7 @@ function NewsAndBlogs({ data, animationConfig }) {
         <Section className='h-screen bg-gradient-to-r from-gray-900 lg:-mb-20 to-gray-600'>
             <motion.div className='flex h-2/6 justify-around items-center'{...animationConfig}>
                 <div className='flex justify-center items-center gap-5 lg:gap-11'>
-                    <img src={round} className='w-3/12 lg:w-auto' alt="" /><p className=' text-3xl lg:text-5xl  font-thin'>New & Blogs</p>
+                    <img src={roundIcons} className='w-3/12 lg:w-auto' alt="" /><p className=' text-3xl lg:text-5xl  font-thin'>New & Blogs</p>
                 </div>
                 <div className='hidden lg:block' onClick={()=>navigate('/blogs')}>
                     <AnimationButton text={"View all"} />

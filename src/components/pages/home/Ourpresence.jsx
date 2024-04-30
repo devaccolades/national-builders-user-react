@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
 import { motion } from 'framer-motion';
-
-// Image
-import RoundImg from '../../../assets/images/common/round.svg'
 import styled from 'styled-components';
 import Text from '../../common/Text';
 import AnimationButton from '../../common/Button';
+// Icons
+import RoundIcon from '../../../assets/icons/round.svg'
+
 
 function Ourpresence() {
     const animationConfig = {
@@ -78,7 +78,7 @@ function Ourpresence() {
             <motion.div className='w-full' {...animationConfig}>
                 <div className='w-full px-20 lg:mb-64'>
                     <div className='flex justify-center items-center'>
-                        <img src={RoundImg} className='w-20 lg:w-32' alt="" />
+                        <img src={RoundICon} className='w-20 lg:w-32' alt="" />
                         <p className='text-center py-10 text-4xl lg:text-6xl ps-5 lg:ps-10'>Our Presence</p>
                     </div>
                 </div>
