@@ -43,9 +43,8 @@ function NewsAndBlogs({ data, animationConfig }) {
                     <AnimationButton text={"View all"} />
                 </div>
             </motion.div>
-            <Carourcel className='flex justify-end'>
-                <motion.div className='w-[90%] flex flex-row overflow-x-auto' style={{ scrollbarWidth: 'none' }}
-                >
+            <Carourcel className='flex justify-end' {...animationConfig}>
+                <motion.div className='w-[90%] flex flex-row overflow-x-auto' style={{ scrollbarWidth: 'none' }}>
                     {data.map((data, index) => (
                         <motion.div key={index} className='pe-14'
                         animate={{ x: value }} 
@@ -59,7 +58,7 @@ function NewsAndBlogs({ data, animationConfig }) {
                                     <p className='font-bold text-white lg:text-2xl'>{data?.title}</p>
                                     <p className='text-md lg:text-xl text-white my-2 lg:my-5'>{data?.date}</p>
                                     <p className='text-white opacity-75 lg:text-lg'>{data?.description}</p>
-                                    <button className='flex justify-center items-center mt-2 lg:mt-12 py-4 lg:py-0 lg:text-xl text-red-500'>Read more <IoIosArrowForward />
+                                    <button className='flex justify-center items-center mt-2 lg:mt-12 py-4 lg:py-0 lg:text-xl text-red-500' onClick={()=>navigate('/blog/details')}>Read more <IoIosArrowForward />
                                         <IoIosArrowForward className='-ms-3' />
                                     </button>
                                 </div>
@@ -68,13 +67,13 @@ function NewsAndBlogs({ data, animationConfig }) {
                     ))}
                 </motion.div>
             </Carourcel>
-            <div className='absolute right-[15%] hidden lg:block mt-5 lg:mt-14  '>
+            <motion.div className='absolute right-[15%] hidden lg:block mt-5 lg:mt-14 ' {...animationConfig}>
                <div className='flex flex-row items-center gap-2'>
                <button onClick={scrollLeft}>Prev</button>
                 <hr className='w-32'/>
                 <button onClick={scrollRight}>Next</button>
                </div>
-            </div>
+            </motion.div>
         </Section>
     );
 }
@@ -85,4 +84,4 @@ const Section = styled.section`
     padding-bottom: 5rem;
 `;
 
-const Carourcel = styled.div``;
+const Carourcel = styled(motion.div)``;

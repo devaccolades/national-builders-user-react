@@ -33,15 +33,15 @@ function VideoTag({ animationConfig }) {
 
 export default VideoTag
 
-const Section = styled.div`
+const Section = styled(motion.div)`
 margin-top: 10rem;
 margin-bottom: 5rem;
 @media(max-width:1400px){
   width:90%;
 }
 @media(max-width:768px){
-  margin-top: 25rem;
-  margin-bottom: 4rem;
+  margin-top: 29rem !important;
+  margin-bottom: 4% !important;
 
 }
 `;

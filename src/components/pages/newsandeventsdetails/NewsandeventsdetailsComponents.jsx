@@ -8,6 +8,7 @@ import facebookIcon from '../../../assets/icons/facebook.svg'
 import twitterIcon from '../../../assets/icons/twitter.svg'
 import linkedInIcon from '../../../assets/icons/linkedin.svg'
 import linkIcon from '../../../assets/icons/links.svg'
+import { motion } from 'framer-motion';
 
 // aftr backend should be remove
 import image1 from '../../../assets/images/newsandeventsdetails/image1.png'
@@ -15,9 +16,9 @@ import image2 from '../../../assets/images/about/director1.png'
 import image3 from '../../../assets/images/about/director3.png'
 import image4 from '../../../assets/images/about/director4.jpeg'
 
-function NewsandeventsdetailsComponents() {
+function NewsandeventsdetailsComponents({animationConfig}) {
   return (
-    <Section className='container mx-auto flex flex-col gap-5 lg:gap-8'>
+    <Section className='container mx-auto flex flex-col gap-5 lg:gap-8' {...animationConfig}>
     <Backgroundimage className='bg-gray-900 bg-opacity-50 lg:bg-transparent p-6 lg:p-0 rounded-[1.1rem] rounded-b-none lg:rounded-none -mb-5 lg:mb-0'>
    
       <div className='image rounded-[1.1rem]'>
@@ -88,7 +89,7 @@ function NewsandeventsdetailsComponents() {
 
 export default NewsandeventsdetailsComponents
 
-const Section = styled.section`
+const Section = styled(motion.section)`
 margin-top: 2rem;
 margin-bottom: 4rem;
 @media(max-width:1400px){

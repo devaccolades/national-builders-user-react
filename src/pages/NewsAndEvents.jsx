@@ -31,7 +31,7 @@ function NewsAndEvents() {
   return (
     <>
     <Helmet>
-        <title>Projects - Ready To Move Flats In Kochi | Best builders in Kochi</title>
+        <title>New & Events - Ready To Move Flats In Kochi | Best builders in Kochi</title>
         <meta
           name="description"
           content="At English Cafe, we welcome you to boost your confidence and communication skills through our expertly crafted lessons. Join us now!"

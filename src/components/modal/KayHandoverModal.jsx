@@ -9,7 +9,7 @@ import styled from "styled-components";
 export function KayHandoverModal({ open, handleOpen, data }) {
     return (
         <>
-            <Dialog size="lg" open={open} handler={handleOpen} className="bg-transparent h-screen flex overflow-y-hidden justify-center items-center">
+            <Dialog size="lg" open={open} handler={handleOpen} className="bg-transparent h-screen py-2 flex overflow-y-hidden justify-center items-center">
                 <Button className="bg-white p-2 rounded-full" onClick={handleOpen}>
                     <IoMdClose className="text-black w-6 h-6"/>
                 </Button>

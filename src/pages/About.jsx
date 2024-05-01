@@ -25,7 +25,7 @@ function About() {
     return (
         <>
             <Helmet>
-                <title>About | Top Builders In Kochi</title>
+                <title>About - Ready To Give a Flat In Kochi</title>
                 <meta
                     name="description"
                     content="At English Cafe, we welcome you to boost your confidence and communication skills through our expertly crafted lessons. Join us now!"

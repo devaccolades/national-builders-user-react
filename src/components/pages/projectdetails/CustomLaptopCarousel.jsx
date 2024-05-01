@@ -118,7 +118,12 @@ const CustomLaptopCarousel = ({ data }) => {
                 </AnimatePresence>
               </div>
             </SliderContainer>
-            <Thumbnails ref={thumbnailsRef} className="rounded-[1.1rem]">
+            <Thumbnails ref={thumbnailsRef} className="rounded-[1.1rem]"
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={1}
+            onDragEnd={(_, dragInfo) => dragEndHandler(dragInfo)}
+            >
               {data.map((image, index) => (
                 <motion.img
                   key={index}
@@ -209,10 +214,13 @@ const Thumbnails = styled.div`
   display: flex;
   align-items: center;
   flex-direction: row;
-  overflow-x: hidden;
+  overflow-x: auto;
   overflow-y: hidden;
   background-color: black;
   gap: 0.8rem;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const ArrowButtons = styled.div``;

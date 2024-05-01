@@ -41,7 +41,7 @@ function Blogs() {
   return (
     <>
     <Helmet>
-        <title>Contact - Ready To Move Flats In Kochi | Best builders in Kochi</title>
+        <title>Blogs - Ready To Move Flats In Kochi | Best builders in Kochi</title>
         <meta
           name="description"
           content="At English Cafe, we welcome you to boost your confidence and communication skills through our expertly crafted lessons. Join us now!"

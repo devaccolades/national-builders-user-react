@@ -33,7 +33,7 @@ function NewsAndEventsListing({ animationConfig, data }) {
     };
   }, []);
   return (
-    <Section className='mx-auto container'>
+    <Section className='mx-auto container' {...animationConfig}>
       <Listing {...animationConfig}>
         {data && data?.length === 0 ? (
           <div className='-mt-20'>
@@ -130,7 +130,7 @@ function NewsAndEventsListing({ animationConfig, data }) {
 
 export default NewsAndEventsListing
 
-const Section = styled.section`
+const Section = styled(motion.section)`
 margin-top: 1rem;
 
 @media(max-width:1400px){

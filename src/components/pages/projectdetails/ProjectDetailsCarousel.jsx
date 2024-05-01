@@ -24,7 +24,6 @@ function ProjectDetailsCarousel({ animationConfig, images, name, location, reraN
                     <span>{reraNumber}</span>
                 </Paragraph>
             </motion.div>
-
            <motion.div {...animationConfig}>
            <CustomLaptopCarousel data={images} />
             <CustomMobileCarousel data={images} />

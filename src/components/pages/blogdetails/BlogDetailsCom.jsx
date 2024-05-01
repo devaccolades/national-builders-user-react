@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import { Typography } from '@material-tailwind/react';
 import Text from '../../common/Text';
+import { motion } from 'framer-motion';
 
 // Icons
 import facebookIcon from '../../../assets/icons/facebook.svg'
@@ -15,9 +16,9 @@ import image2 from '../../../assets/images/blogs/image2.png'
 import image3 from '../../../assets/images/blogs/image3.png'
 import image4 from '../../../assets/images/blogs/image4.png'
 
-function BlogDetailsCom() {
+function BlogDetailsCom({animationConfig}) {
   return (
-    <Section className='container mx-auto flex flex-col gap-5 lg:gap-8'>
+    <Section className='container mx-auto flex flex-col gap-5 lg:gap-8' {...animationConfig}>
       <Backgroundimage className='bg-gray-900 bg-opacity-50 lg:bg-transparent p-6 lg:p-0 rounded-[1.1rem] rounded-b-none lg:rounded-none -mb-5 lg:mb-0'>
         <div className='image rounded-[1.1rem]'>
           {/* Backgroud image */}
@@ -119,7 +120,7 @@ function BlogDetailsCom() {
 
 export default BlogDetailsCom
 
-const Section = styled.section`
+const Section = styled(motion.section)`
 margin-top: 2rem;
 margin-bottom: 4rem;
 @media(max-width:1400px){

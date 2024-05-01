@@ -10,7 +10,7 @@ function TextAndCounts({ animationConfig }) {
 
     return (
         <Section className='container mx-auto grid grid-rows-[1fr,16rem]'>
-            <div className='flex flex-col lg:flex-row lg:items-start pt-36 py-10  lg:mx-5 xl:mx-0' >
+            <div className='flex flex-col lg:flex-row lg:items-start pt-32 py-10  lg:mx-5 xl:mx-0' >
                 <motion.div className='w-full lg:w-8/12 text-white text-2xl md:text-4xl lg:text-6xl mb-5 lg:mb-0 -mt-16 lg:mt-0' {...animationConfig}>
                     <div className='invisible lg:visible h-0 lg:h-full'>
                         {/* For Laptop View */}

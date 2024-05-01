@@ -51,8 +51,10 @@ function ProjectDetails() {
       { id: 5, image: image5 },
       { id: 6, image: image6 },
       { id: 7, image: image7 },
-      { id: 8, image: image8 },
-      { id: 9, image: image9 }
+      { id: 9, image: image8 },
+      { id: 10, image: image8 },
+      { id: 11, image: image8 },
+      { id: 12, image: image9 }
     ],
     location: 'Thiruvalla, Kerala',
     rera_number: 'K-RERA/PRJ/066/2021',
