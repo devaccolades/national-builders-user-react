@@ -94,7 +94,7 @@ function RentalsList({ animationConfig, data }) {
                                         <div>
                                             <div className='flex flex-row gap-2 items-center'>
                                                 <img src={rupeesIcon} className='' alt="" />
-                                                <p className='text-[1.1rem] lg:text-[1.3rem] text-gray-600'>Area</p>
+                                                <p className='text-[1.1rem] lg:text-[1.3rem] text-gray-600'>Price</p>
                                             </div>
                                             <p className='text-[1.2rem] pt-2 text-gray-600'>{`${rental.price}/sqft + MMc`}</p>
                                         </div>
