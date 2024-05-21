@@ -1,10 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import PageName from '../components/common/PageName'
 import CommonDiv from '../components/common/CommonDiv'
 import BlogsListing from '../components/pages/blogs/BlogsListing'
+import { useLocation } from 'react-router-dom'
+import { GetSeoApi } from '../services/services'
 
 function Blogs() {
+  const location = useLocation();
+  const currentPath = location.pathname;
+  const [seoData, setSeoData] = useState([])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await GetSeoApi(currentPath)
+        const { StatusCode, data } = res.data;
+        if (StatusCode === 6000) {
+          setSeoData(data)
+        }
+      } catch (error) {
+        console.error("Error fetching home page data:", error);
+      }
+    }
+    fetchData()
+  }, [currentPath])
   const animationConfig = {
     initial: {
       opacity: 0,
@@ -21,15 +41,15 @@ function Blogs() {
   };
   return (
     <>
-    <Helmet>
-        <title>Blogs - Ready To Move Flats In Kochi | Best builders in Kochi</title>
+      <Helmet>
+        <title>{seoData?.meta_title}</title>
         <meta
           name="description"
-          content="At English Cafe, we welcome you to boost your confidence and communication skills through our expertly crafted lessons. Join us now!"
+          content={seoData?.meta_description}
         ></meta>
       </Helmet>
       <PageName text={"Blogs"} />
-      <BlogsListing animationConfig={animationConfig}/>
+      <BlogsListing animationConfig={animationConfig} />
       <CommonDiv />
     </>
   )

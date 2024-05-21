@@ -10,9 +10,13 @@ import VideoTag from '../components/pages/home/VideoTag'
 import Testimonials from '../components/pages/home/Testimonials'
 import NewsAndBlogs from '../components/pages/home/NewsAndBlogs'
 
-import { GetHomePageApi } from '../services/services'
+import { GetHomePageApi, GetSeoApi } from '../services/services'
+import { useLocation } from 'react-router-dom'
 
 function Home() {
+  const location = useLocation();
+  const currentPath = location.pathname;
+  const [seoData, setSeoData] = useState([])
   const [homepageData, setHomePageData] = useState({
     awards: "",
     home_page_videos: "",
@@ -22,35 +26,49 @@ function Home() {
   });
   const fetchhomePageData = async () => {
     try {
-        const res = await GetHomePageApi();
-        const { StatusCode, data } = res.data;
-        
-        if (StatusCode === 6000) {
-            setHomePageData({
-                awards: data?.awards || "",
-                home_page_videos: data?.home_page_videos || "",
-                project_counts: data?.project_counts || "",
-                blogs: data?.blogs || [],
-                testimonials: data?.testimonials || []
-            });
-        }
-    } catch (error) {
-        console.error("Error fetching home page data:", error);
+      const res = await GetHomePageApi();
+      const { StatusCode, data } = res.data;
+
+      if (StatusCode === 6000) {
         setHomePageData({
-          awards: "",
-          home_page_videos: "",
-          project_counts: "",
-          blogs: [],
-          testimonials: []
-        })
+          awards: data?.awards || "",
+          home_page_videos: data?.home_page_videos || "",
+          project_counts: data?.project_counts || "",
+          blogs: data?.blogs || [],
+          testimonials: data?.testimonials || []
+        });
+      }
+    } catch (error) {
+      console.error("Error fetching home page data:", error);
+      setHomePageData({
+        awards: "",
+        home_page_videos: "",
+        project_counts: "",
+        blogs: [],
+        testimonials: []
+      })
     }
-};
+  };
 
 
   useEffect(() => {
     fetchhomePageData()
   }, [])
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await GetSeoApi(currentPath)
+        const { StatusCode, data } = res.data;
+        if (StatusCode === 6000) {
+          setSeoData(data)
+        }
+      } catch (error) {
+        console.error("Error fetching home page data:", error);
+      }
+    }
+    fetchData()
+  }, [currentPath])
 
   const animationConfig = {
     initial: {
@@ -69,19 +87,19 @@ function Home() {
   return (
     <>
       <Helmet>
-        <title>Top Builders In Kochi | Best builders in Kochi | National Builders</title>
+        <title>{seoData?.meta_title}</title>
         <meta
           name="description"
-          content="At English Cafe, we welcome you to boost your confidence and communication skills through our expertly crafted lessons. Join us now!"
+          content={seoData?.meta_description}
         ></meta>
       </Helmet>
       <HomeBanner animationConfig={animationConfig} />
       {homepageData.project_counts && <TextAndCounts animationConfig={animationConfig} data={homepageData.project_counts[0]} />}
-      {homepageData.awards && <AwardsAndRecognitions animationConfig={animationConfig} data={homepageData.awards}/>}
+      {homepageData.awards && <AwardsAndRecognitions animationConfig={animationConfig} data={homepageData.awards} />}
       <Ourpresence />
-      {homepageData.home_page_videos && <VideoTag animationConfig={animationConfig} data={homepageData.home_page_videos[0]}/>}
-      {homepageData.testimonials.length>0 && <Testimonials testimonials={homepageData?.testimonials}  animationConfig={animationConfig}/>}
-    {homepageData.blogs.length>0 && <NewsAndBlogs data={homepageData?.blogs} animationConfig={animationConfig}/>}
+      {homepageData.home_page_videos && <VideoTag animationConfig={animationConfig} data={homepageData.home_page_videos[0]} />}
+      {homepageData.testimonials.length > 0 && <Testimonials testimonials={homepageData?.testimonials} animationConfig={animationConfig} />}
+      {homepageData.blogs.length > 0 && <NewsAndBlogs data={homepageData?.blogs} animationConfig={animationConfig} />}
     </>
   )
 }

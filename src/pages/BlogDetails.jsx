@@ -7,9 +7,8 @@ import { GetBlogDetailsApi } from '../services/services';
 
 function BlogDetails() {
   const { slug } = useParams();
-  const [blogsDetails,setBlogDetails] = useState()
-  const [suggestionsList,setSuggestionsList] = useState([])
-  
+  const [blogsDetails, setBlogDetails] = useState()
+  const [suggestionsList, setSuggestionsList] = useState([])
   const animationConfig = {
     initial: {
       opacity: 0,
@@ -25,34 +24,34 @@ function BlogDetails() {
     },
   };
 
- useEffect(()=>{
-  const fetchData = async () => {
-    try {
-      const res = await GetBlogDetailsApi(slug);
-      const { StatusCode, data ,suggestions} = res.data;
-      if (StatusCode === 6000) {
-        setBlogDetails(data)
-        setSuggestionsList(suggestions)
-      } else if (StatusCode === 6002) {
-        navigate('/blogs');
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await GetBlogDetailsApi(slug);
+        const { StatusCode, data, suggestions } = res.data;
+        if (StatusCode === 6000) {
+          setBlogDetails(data)
+          setSuggestionsList(suggestions)
+        } else if (StatusCode === 6002) {
+          navigate('/blogs');
+        }
+      } catch (error) {
+        alert(error.message || "Something went wrong");
       }
-    } catch (error) {
-      alert(error.message || "Something went wrong");
     }
-  }
-  fetchData()
- },[slug])
+    fetchData()
+  }, [slug])
   return (
     <>
-     <Helmet>
-        <title>Top Builders In Kochi | Best builders in Kochi | National Builders</title>
+      <Helmet>
+        <title>{blogsDetails?.meta_tag}</title>
         <meta
           name="description"
-          content="At English Cafe, we welcome you to boost your confidence and communication skills through our expertly crafted lessons. Join us now!"
+          content={blogsDetails?.meta_description}
         ></meta>
       </Helmet>
-    <BlogDetailsCom animationConfig={animationConfig} data={blogsDetails} suggestions={suggestionsList}/>
-    <CommonDiv />
+      <BlogDetailsCom animationConfig={animationConfig} data={blogsDetails} suggestions={suggestionsList} />
+      <CommonDiv />
     </>
   )
 }

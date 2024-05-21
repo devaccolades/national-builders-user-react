@@ -91,6 +91,12 @@ const GetKeyAndHandoverApi = (startLimit,endLimit) => {
     });
 };
 
+const GetSeoApi = (path) => {
+    return api.get(`seo/?path=${path}`, {
+        withCredentials: true,
+    });
+};
+
 
 export{
     GetBranchesApi,
@@ -107,4 +113,5 @@ export{
     GetNewsAndEventsApi,
     GetNewsAndEventsDetailsApi,
     GetKeyAndHandoverApi,
+    GetSeoApi,
 }
