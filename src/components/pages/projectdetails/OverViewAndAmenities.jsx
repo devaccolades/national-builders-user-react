@@ -7,37 +7,15 @@ import { motion } from 'framer-motion'
 import bedRommsIcon from '../../../assets/icons/bedrooms.svg'
 import unitsIcon from '../../../assets/icons/units.svg'
 import areaIcon from '../../../assets/icons/area.svg'
-import healthIcon from '../../../assets/icons/helth.svg'
-import roofpartyIcon from '../../../assets/icons/rooftoppartyarea.svg'
-import childrensareaIcon from '../../../assets/icons/childrensplayarea.svg'
-import wifiIcon from '../../../assets/icons/wifi.svg'
-import generatoIcon from '../../../assets/icons/generator.svg'
-import gasIcon from '../../../assets/icons/gas.svg'
-import intercomIcon from '../../../assets/icons/intercom.svg'
-import landscapareaIcon from '../../../assets/icons/landscaped.svg'
 
 
-function OverViewAndAmenities({
-    animationConfig,
-    description,
-    healthClub,
-    roofTopPartyArea,
-    childrensPlayArea,
-    wifi,
-    generatorBackup,
-    gasConnection,
-    intercom,
-    landscapedArea,
-    bedrooms,
-    units,
-    area
-}) {
+function OverViewAndAmenities({ animationConfig, data, amenities }) {
     return (
-        <Section className='container mx-auto'>
+        <Section className='mx-auto'>
             <OverView className='bg-gray-900 bg-opacity-60 rounded-[1.1rem] p-5 lg:p-8' {...animationConfig}>
                 <Heading>OverView</Heading>
-                {description ? (
-                    <Text text={description} />
+                {data.description ? (
+                    <Text text={data.description} />
                 ) : (
                     <Text align='center' text={"Description Not Found"} />
                 )}
@@ -47,14 +25,14 @@ function OverViewAndAmenities({
                             <img src={bedRommsIcon} alt="icons" />
                             <Text text={"Bedrooms"} />
                         </div>
-                        <Text align='center' text={bedrooms.join(', ')} />
+                        <Text align='center' text={data?.bedrooms} />
                     </div>
                     <div>
                         <div className='flex flex-row gap-3 items-center pb-4'>
                             <img src={unitsIcon} className='-mt-[0.5rem]' alt="icons" />
                             <Text text={"Units"} />
                         </div>
-                        <Text  align='center' text={units} />
+                        <Text align='center' text={data.units} />
                     </div>
                     <div className='mt-5 md:mt-0'>
                         <div className='flex flex-row gap-3 items-center pb-4'>
@@ -62,50 +40,27 @@ function OverViewAndAmenities({
                             <Text text={"Area"} />
                         </div>
                         <div className='flex items-center justify-center'>
-                            <Text text={area.from} />
+                            <Text text={data?.area_from} />
                             <hr className='w-5 mx-2' />
-                            <Text text={`${area.to} sq. ft.`} />
+                            <Text text={`${data?.area_to} sq. ft.`} />
                         </div>
                     </div>
                 </div>
-
             </OverView>
             <Amenities className='bg-gray-900 bg-opacity-60 rounded-[1.1rem] p-5 lg:p-8 md:pb-20' {...animationConfig}>
                 <Heading>Amenities</Heading>
-                <div className='grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-10 h-full mt-2'>
-                    {healthClub && (<div className=''>
-                        <img src={healthIcon} alt="" />
-                        <Text align='' mt='3' text={"Health Club"} />
-                    </div>)}
-                    {roofTopPartyArea && (<div className=''>
-                        <img src={roofpartyIcon} alt="" />
-                        <Text align='' mt='3' text={"Roof Top Party Area"} />
-                    </div>)}
-                    {childrensPlayArea && (<div className=''>
-                        <img src={childrensareaIcon} alt="" />
-                        <Text align='' mt='3' text={"Children's Play Area"} />
-                    </div>)}
-                    {wifi && (<div className=' '>
-                        <img src={wifiIcon} alt="" />
-                        <Text align='' mt='3' text={"WiFi Enabled Visitors Lounge"} />
-                    </div>)}
-                    {generatorBackup && (<div className=''>
-                        <img src={generatoIcon} alt="" />
-                        <Text align='' mt='3' text={"Generator Back Up"} />
-                    </div>)}
-                    {gasConnection && (<div className=''>
-                        <img src={gasIcon} alt="" />
-                        <Text align='' mt='3' text={"Centralised Gas Connection"} />
-                    </div>)}
-                    {intercom && (<div className=''>
-                        <img src={intercomIcon} alt="" />
-                        <Text align='' mt='3' text={"Intercom"} />
-                    </div>)}
-                    {landscapedArea && (<div className=''>
-                        <img src={landscapareaIcon} alt="" />
-                        <Text align='' mt='3' text={"Landscaped Area"} />
-                    </div>)}
-                </div>
+                {amenities.length === 0 ? (<div className='flex -mt-10 justify-center items-center h-full'>
+                    <Text align='center' text={"Description Not Found"} />
+                </div>) : (
+                    <div className='grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-10 h-auto max-h-full mt-2'>
+                        {amenities.map((amenity,index)=>(
+                            <div >
+                            <img src={amenity?.logo} alt={amenity?.image_alt} />
+                            <Text align='' mt='3' text={`${amenity?.title}`} />
+                        </div>
+                        ))}
+                    </div>
+                )}
             </Amenities>
         </Section>
     )
@@ -119,6 +74,7 @@ margin-bottom: 2rem;
 display: flex;
 flex-direction: row;
 gap: 2rem;
+width: 70%;
     @media(max-width:1400px){
       width:90%; 
       @media(max-width:1024px){

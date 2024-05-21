@@ -1,14 +1,14 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet';
 import PageName from '../components/common/PageName';
 import RoundAndText from '../components/common/RoundAndText';
 import RentalsList from '../components/pages/rentals/RentalsList';
 import CommonDiv from '../components/common/CommonDiv'
 
-// Image after the backend should be remove the images
-import Rentals1 from '../assets/images/rentals/rentals1.png'
-import Rentals2 from '../assets/images/rentals/rentals2.jpg'
+import { GetRentalsApi } from '../services/services';
+
 function RentalProperties() {
+  const [retals,setRentals] = useState([])
   const animationConfig = {
     initial: {
       opacity: 0,
@@ -24,14 +24,21 @@ function RentalProperties() {
     },
   };
 
-  const data = [
-    {image:Rentals1, name:'National Residency 0-14',type:'Commercial',area:500,price:50, place:'Kochi'},
-    {image:Rentals1, name:'National Residency 0-7',type:'Commercial',area:500,price:50, place:'Kochi'},
-    {image:Rentals1, name:'National Residency B-4 And 5',type:'Commercial',area:276,price:50, place:'Kochi'},
-    {image:Rentals2, name:'National Pearl Star -2K',type:'Commercial',area:666,price:60, place:'Kochi'},
-    {image:Rentals2, name:'National Pearl Star -3N',type:'Commercial',area:775,price:60, place:'Kochi'},
-    {image:Rentals2, name:'National Pearl Star -4K',type:'Commercial',area:666,price:60, place:'Kochi'},
-  ]
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await GetRentalsApi()
+        const { StatusCode, data } = res.data;
+        if (StatusCode === 6000) {
+          setRentals(data)
+        }
+      } catch (error) {
+        setRentals([])
+      }
+    };
+
+    fetchData();
+  }, [])
 
   return (
     <>
@@ -44,7 +51,7 @@ function RentalProperties() {
       </Helmet>
       <PageName text={"Rental Properties"} />
       <RoundAndText headingred={"Properties"} headingwhite={"for rent"} />
-      <RentalsList animationConfig={animationConfig} data={data}/>
+      <RentalsList animationConfig={animationConfig} data={retals}/>
       <CommonDiv />
     </>
   )

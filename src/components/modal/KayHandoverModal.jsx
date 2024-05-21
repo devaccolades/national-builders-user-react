@@ -13,7 +13,7 @@ export function KayHandoverModal({ open, handleOpen, data }) {
                 <Button className="bg-white p-2 rounded-full" onClick={handleOpen}>
                     <IoMdClose className="text-black w-6 h-6"/>
                 </Button>
-                <img src={data.image} className="lg:h-full " alt="" />
+                <img src={data.image} className="lg:h-full" alt={data?.image_alt} />
             </Dialog>
         </>
     );

@@ -20,7 +20,6 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 function Header() {
   const navigate = useNavigate()
   const [openMenu, setOpenMenu] = useState(false);
-  console.log(openMenu);
 
   const location = useLocation();
   const currentPath = location.pathname;
@@ -31,7 +30,7 @@ function Header() {
       <Typography
         as="li"
         variant="small"
-        className={`p-1 ${currentPath === '/' ? 'font-bold' : 'font-normal'} text-xl text-white hidden lg:block`}
+        className={`p-1 ${currentPath === '/' ? 'font-bold' : 'font-normal'} text-[1.1vw] text-white hidden lg:block`}
       >
         <Link to={'/'} className="flex items-center">
           Home
@@ -41,7 +40,7 @@ function Header() {
       <Typography
         as="li"
         variant="small"
-        className={`p-1 ${currentPath === '/projects' ? 'font-bold' : 'font-normal'} text-xl text-white hidden lg:block `}
+        className={`p-1 ${currentPath === '/projects' ? 'font-bold' : 'font-normal'} text-[1.1vw] text-white hidden lg:block `}
       >
         <Link to={'/projects'} className="flex items-center">
           Project
@@ -51,7 +50,7 @@ function Header() {
       <Typography
         as="li"
         variant="small"
-        className={`p-1 ${currentPath === '/rentals' ? 'font-bold' : 'font-normal'} text-xl text-white hidden lg:block `}
+        className={`p-1 ${currentPath === '/rentals' ? 'font-bold' : 'font-normal'} text-[1.1vw] text-white hidden lg:block `}
       >
         <Link to={'/rentals'} className="flex items-center">
           Rentals
@@ -60,7 +59,7 @@ function Header() {
       <Typography
         as="li"
         variant="small"
-        className={`p-1 ${currentPath === '/about' ? 'font-bold' : 'font-normal'} text-xl text-white hidden lg:block`}
+        className={`p-1 ${currentPath === '/about' ? 'font-bold' : 'font-normal'} text-[1.1vw] text-white hidden lg:block`}
       >
         <Link to={'/about'} className="flex items-center">
           About
@@ -131,7 +130,7 @@ function Header() {
           <div className='flex flex-row justify-center items-center -ms-10 lg:ms-0'>
             <motion.img
               src={logo}
-              className='h-[3rem] lg:h-[3.5rem]'
+              className='h-[3rem] lg:h-[6vh]'
               alt="logo"
               onClick={() => navigate('/')}
               initial={{ opacity: 0 }}
@@ -140,13 +139,13 @@ function Header() {
             />
             <motion.img
               src={text}
-              className='h-[3rem] lg:h-[4rem]'
+              className='h-[3rem] lg:h-[6vh]'
 
               alt="logo"
               onClick={() => navigate('/')}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 2, duration: .5 }}
+              transition={{ delay: 1.5, duration: .5 }}
             />
           </div>
           <div className="flex items-center gap-4">

@@ -5,11 +5,9 @@ import Text from '../../common/Text';
 import AnimationButton from '../../common/Button';
 import CounterAnimation from '../../common/CounterAnimation';
 
-function TextAndCounts({ animationConfig }) {
-
-
+function TextAndCounts({ animationConfig, data }) {
     return (
-        <Section className='container mx-auto grid grid-rows-[1fr,16rem]'>
+        <Section className='mx-auto grid grid-rows-[1fr,16rem]'>
             <div className='flex flex-col lg:flex-row lg:items-start pt-32 py-10  lg:mx-5 xl:mx-0' >
                 <motion.div className='w-full lg:w-8/12 text-white text-2xl md:text-4xl lg:text-6xl mb-5 lg:mb-0 -mt-16 lg:mt-0' {...animationConfig}>
                     <div className='invisible lg:visible h-0 lg:h-full'>
@@ -33,24 +31,23 @@ function TextAndCounts({ animationConfig }) {
                     <div className='lg:w-3/1 mt-4 h-24 items-center flex justify-center lg:justify-start'>
                         <AnimationButton text={"Read More"} />
                     </div>
-
                 </motion.div>
             </div>
             <motion.div className='grid grid-cols-2 lg:grid-cols-4 w-full  lg:mt-0' {...animationConfig}>
                 <div className='my-auto mx-auto text-center'>
-                    <CounterAnimation value={5} />
+                    <CounterAnimation value={parseInt(data?.launched) || 0} />
                     <Text text={"Launched"} />
                 </div>
                 <div className='my-auto mx-auto text-center'>
-                    <CounterAnimation value={135} />
+                    <CounterAnimation value={parseInt(data?.projectcompleted) || 0} />
                     <Text text={"Project's Completed"} />
                 </div>
                 <div className='my-auto mx-auto text-center'>
-                    <CounterAnimation value={4} />
+                <CounterAnimation value={parseInt(data?.readytooccupy) || 0} />
                     <Text text={"Ready to Move In"} />
                 </div>
                 <div className='my-auto mx-auto text-center'>
-                    <CounterAnimation value={4} />
+                <CounterAnimation value={parseInt(data?.ongoing) || 0} />
                     <Text text={"Ongoing"} />
                 </div>
             </motion.div>
@@ -61,6 +58,7 @@ function TextAndCounts({ animationConfig }) {
 export default TextAndCounts
 
 const Section = styled.div`
+width: 70%;
 @media(max-width:1400px){
   width:90%;
 }

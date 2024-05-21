@@ -22,7 +22,7 @@ function CommonDiv() {
   };
     return (
         <Section  {...animationConfig}>
-          <Container className='container mx-auto'>
+          <Container className='mx-auto'>
           <div className='w-full'>
                 <Headding className='text-center xl:text-start lg:font-bold bg-gradient-to-r from-white to-gray-800 text-transparent bg-clip-text'>
                     Find your dream home today
@@ -55,6 +55,7 @@ const Container = styled.div`
     flex-direction: row;
     gap: 2rem;
     margin: 1rem auto;
+    width: 70%;
     @media(max-width:1400px){
       width:90%; 
 }

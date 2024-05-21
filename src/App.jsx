@@ -37,13 +37,13 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/project/details" element={<ProjectDetails />} />
+          <Route path="/project/:slug" element={<ProjectDetails />} />
           <Route path="/rentals" element={<RentalProperties />} />
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/news-and-events" element={<NewsAndEvents />} />
-          <Route path="/news-and-events/details" element={<NewsAndEventsDetails />} />
+          <Route path="/news-and-events/:slug" element={<NewsAndEventsDetails />} />
           <Route path="/blogs" element={<Blogs />} />
-          <Route path="/blog/details" element={<BlogDetails />} />
+          <Route path="/blog/:slug" element={<BlogDetails />} />
           <Route path="/key-handover" element={<KeyHandover />} />
           <Route path="/*" element={<ErrorPage />} />
         </Route>

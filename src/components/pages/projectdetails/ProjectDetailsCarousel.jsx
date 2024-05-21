@@ -3,31 +3,40 @@ import styled from 'styled-components';
 import { IoLocationSharp } from "react-icons/io5";
 import { motion } from 'framer-motion';
 
-// Icons
 import CustomMobileCarousel from '../../customcarousel/CustomMobileCarousel';
 import CustomLaptopCarousel from './CustomLaptopCarousel';
+import NoDataFound from '../../common/NoDataFound';
+import Text from '../../common/Text';
 
-function ProjectDetailsCarousel({ animationConfig, images, name, location, reraNumber }) {
-
-
+function ProjectDetailsCarousel({ animationConfig, data, images }) {
     return (
-        <Section className='container mx-auto flex flex-col gap-6'>
-            <motion.div className='flex flex-col lg:flex-row gap-2 lg:gap-0 justify-between lg:items-center w-full' {...animationConfig}>
-                <Heading1 className='hidden lg:block'>{name}</Heading1>
-                <Paragraph className='flex bg-gray-900 w-7/12 md:w-4/12 lg:w-auto border border-gray-800 rounded-[2rem] p-3 text-center flex-row md:gap-3 justify-center items-center'>
+        <Section className='mx-auto flex flex-col gap-6 '>
+            <motion.div className='grid grid-row-3 lg:grid-cols-3 gap-2 lg:gap-0 justify-between lg:items-center w-full' {...animationConfig}>
+                <Heading1 className='hidden lg:block'>{data?.name}</Heading1>
+                <Paragraph className='flex bg-gray-900 border border-gray-800 rounded-[2rem] p-3 text-center flex-row md:gap-3 justify-center items-center'>
                     <IoLocationSharp className='w-6 h-6' />
-                    <span>{location}</span>
+                    <span>{data?.location}</span>
                 </Paragraph>
-                <Heading1 className='lg:hidden block'>{name}</Heading1>
-                <Paragraph>
-                    <span className='span2'>RERA Number : </span>
-                    <span>{reraNumber}</span>
-                </Paragraph>
+                <Heading1 className='lg:hidden block'>{data?.name}</Heading1>
+                <p>
+                    <Paragraph>
+                        <span className='span2'>RERA Number : </span>
+                        <span>{data?.rera_number}</span>
+                    </Paragraph>
+                </p>
             </motion.div>
-           <motion.div {...animationConfig}>
-           <CustomLaptopCarousel data={images} />
-            <CustomMobileCarousel data={images} />
-           </motion.div>
+            <motion.div {...animationConfig}>
+                {images.length === 0 ? (
+                    <div className='flex justify-center flex-col h-[20rem] items-center'>
+                        <NoDataFound text={"Images Not Found"} />
+                    </div>
+                ) : (
+                   <>
+                    <CustomLaptopCarousel data={images} />
+                    <CustomMobileCarousel data={images} />
+                   </>
+                )}
+            </motion.div>
         </Section>
     );
 }
@@ -35,6 +44,7 @@ function ProjectDetailsCarousel({ animationConfig, images, name, location, reraN
 export default ProjectDetailsCarousel;
 
 const Section = styled.section`
+width: 70%;
     @media(max-width:1400px){
       width:90%; 
 }
@@ -81,7 +91,4 @@ const Paragraph = styled.p`
     @media (max-width: 425px) {
         font-size: 0.9rem;
     }
-`;
-
-const Carousel = styled(motion.section)`
 `;

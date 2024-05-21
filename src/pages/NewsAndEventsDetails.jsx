@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import NewsandeventsdetailsComponents from '../components/pages/newsandeventsdetails/NewsandeventsdetailsComponents'
 import CommonDiv from '../components/common/CommonDiv'
+import { GetNewsAndEventsApi, GetNewsAndEventsDetailsApi } from '../services/services';
+import { useParams } from 'react-router-dom';
 
 function NewsAndEventsDetails() {
+  const { slug } = useParams();
+  const [newsAndEvents,setNewsAndEvents] = useState('')
+  const [suggestionsData,setSuggestionsData] = useState([])
   const animationConfig = {
     initial: {
       opacity: 0,
@@ -18,16 +23,31 @@ function NewsAndEventsDetails() {
       },
     },
   };
+  const fetchData = async () => {
+    try {
+        const res = await GetNewsAndEventsDetailsApi(slug)
+        const { StatusCode, data, suggestions } = res.data;
+        if (StatusCode === 6000) {
+          setNewsAndEvents(data)
+          setSuggestionsData(suggestions)
+        }
+    } catch (error) {
+      setNewsAndEvents([])
+    }
+};
+useEffect(()=>{
+  fetchData()
+},[slug])
   return (
     <>
     <Helmet>
-        <title>M.C Sunny won Business Excellence in Construction Award 2016- Unique Times FMB Award 2016 - National</title>
+        <title>{newsAndEvents?.meta_tag}</title>
         <meta
           name="description"
-          content="M.C Sunny won Business Excellence in Construction Award 2016- Unique Times FMB Award 2016 - National"
+          content={newsAndEvents?.meta_description}
         ></meta>
       </Helmet>
-      <NewsandeventsdetailsComponents animationConfig={animationConfig} />
+      <NewsandeventsdetailsComponents animationConfig={animationConfig} data={newsAndEvents} suggestions={suggestionsData} />
       <CommonDiv />
     </>
   )

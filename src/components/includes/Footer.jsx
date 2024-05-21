@@ -28,13 +28,13 @@ function Footer() {
   return (
     <>
       <section className='hidden lg:block'>
-        <div className=' bg-black grid grid-rows-[10rem,1px,1fr]'>
+        <div className=' bg-black grid grid-rows-[10rem,1px,1fr] overflow-hidden'>
           <div className='flex justify-center items-center'>
             <img src={logo} className='w-56 ' alt="" />
           </div>
-          <hr className='xl:mx-auto mx-20 xl:container border border-gray-900' />
+          <hr className='xl:mx-auto mx-20 xl:w-[70%] border border-gray-900' />
           <div className='bg-no-repeat bg-cover' style={{ backgroundImage: `url(${FooterBgImg})` }}>
-            <Container className='mx-auto ps-2 container grid grid-rows-[1fr,6rem,12rem] '>
+            <Container className='mx-auto ps-2 w-[70%] grid grid-rows-[1fr,6rem,12rem] '>
               <div className='grid grid-cols-[1fr,5rem,1fr] gap-8'>
                 <Card className='bg-gray-900 grid gap-4 bg-opacity-50 border p-5 text-white opacity-90 border-gray-800 my-10  rounded-[2rem]'>
                   <div className='w-full  pt-7 flex items-end'>
@@ -160,8 +160,8 @@ function Footer() {
             </div>
           </div>
         </div>
-        <div className='bg-[#262626] opacity-50 border border-gray-800 rounded-[1rem] flex flex-col p-5 mb-10 justify-center items-center'>
-          <div className='grid grid-cols-4 gap-4 sm:gap-20'>
+        <div className='bg-[#262626] bg-opacity-50 border border-gray-800 rounded-[1rem] flex flex-col p-5 mb-10 justify-center items-center'>
+          <div className='flex justify-around gap-4'>
             <img src={facebook} alt="" />
             <img src={instagram} alt="" />
             <img src={linkedin} alt="" />

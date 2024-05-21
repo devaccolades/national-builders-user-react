@@ -80,8 +80,8 @@ const CustomLaptopCarousel = ({ data }) => {
               <div>
                 <AnimatePresence initial={false} custom={direction}>
                   <motion.img
-                    src={data[activeImageIndex].image}
-                    alt={data.name}
+                    src={data[activeImageIndex].images}
+                    alt={data[activeImageIndex]?.image_alt}
                     key={imageCount}
                     custom={direction}
                     variants={sliderVariants}
@@ -100,8 +100,8 @@ const CustomLaptopCarousel = ({ data }) => {
               <div>
                 <AnimatePresence initial={false} custom={direction}>
                   <motion.img
-                    src={data[activeImageIndex + 1]?.image || data[0]?.image}
-                    alt={data.name}
+                    src={data[activeImageIndex + 1]?.images || data[0]?.images}
+                    alt={data[activeImageIndex +1]?.image_alt || data[0].image_alt}
                     key={imageCount + 1}
                     custom={direction}
                     variants={sliderVariants}
@@ -127,14 +127,16 @@ const CustomLaptopCarousel = ({ data }) => {
               {data.map((image, index) => (
                 <motion.img
                   key={index}
-                  src={image.image}
-                  alt=""
+                  src={image?.images}
+                  alt={image?.image_alt}
                   onClick={() => skipToImage(index)}
                   className={`rounded-[.6rem] cursor-pointer`}
                   initial={{ width: "6rem", maxWidth: "6rem" }}
                   animate={{
                     width: image.id === data[activeImageIndex].id ? "8.9rem" : "8rem",
-                    maxWidth: image.id === data[activeImageIndex].id ? "8.9rem" : "8rem",
+                    maxWidth: image.id === data[activeImageIndex].id ? "8.9rem" : "8rem ",
+                    height: image.id === data[activeImageIndex].id ? "7.5rem" : "6.5rem",
+                    maxHeight: image.id === data[activeImageIndex].id ? "7.5rem" : "6.5rem",
                     transition: { duration: 0.3 }
                   }}
                 />
@@ -192,7 +194,7 @@ const SliderContainer = styled.div`
     top: 0;
     left: 0;
     width: 100%;
-    height: auto;
+    height: 95%;
 
     @media only screen and (max-width: 375px) {
       width: 286px;

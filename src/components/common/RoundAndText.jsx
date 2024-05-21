@@ -19,7 +19,7 @@ function RoundAndText({ headingred, headingwhite, text }) {
         },
       };
     return (
-        <Section className='container mx-auto'>
+        <Section className='mx-auto'>
             <Main {...animationConfig}>
                 <img src={round} className='w-3/12 md:w-2/12 lg:w-auto' alt="" />
                 <Headding>
@@ -39,7 +39,8 @@ function RoundAndText({ headingred, headingwhite, text }) {
 export default RoundAndText
 
 const Section = styled.div`
-    height: 30vh;
+    height: 279.6px;
+    width: 70%;
     @media(max-width:1400px){
       width:90%; 
 }

@@ -10,10 +10,10 @@ export function DirectorModal({ open, handleOpen, data }) {
 
   return (
     <>
-      <Dialog size="xl" className="bg-black p-5 lg:p-10 text-white rounded-[2rem] border border-gray-700 h-[38rem] lg:h-auto overflow-y-scroll lg:overflow-y-hidden" open={open} handler={handleOpen}>
-        <div className="lg:hidden block">
-          <div className="w-full flex justify-end items-start mb-4">
-            <button onClick={handleOpen} className="px-2 py-2 font-bold opacity-65 rounded-[3rem] border border-gray-400"> <IoMdClose /></button>
+      <Dialog size="xl" className="bg-black p-5 lg:p-10 text-white rounded-[2rem] border border-gray-800 h-[93vh] md:h-[93vh] lg:h-auto overflow-y-scroll lg:overflow-y-hidden" open={open} handler={handleOpen}>
+        <div className="lg:hidden block sticky top-0">
+          <div className="w-full flex justify-end items-start mb-4 ">
+            <button onClick={handleOpen} className="px-2 py-2 bg-black font-bold bg-opacity-90 opacity-65 rounded-[3rem] border border-gray-600"> <IoMdClose /></button>
           </div>
         </div>
         <div className="flex justify-center ">
@@ -56,7 +56,7 @@ export function DirectorModal({ open, handleOpen, data }) {
         </div>
         <div className="lg:hidden block">
           <div className="w-full flex justify-end items-start mt-4">
-            <button onClick={handleOpen} className="px-6 py-2 font-bold opacity-65 rounded-[3rem] border border-gray-400">Back</button>
+            <button onClick={handleOpen} className="px-6 py-2 font-bold opacity-65 rounded-[3rem] border border-gray-800">Back</button>
           </div>
         </div>
       </Dialog>

@@ -5,7 +5,7 @@ import { GoArrowUpRight } from "react-icons/go";
 import { GoArrowRight } from "react-icons/go";
 import styled from 'styled-components';
 
-function AnimationButton({text,width='',hieght='auto'}) {
+function  AnimationButton({text,width='',hieght='auto'}) {
     const [hovered, setHovered] = useState(false);
 
   return (

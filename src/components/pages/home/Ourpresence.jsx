@@ -103,7 +103,7 @@ function Ourpresence() {
     return (
         <Section className='-mt-32 lg:mt-0 '>
             <motion.div className='w-full' {...animationConfig}>
-                <div className='w-full px-20 lg:mb-64'>
+                <div className='w-full px-20'>
                     <div className='flex justify-center items-center'>
                         <img src={RoundIcon} className='w-20 lg:w-32' alt="" />
                         <p className='text-center py-10 text-4xl lg:text-6xl ps-5 lg:ps-10'>Our Presence</p>
@@ -259,7 +259,7 @@ const MovileView = styled.div`
 const TabView = styled.div`
 `
 const H1 = styled.h3`
-font-family: "Satisfy", cursive;
-  font-style: normal;
+/* font-family: "Satisfy", cursive; */
+  /* font-style: normal; */
 `;
 

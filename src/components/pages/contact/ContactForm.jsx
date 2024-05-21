@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
@@ -6,9 +6,15 @@ import { contactForm } from '../../../Validation/index'
 import { useFormik } from 'formik';
 import { Link } from 'react-router-dom';
 import AnimationButton from '../../common/Button';
+import { PostEnquiryApi } from '../../../services/services';
+import Swal from 'sweetalert2';
+import { Spinner } from '@material-tailwind/react';
 
-function ContactForm({animationConfig}) {
+function ContactForm({ animationConfig }) {
+  const [loader, setLoader] = useState(false)
   const initialValues = {
+    first_name: "",
+    last_name: "",
     email: "",
     phone: "",
     message: "",
@@ -18,6 +24,7 @@ function ContactForm({animationConfig}) {
     values,
     errors,
     touched,
+    resetForm,
     handleBlur,
     handleSubmit,
     handleChange,
@@ -30,29 +37,69 @@ function ContactForm({animationConfig}) {
   });
   const handleSubmitForm = async (values, setSubmitting) => {
     try {
-      alert(values.termsAndConditions, 'daxo')
+      setLoader(true)
+      const res = await PostEnquiryApi(values)
+      const { StatusCode } = res.data
 
+      if (StatusCode === 6001) {
+        Swal.fire({
+          title: "We received your enquiry",
+          text: "We will contact you soon. Thank you for your enquiry.",
+          icon: "success",
+          background: '#2B2B2B',
+          color: 'white',
+          confirmButtonColor: '#3085d6',
+          customClass: {
+            popup: 'custom-swal-popup'
+          },
+          showConfirmButton: false,
+          timer: 3000
+        });
+        resetForm()
+      } else {
+        Swal.fire({
+          position: "top-end",
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!.",
+          showConfirmButton: false,
+          background: '#2B2B2B',
+          color: 'white',
+          timer: 1500
+        });
+      }
     } catch (error) {
-
+      console.log(error);
     } finally {
+      setLoader(false)
       setSubmitting(false);
     }
   };
 
   return (
-    <Section className='container mx-auto' {...animationConfig}>
+    <Section className='mx-auto' {...animationConfig}>
       <form onSubmit={handleSubmit} className='bg-red bg-[#2B2B2B] bg-opacity-50 p-5 sm:p-8 md:p-10 lg:p-14 xl:p-20 rounded-[1.4rem]'>
         <Columns className='grid md:grid-cols-2 grid-cols-1 gap-5'>
           <div className='w-full'>
             <p className='font-bold mb-4'>First Name</p>
-            <input type="text" placeholder='Enter First Name' className='bg-black border border-[#2B2B2B] ps-3 py-3 w-full rounded-[.6rem] focus:outline-gray-500 focus:outline' name='first_name' />
+            <input type="text" placeholder='Enter First Name' className='bg-black border border-[#2B2B2B] ps-3 py-3 w-full rounded-[.6rem] focus:outline-gray-500 focus:outline'
+              name='first_name'
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.first_name}
+            />
           </div>
           <div className='w-full'>
             <p className='font-bold mb-4'>Last Name</p>
-            <input type="text" placeholder='Enter Last Name' className='bg-black border border-[#2B2B2B] ps-3 py-3 w-full rounded-[.6rem] focus:outline-gray-500 focus:outline' name='last_name' />
+            <input type="text" placeholder='Enter Last Name' className='bg-black border border-[#2B2B2B] ps-3 py-3 w-full rounded-[.6rem] focus:outline-gray-500 focus:outline'
+              name='last_name'
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.last_name}
+            />
           </div>
           <div className='w-full'>
-            <p className='font-bold mb-4'>Last Name</p>
+            <p className='font-bold mb-4'>Email</p>
             <input type="email" placeholder='Enter Your Email' className='bg-black border border-[#2B2B2B] ps-3 py-3 w-full rounded-[.6rem] focus:outline-gray-500 focus:outline' name='email'
               onChange={handleChange}
               onBlur={handleBlur}
@@ -95,17 +142,18 @@ function ContactForm({animationConfig}) {
             />
             <div c>
               <p>I Agree with <Link className='underline'>Terms of User</Link> and <Link className='underline'>Privacy Policy</Link></p>
-
               {touched.termsAndConditions && errors.termsAndConditions && (
                 <div className="text-red-500 text-sm ">{errors.termsAndConditions}</div>
               )}
             </div>
-
           </div>
-          <div className='flex justify-center w-full lg:justify-end items-center'>
-            <AnimationButton hieght='' text={"Send Message"} />
-           
-          </div>
+          {loader ? (
+            <div className="justify-between bg-[#343894] items-center rounded-full flex p-3 lg:p-4">
+              <Spinner />
+            </div>) : (
+            <div className='flex justify-center w-full lg:justify-end items-center'>
+              <AnimationButton hieght='' text={"Send Message"} />
+            </div>)}
         </div>
       </form>
     </Section>
@@ -116,6 +164,7 @@ export default ContactForm
 
 const Section = styled(motion.section)`
 margin-bottom: 5rem;
+width: 70%;
 @media(max-width:1400px){
   width:90%;
 }

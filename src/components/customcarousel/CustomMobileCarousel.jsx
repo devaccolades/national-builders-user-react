@@ -74,11 +74,11 @@ const CustomMobileCarousel = ({ data }) => {
 
   return (
     <Section className="lg:hidden block">
-      <Main className={`grid ${data[activeImageIndex].name? "grid-rows-[1fr,3rem,8rem,2rem]" : "grid-rows-[1fr8rem,2rem]"} bg-gray-900 bg-opacity-90 rounded-[1.1rem] p-5 gap-5`}>
+      <Main className={`grid ${data[activeImageIndex].name? "grid-rows-[1fr,3rem,8rem,2rem]" : "grid-rows-[1fr,8rem,2rem]"} bg-gray-900 bg-opacity-90 rounded-[1.1rem] p-5 gap-5`}>
         <SliderContainer>
           <AnimatePresence initial={false} custom={direction}>
-            <motion.img src={data[activeImageIndex].image}
-              alt={data.name}
+            <motion.img src={data[activeImageIndex].images}
+              alt={data[activeImageIndex]?.image_alt}
               key={imageCount}
               custom={direction}
               variants={sliderVariants}
@@ -102,25 +102,27 @@ const CustomMobileCarousel = ({ data }) => {
       </div>
         }
         
-        <Thumbnails ref={thumbnailsRef} className="rounded-[1.1rem]">
+        <Thumbnails ref={thumbnailsRef} className="rounded-[1.1rem] ">
           {data.map((image, index) => (
             <motion.img
               key={index}
-              src={image.image}
-              alt=""
+              src={image?.images}
+              alt={image?.image_alt}
               // onClick={() => skipToImage(index)}
               className={`rounded-[.6rem] cursor-pointer`}
               initial={{ width: "6rem", maxWidth: "6rem" }}
               animate={{
                 width: image.id === data[activeImageIndex].id ? "7rem" : "6rem",
                 maxWidth: image.id === data[activeImageIndex].id ? "7rem" : "6rem",
+                height: image.id === data[activeImageIndex].id ? "5.9rem" : "5rem",
+                maxHeight: image.id === data[activeImageIndex].id ? "5.9rem" : "5rem",
                 transition: { duration: 0.3 }
               }}
             />
           ))}
         </Thumbnails>
         <ArrowButtons className='flex justify-center items-center'>
-          <div className='bg-black flex flex-row p-1 rounded-[1.1rem]'>
+          <div className='bg-black flex flex-row p-1 gap-5 rounded-[1.1rem]'>
             <button className='bg-gray-900  p-3 rounded-full' onClick={() => swipeToImage(-1)}>
               <FaArrowLeft />
             </button>
@@ -147,6 +149,7 @@ const Main = styled.div``;
 
 const SliderContainer = styled.div`
     overflow-x: hidden !important;
+    overflow-y: hidden !important;
   position: relative;  
   height: 32rem;
   @media (max-width: 425px) {
@@ -158,7 +161,7 @@ const SliderContainer = styled.div`
 
   .image {
     position: absolute;
-    height: auto;
+    height: 100%;
     width: auto;
 
     @media only screen and (max-width: 375px) {
