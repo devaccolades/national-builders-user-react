@@ -24,9 +24,9 @@ function BlogDetailsCom({ animationConfig, data, suggestions }) {
       <Details className='flex flex-col lg:flex-row items-start gap-6'>
         <div className='w-full flex flex-col-reverse lg:flex-row gap-6'>
           <Icons className='w-full lg:w-1/12 flex justify-center lg:justify-start flex-row lg:flex-col gap-5'>
-            <div className='bg-gray-900 bg-opacity-50 flex justify-center items-center rounded-[1.1rem]'>
+            <a href='https://www.facebook.com/nationalbuilderskerala' target='_blank' className='bg-gray-900 bg-opacity-50 flex justify-center items-center rounded-[1.1rem]'>
               <img src={facebookIcon} className='m-5' alt="" />
-            </div>
+            </a>
             <div className='bg-gray-900 bg-opacity-50 flex justify-center items-center rounded-[1.1rem]'>
               <img src={twitterIcon} className='m-5' alt="" />
             </div>

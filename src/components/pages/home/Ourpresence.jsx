@@ -111,52 +111,51 @@ function Ourpresence() {
                 </div>
             </motion.div>
 
-            <div className='hidden xl:block'>
-                <div className='grid grid-rows-4 lg:px-20 w-full absolute gap-[11rem] mt-[26rem] lg:mt-24'>
+            <LapView className='hidden xl:block LapView'>
+                <div className='paragraphsub1 grid grid-rows-4 lg:px-20 w-full absolute gap-[11rem] mt-[26rem] lg:mt-24'>
                     <div className='flex'>
-                        <div className='w-full'></div>
-                        <motion.div className='w-full ps-48 lg:ps-0 lg:w-5/6' {...animationConfig}>
+                        <div className='w-full space-div'></div>
+                        <motion.div className='w-full ps-48 lg:ps-0 lg:w-5/6 ' {...animationConfig}>
                             <H1 className='text-7xl opacity-65 font-bold italic heding-font'>Mumbai</H1>
                             <Text text={"In Mumbai, National Builders offers premium building solutions. Rent or buy, we cater to your needs and budget. With over 50 completed projects, trust us to deliver excellence. Make your dreams a reality with National Builders."} />
-
-                            <div className='flex justify-end items-center mt-10'>
+                            <div className='flex justify-end items-center mt-10 button'>
                                 <AnimationButton text={"See Projects"} />
                             </div>
                         </motion.div>
                     </div>
                     <div className='flex'>
-                        <motion.div className='w-full ps-14 lg:ps-0 pe-28 -mt-36 lg:mt-0' {...animationConfig}>
+                        <motion.div className='thane-content w-full ps-14 lg:ps-0 pe-28 -mt-36 lg:mt-0' {...animationConfig}>
                             <H1 className='text-7xl opacity-65 font-bold italic heding-font'>Thane</H1>
                             <Text text={"National Builders, serving the dynamic locale of Thane, presents tailored building solutions. Whether you're in search of rentals or purchases, we accommodate your needs and budget. With our expertise, we've successfully executed 20 landmark projects in Thane. Entrust National Builders to transform your aspirations into architectural marvels."} />
-                            <div className='flex justify-end w-full items-center mt-10'>
+                            <div className='flex justify-end w-full items-center mt-10 button'>
                                 <AnimationButton text={"See Projects"} />
                             </div>
                         </motion.div>
-                        <div className='w-full'></div>
+                        <div className='w-full space-div'></div>
 
                     </div>
                     <div className='flex'>
-                        <div className='w-full'></div>
-                        <motion.div className='w-full ps-14 lg:ps-0 pe-28 lg:pe-0 lg:w-5/6 mt-10' {...animationConfig}>
+                        <div className='w-full space-div'></div>
+                        <motion.div className='kochi-content w-full ps-14 lg:ps-0 pe-28 lg:pe-0 lg:w-5/6 mt-10' {...animationConfig}>
                             <H1 className=' text-7xl opacity-65 font-bold italic heding-font'>Kochi</H1>
                             <Text text={"Discover National Builders, your premier partner in Kochi's thriving landscape. Offering bespoke building solutions, we cater to your every requirement and budget. With an impressive track record, we've completed 40 prestigious projects in Kochi. Choose National Builders and witness your dreams materialize into magnificent realities."} />
-                            <div className='flex justify-end w-full items-center mt-10'>
+                            <div className='flex justify-end w-full items-center mt-10 button'>
                                 <AnimationButton text={"See Projects"} />
                             </div>
                         </motion.div>
                     </div>
-                    <div className='flex'>
-                        <motion.div className='w-5/6 -mt-10' {...animationConfig}>
+                    <div className='flex thiruvalla-content'>
+                        <motion.div className='w-5/6 -mt-10 ' {...animationConfig}>
                             <H1 className='text-7xl opacity-65 font-bold italic heding-font'>Thiruvalla</H1>
                             <Text text={"Introducing National Builders, your trusted ally in the charming locale of Thiruvalla. Specializing in tailor-made building solutions, we cater to diverse needs and budgets. With a rich history of accomplishments, we've successfully delivered 15 esteemed projects in Thiruvalla. Choose National Builders and watch your visions come to life."} />
-                            <div className='flex justify-end w-full items-center mt-10'>
+                            <div className='flex justify-end w-full items-center mt-10 button'>
                                 <AnimationButton text={"See Projects"} />
                             </div>
                         </motion.div>
-                        <div className='w-full'></div>
+                        <div className='w-full space-div'></div>
                     </div>
                 </div>
-                <div className='mt-10 lg:mt-36  px-10'>
+                <div className='mt-10 lg:mt-36  px-10 svg-image'>
                     <div className='flex justify-center'>
                         <svg width="1725" height="2006" viewBox="0 0 1725 2006" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -168,7 +167,7 @@ function Ourpresence() {
                         </svg>
                     </div>
                 </div>
-            </div>
+            </LapView>
             {/* Mobile View */}
             <MovileView className="sm:hidden block text-white">
                 <div className='w-full h-full px-5 mt-[6rem] absolute '>
@@ -252,12 +251,10 @@ function Ourpresence() {
 
 export default Ourpresence
 
-const Section = styled.div`
-`
-const MovileView = styled.div`
-`
-const TabView = styled.div`
-`
+const Section = styled.div``
+const LapView = styled.div``;
+const MovileView = styled.div``
+const TabView = styled.div``
 const H1 = styled.h3`
 /* font-family: "Satisfy", cursive; */
   /* font-style: normal; */

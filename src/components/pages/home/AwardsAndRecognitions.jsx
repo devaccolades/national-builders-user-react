@@ -17,7 +17,7 @@ function AwardsAndRecognitions({animationConfig,data}) {
         </div>
         <div className='w-full pt-10 lg:pt-28 flex custom-scrollbar justify-center items-center overflow-y-auto '>
          {data.map((img,index)=>(
-          <img className='mx-2 lg:mx-12 w-2/12 md:w-auto  flex justify-center items-center' src={img.images} alt={img?.image_alt} />
+          <img className='mx-2 lg:mx-12 w-2/12 md:w-auto flex justify-center items-center' src={img.images} alt={img?.image_alt} />
          ))}
         </div>
       </Section>

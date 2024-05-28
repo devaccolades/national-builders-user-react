@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components';
 import { Typography } from '@material-tailwind/react';
 import Text from '../../common/Text';
@@ -14,10 +14,13 @@ import { useNavigate } from 'react-router-dom';
 
 function NewsandeventsdetailsComponents({ animationConfig, data, suggestions }) {
   const navigate = useNavigate()
+
   return (
     <Section className='mx-auto flex flex-col gap-5 lg:gap-8' {...animationConfig}>
       <Backgroundimage className='bg-gray-900 bg-opacity-50 lg:bg-transparent p-6 lg:p-0 rounded-[1.1rem] rounded-b-none lg:rounded-none -mb-5 lg:mb-0'>
-        <div className='image rounded-[1.1rem]' style={{ backgroundImage: `url(${data?.image})` }}
+        <div className='image rounded-[1.1rem]' 
+        dangerouslySetInnerHTML={{ __html: data?.youtube_link }}
+        style={{ backgroundImage: `url(${data?.image})` }}
         >
         </div>
         {/* <img src={image1} className='image h-full w-full rounded-[1.1rem]' alt="" /> */}
@@ -60,7 +63,7 @@ function NewsandeventsdetailsComponents({ animationConfig, data, suggestions }) 
           <div className='flex flex-col gap-5 lg:gap-0 my-2 lg:my-5'>
             {suggestions[0] &&
               <>
-                <div className='flex flex-row gap-2 lg:gap-5 items-center cursor-pointer' onClick={()=>navigate(`/news-and-events/${suggestions[0]?.slug}`)}>
+                <div className='flex flex-row gap-2 lg:gap-5 items-center cursor-pointer' onClick={() => navigate(`/news-and-events/${suggestions[0]?.slug}`)}>
                   <img src={suggestions[0]?.image} alt={suggestions[0]?.image_alt} className='w-2/12' />
                   <Typography variant="p" className="text-white text-[.9rem] text-opacity-90">
                     {suggestions[0]?.title}
@@ -70,7 +73,7 @@ function NewsandeventsdetailsComponents({ animationConfig, data, suggestions }) 
               </>
             }
             {suggestions[1] && <>
-              <div className='flex flex-row gap-2 lg:gap-5 items-center cursor-pointer' onClick={()=>navigate(`/news-and-events/${suggestions[1]?.slug}`)}>
+              <div className='flex flex-row gap-2 lg:gap-5 items-center cursor-pointer' onClick={() => navigate(`/news-and-events/${suggestions[1]?.slug}`)}>
                 <img src={suggestions[1]?.image} alt={suggestions[1]?.image_alt} className='w-2/12' />
                 <Typography variant="p" className="text-white text-[.9rem] text-opacity-90">
                   {suggestions[1]?.title}
@@ -78,7 +81,7 @@ function NewsandeventsdetailsComponents({ animationConfig, data, suggestions }) 
               </div>
               <hr className='border border-gray-800 lg:my-4' />
             </>}
-            {suggestions[2] && <div className='flex flex-row gap-2 lg:gap-5 items-center cursor-pointer' onClick={()=>navigate(`/news-and-events/${suggestions[2]?.slug}`)}>
+            {suggestions[2] && <div className='flex flex-row gap-2 lg:gap-5 items-center cursor-pointer' onClick={() => navigate(`/news-and-events/${suggestions[2]?.slug}`)}>
               <img src={suggestions[2]?.image} alt={suggestions[2]?.image_alt} className='w-2/12' />
               <Typography variant="p" className="text-white text-[.9rem] text-opacity-90">
                 {suggestions[2]?.title}
@@ -103,6 +106,10 @@ width: 70%;
 `;
 const Backgroundimage = styled.div`
 height: 45rem;
+iframe{
+  width: 100%;
+  height: 100%;
+}
   .image{
     background: no-repeat;
 background-position: center;

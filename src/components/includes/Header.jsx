@@ -30,7 +30,7 @@ function Header() {
       <Typography
         as="li"
         variant="small"
-        className={`p-1 ${currentPath === '/' ? 'font-bold' : 'font-normal'} text-[1.1vw] text-white hidden lg:block`}
+        className={`p-1 ${currentPath === '/' ? 'font-bold' : 'font-normal'} text-xl text-white hidden lg:block`}
       >
         <Link to={'/'} className="flex items-center">
           Home
@@ -40,7 +40,7 @@ function Header() {
       <Typography
         as="li"
         variant="small"
-        className={`p-1 ${currentPath === '/projects' ? 'font-bold' : 'font-normal'} text-[1.1vw] text-white hidden lg:block `}
+        className={`p-1 ${currentPath === '/projects' ? 'font-bold' : 'font-normal'} text-xl text-white hidden lg:block `}
       >
         <Link to={'/projects'} className="flex items-center">
           Project
@@ -50,7 +50,7 @@ function Header() {
       <Typography
         as="li"
         variant="small"
-        className={`p-1 ${currentPath === '/rentals' ? 'font-bold' : 'font-normal'} text-[1.1vw] text-white hidden lg:block `}
+        className={`p-1 ${currentPath === '/rentals' ? 'font-bold' : 'font-normal'} text-xl text-white hidden lg:block `}
       >
         <Link to={'/rentals'} className="flex items-center">
           Rentals
@@ -59,7 +59,7 @@ function Header() {
       <Typography
         as="li"
         variant="small"
-        className={`p-1 ${currentPath === '/about' ? 'font-bold' : 'font-normal'} text-[1.1vw] text-white hidden lg:block`}
+        className={`p-1 ${currentPath === '/about' ? 'font-bold' : 'font-normal'} text-xl text-white hidden lg:block`}
       >
         <Link to={'/about'} className="flex items-center">
           About
@@ -120,14 +120,14 @@ function Header() {
 
   return (
     <div className={`top-0 sticky z-10 w-full h-full overflow-x-hidden bg-transparent`}>
-      <Navbar className={` border-0 bg-transparent z-10 h-max max-w-full rounded-none px-4 py-5  lg:px-8 lg:py-6`}>
-        <motion.div className="flex ps-16 items-center justify-between text-blue-gray-900"
+      <Navbar className={`border-0 bg-transparent z-10 h-max max-w-full rounded-none py-5  lg:py-6`}>
+        <motion.div className="flex w-full justify-between items-center  text-blue-gray-900 lg:px-20 xl:px-28"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1 }}
         >
-          <div className='flex flex-row justify-center items-center -ms-10 lg:ms-0'>
+          <div className='flex flex-row justify-center items-center lg:-ms-12'>
             <motion.img
               src={logo}
               className='h-[3rem] lg:h-[6vh]'
@@ -149,7 +149,7 @@ function Header() {
             />
           </div>
           <div className="flex items-center gap-4">
-            <div className="mr-4 xl:mr-32">{navList}</div>
+            <div className="">{navList}</div>
           </div>
         </motion.div>
       </Navbar>

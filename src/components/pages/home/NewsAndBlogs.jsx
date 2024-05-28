@@ -16,7 +16,6 @@ function NewsAndBlogs({ data, animationConfig }) {
     const max = `-${data.length * 420}`
     const scrollLeft = () => {
         if (value !== 0) {
-            console.log(value);
             const updatedValue = value + 300;
             setValues(updatedValue);
         }
@@ -44,7 +43,7 @@ function NewsAndBlogs({ data, animationConfig }) {
         <Section className='h-screen bg-gradient-to-r from-gray-900 lg:-mb-20 to-gray-600'>
             <motion.div className='flex h-2/6 justify-around items-center'{...animationConfig}>
                 <div className='flex justify-center items-center gap-5 lg:gap-16'>
-                    <img src={roundIcons} className='w-3/12 lg:w-auto' alt="" /><p className=' text-3xl lg:text-5xl  font-thin'>New Blogs</p>
+                    <img src={roundIcons} className='w-3/12 md:w-20 lg:w-auto' alt="" /><p className=' text-3xl md:text-4xl lg:text-5xl  font-thin'>New Blogs</p>
                 </div>
                 <div className='hidden lg:block' onClick={() => navigate('/blogs')}>
                     <AnimationButton text={"View all"} />
@@ -65,7 +64,7 @@ function NewsAndBlogs({ data, animationConfig }) {
                                     <p className='font-bold text-white lg:text-2xl'>{data?.title}</p>
                                     <p className='text-md lg:text-xl text-white my-2 lg:my-5'>{data?.date_added}</p>
                                     <p className='text-white opacity-75 lg:text-lg' dangerouslySetInnerHTML={{ __html: extractFirstThreeLines(data?.body) }}></p>
-                                    <button className='flex justify-center items-center mt-2 lg:mt-12 py-4 lg:py-0 lg:text-xl text-red-500' onClick={() => navigate('/blog/details')}>Read more <IoIosArrowForward />
+                                    <button className='flex justify-center items-center mt-2 lg:mt-12 py-4 lg:py-0 lg:text-xl text-red-500' onClick={() => navigate(`/blog/${data.slug}`)}>Read more <IoIosArrowForward />
                                         <IoIosArrowForward className='-ms-3' />
                                     </button>
                                 </div>

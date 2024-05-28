@@ -5,3 +5,287 @@
     }
   }
    */
+
+.LapView{
+  @media (max-width: 1160px) {
+    margin-top: -370px;
+    .paragraphsub1 {
+      display: flex;
+      flex-direction: column;
+      padding-left: 30px;
+      padding-right: 30px;
+      /* gap: 10px !important; */
+      margin-top: 400px !important;
+    }
+    .space-div{
+      width: 70%;
+    }
+   .thane-content{
+    margin-top: -130px;
+   }
+   .kochi-content{
+    margin-top: -140px;
+   }.thiruvalla-content{
+    margin-top: -60px;
+   }
+   .button{
+    display: none;
+   }
+   .svg-image{
+    margin-bottom: -350px;
+   }
+  }
+  @media (min-width:1161px) and (max-width: 1200px) {
+    margin-top: -300px;
+    .paragraphsub1 {
+      display: flex;
+      flex-direction: column;
+      padding-left: 30px;
+      padding-right: 30px;
+      /* gap: 10px !important; */
+      margin-top: 400px !important;
+    }
+    .space-div{
+      width: 70%;
+    }
+   .thane-content{
+    margin-top: -130px;
+   }
+   .kochi-content{
+    margin-top: -140px;
+   }.thiruvalla-content{
+    margin-top: 0px;
+   }
+   .button{
+    display: none;
+   }
+   .svg-image{
+    margin-bottom: -350px;
+   }
+  }
+  @media(min-width:1201px) and (max-width: 1250px) {
+    margin-top: -300px;
+    .paragraphsub1 {
+      display: flex;
+      flex-direction: column;
+      padding-left: 30px;
+      padding-right: 30px;
+
+      margin-top: 360px !important;
+    }
+    .space-div{
+      width: 70%;
+    }
+   .thane-content{
+    margin-top: -150px;
+   }
+   .kochi-content{
+    margin-top: -120px;
+   }.thiruvalla-content{
+    margin-top: -120px;
+   }
+   .button{
+    margin-top: 2px;
+   }
+   .svg-image{
+    margin-bottom: -290px;
+   }
+  }
+  @media(min-width:1250px) and (max-width: 1300px) {
+    margin-top: -300px;
+    .paragraphsub1 {
+      display: flex;
+      flex-direction: column;
+      padding-left: 30px;
+      padding-right: 30px;
+
+      margin-top: 330px !important;
+    }
+    .space-div{
+      width: 70%;
+    }
+   .thane-content{
+    margin-top: -150px;
+   }
+   .kochi-content{
+    margin-top: -120px;
+   }.thiruvalla-content{
+    margin-top: -120px;
+   }
+   .button{
+    margin-top: 2px;
+   }
+   .svg-image{
+    margin-bottom: -290px;
+   }
+  }
+  @media(min-width:1300px) and (max-width: 1350px) {
+    margin-top: -200px;
+    .paragraphsub1 {
+      display: flex;
+      flex-direction: column;
+      padding-left: 30px;
+      padding-right: 30px;
+
+      margin-top: 330px !important;
+    }
+    .space-div{
+      width: 70%;
+    }
+   .thane-content{
+    margin-top: -150px;
+   }
+   .kochi-content{
+    margin-top: -70px;
+   }.thiruvalla-content{
+    margin-top: -120px;
+   }
+   .button{
+    margin-top: 10px;
+   }
+   .svg-image{
+    margin-bottom: -240px;
+   }
+  }
+  @media(min-width:1350px) and (max-width: 1400px) {
+    margin-top: -200px;
+    .paragraphsub1 {
+      display: flex;
+      flex-direction: column;
+      padding-left: 30px;
+      padding-right: 30px;
+
+      margin-top: 280px !important;
+    }
+    .space-div{
+      width: 80%;
+    }
+   .thane-content{
+    margin-top: -110px;
+   }
+   .kochi-content{
+    margin-top: -60px;
+   }.thiruvalla-content{
+    margin-top: -120px;
+   }
+   .button{
+    margin-top: 15px;
+   }
+   .svg-image{
+    margin-bottom: -250px;
+   }
+  }
+  @media(min-width:1400px) and (max-width: 1450px) {
+    margin-top: -200px;
+    .paragraphsub1 {
+      display: flex;
+      flex-direction: column;
+      padding-left: 30px;
+      padding-right: 30px;
+
+      margin-top: 280px !important;
+    }
+    .space-div{
+      width: 80%;
+    }
+   .thane-content{
+    margin-top: -110px;
+   }
+   .kochi-content{
+    margin-top: -60px;
+   }.thiruvalla-content{
+    margin-top: -90px;
+   }
+   .button{
+    margin-top: 15px;
+   }
+   .svg-image{
+    margin-bottom: -250px;
+   }
+  }
+  @media(min-width:1450px) and (max-width: 1500px) {
+    margin-top: -40px;
+    .paragraphsub1 {
+      display: flex;
+      flex-direction: column;
+      padding-left: 30px;
+      padding-right: 30px;
+
+      margin-top: 220px !important;
+    }
+    .space-div{
+      width: 80%;
+    }
+   .thane-content{
+    margin-top: -90px;
+   }
+   .kochi-content{
+    margin-top: -20px;
+   }.thiruvalla-content{
+    margin-top: -50px;
+   }
+   .button{
+    margin-top: 15px;
+   }
+   .svg-image{
+    margin-bottom: -210px;
+   }
+  }
+  @media(min-width:1500px) and (max-width: 1600px) {
+    margin-top: -40px;
+    .paragraphsub1 {
+      display: flex;
+      flex-direction: column;
+      padding-left: 30px;
+      padding-right: 30px;
+
+      margin-top: 220px !important;
+    }
+    .space-div{
+      width: 80%;
+    }
+   .thane-content{
+    margin-top: -90px;
+   }
+   .kochi-content{
+    margin-top: -20px;
+   }.thiruvalla-content{
+    margin-top: -50px;
+   }
+   .button{
+    margin-top: 15px;
+   }
+   .svg-image{
+    margin-bottom: -210px;
+   }
+  }
+  @media(min-width:1600px) and (max-width: 1700px) {
+    margin-top: -40px;
+    .paragraphsub1 {
+      display: flex;
+      flex-direction: column;
+      padding-left: 30px;
+      padding-right: 30px;
+
+      margin-top: 170px !important;
+    }
+    .space-div{
+      width: 80%;
+    }
+   .thane-content{
+    margin-top: -20px;
+   }
+   .kochi-content{
+    margin-top: 60px;
+   }.thiruvalla-content{
+    margin-top: -50px;
+   }
+   .button{
+    margin-top: 15px;
+   }
+   .svg-image{
+    margin-bottom: -40px;
+   }
+  }
+  }
+

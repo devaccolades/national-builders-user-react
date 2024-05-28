@@ -9,27 +9,18 @@ function TextAndCounts({ animationConfig, data }) {
     return (
         <Section className='mx-auto grid grid-rows-[1fr,16rem]'>
             <div className='flex flex-col lg:flex-row lg:items-start pt-32 py-10  lg:mx-5 xl:mx-0' >
-                <motion.div className='w-full lg:w-8/12 text-white text-2xl md:text-4xl lg:text-6xl mb-5 lg:mb-0 -mt-16 lg:mt-0' {...animationConfig}>
-                    <div className='invisible lg:visible h-0 lg:h-full'>
-                        {/* For Laptop View */}
-                        <p className='my-3'>Best Builders</p>
-                        <p className='my-3'>In</p>
-                        <p className='my-3 text-red-500'>Navi Mumbai</p>
-                        <p className='my-3'>And</p>
-                        <p className='my-3 text-red-500'>Kerala</p>
-                    </div>
-                    {/* For mobile View */}
-                    <div className='visible lg:invisible lg:h-0 font-bold'>
-                        <p className='my-2 text-center'>Best Builders In</p>
-                        <p className='m-3 text-center'><span className='text-red-500'>Navi Mumbai</span> And <span className='text-red-500'>Kerala</span></p>
+                <motion.div className='w-full maindiv text-white text-2xl md:text-4xl lg:text-5xl xl:text-6xl mb-5 lg:mb-0 -mt-16 lg:mt-0' {...animationConfig}>
+                    <div className='h-full'>
+                        <p className='flex lg:flex-col justify-center flex-wrap gap-3'>Best Builders <span className=''>In</span><span className='text-red-500'>Navi Mumbai</span> And <span className='text-red-500 '>Kerala</span></p>
                     </div>
                 </motion.div>
                 <motion.div class='w-full flex flex-col gap-3' {...animationConfig}>
                     <Text text={"A visionary real estate development firm, National Builders specializes in pioneering architecturally distinct residential and mixed-use projects in India's prime metropolitan markets of Navi Mumbai and Kerala."} />
                     <Text text={"The firm has a proven track record of successful real estate development, consistently fulfilling its commitments and exceeding customer expectations. Its stamp of quality and delivery of best-in-class features are visible in each of the 135+ projects of National Builders."} />
-
-                    <div className='lg:w-3/1 mt-4 h-24 items-center flex justify-center lg:justify-start'>
-                        <AnimationButton text={"Read More"} />
+                    <div className='hidden lg:block '>
+                        <div className='lg:w-3/1 mt-4 h-24 items-center flex justify-center lg:justify-start'>
+                            <AnimationButton text={"Read More"} />
+                        </div>
                     </div>
                 </motion.div>
             </div>
@@ -43,11 +34,11 @@ function TextAndCounts({ animationConfig, data }) {
                     <Text text={"Project's Completed"} />
                 </div>
                 <div className='my-auto mx-auto text-center'>
-                <CounterAnimation value={parseInt(data?.readytooccupy) || 0} />
+                    <CounterAnimation value={parseInt(data?.readytooccupy) || 0} />
                     <Text text={"Ready to Move In"} />
                 </div>
                 <div className='my-auto mx-auto text-center'>
-                <CounterAnimation value={parseInt(data?.ongoing) || 0} />
+                    <CounterAnimation value={parseInt(data?.ongoing) || 0} />
                     <Text text={"Ongoing"} />
                 </div>
             </motion.div>
@@ -59,7 +50,24 @@ export default TextAndCounts
 
 const Section = styled.div`
 width: 70%;
+.maindiv{
+    width: 850px;
+}
 @media(max-width:1400px){
+  width:96%;
+  .maindiv{
+    width: 600px;
+  }
+}
+@media(max-width:964px){
+  width:96%;
+  .maindiv{
+    width: 100%;
+  }
+}
+@media(max-width:425px){
   width:90%;
 }
+
+
 `

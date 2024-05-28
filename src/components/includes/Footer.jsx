@@ -5,10 +5,6 @@ import { Card } from '@material-tailwind/react'
 import { IoLocationSharp } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
-import { FaFacebook } from "react-icons/fa6";
-import { GrInstagram } from "react-icons/gr";
-import { FaLinkedin } from "react-icons/fa";
-import { IoLogoYoutube } from "react-icons/io5";
 import { MdCopyright } from "react-icons/md";
 
 import { Link } from 'react-router-dom'
@@ -27,99 +23,101 @@ import youtube from '../../assets/icons/youtuve-icon.svg'
 function Footer() {
   return (
     <>
-      <section className='hidden lg:block'>
+      <section className='hidden lg:block mx-auto'>
         <div className=' bg-black grid grid-rows-[10rem,1px,1fr] overflow-hidden'>
           <div className='flex justify-center items-center'>
             <img src={logo} className='w-56 ' alt="" />
           </div>
-          <hr className='xl:mx-auto mx-20 xl:w-[70%] border border-gray-900' />
-          <div className='bg-no-repeat bg-cover' style={{ backgroundImage: `url(${FooterBgImg})` }}>
-            <Container className='mx-auto ps-2 w-[70%] grid grid-rows-[1fr,6rem,12rem] '>
-              <div className='grid grid-cols-[1fr,5rem,1fr] gap-8'>
-                <Card className='bg-gray-900 grid gap-4 bg-opacity-50 border p-5 text-white opacity-90 border-gray-800 my-10  rounded-[2rem]'>
+          <hr className='mx-auto lg:w-[90%] xl:w-[70%] border border-gray-900' />
+          <MainDiv className='bg-no-repeat  bg-cover flex flex-col items-center' style={{ backgroundImage: `url(${FooterBgImg})` }}>
+            <AddressMedia className='w-[96%] xl:w-[70%] flex flex-row gap-5 xl:gap-7'>
+              <Card className='bg-gray-900 py-5 bg-opacity-50 border  text-white opacity-90 border-gray-800 my-10  rounded-[2rem] w-full'>
+                <div className='px-5 grid gap-4'>
                   <div className='w-full  pt-7 flex items-end'>
                     <div className='w-1/12'></div>
-                    <p className='ps-2 text-xl '>NAVI MUMBAI </p>
+                    <p className='ps-2 xl:text-xl '>NAVI MUMBAI </p>
                   </div>
                   <div className='grid grid-cols-[3rem,1fr]'>
                     <IoLocationSharp className='text-red-500 h-7 w-7 mt-2' />
-                    <p className='text-[1.2rem]'>National Builders Office, Sea Queen Heritage Buiding, 1st Floor, Plot No, Sector 18, Palm Beach Service Road, Sanpada, Navi Mumbai-400705</p>
+                    <p className='text-md xl:text-[1.2rem]'>National Builders Office, Sea Queen Heritage Buiding, 1st Floor, Plot No, Sector 18, Palm Beach Service Road, Sanpada, Navi Mumbai-400705</p>
                   </div>
                   <div className='grid grid-cols-[3rem,1fr] w-full'>
                     <MdEmail className='text-red-500 h-6 w-6' />
-                    <p className='whitespace-normal text-[1.2rem] w-[80%] break-words'><a href="mailto:marketingmumbai@nationalbuilders.in" >marketingmumbai@nationalbuilders.in</a></p>
+                    <p className='whitespace-normal text-md xl:text-[1.2rem] break-words'><a href="mailto:marketingmumbai@nationalbuilders.in" >marketingmumbai@nationalbuilders.in</a></p>
                   </div>
                   <div className='grid grid-cols-[3rem,1fr] w-full'>
                     <FaPhoneAlt className='text-red-500 h-6 w-6' />
-                    <p className='whitespace-normal text-[1.2rem] break-words'>+ 9122 49639871 /72/ 73, 2249737814 +91 9223300950 / 9223300960, +91 9004091082</p>
+                    <p className='whitespace-normal text-md xl:text-[1.2rem] break-words'>+ 9122 49639871 /72/ 73, 2249737814 +91 9223300950 / 9223300960, +91 9004091082</p>
                   </div>
-                </Card>
-
-                <div className='bg-gray-900 bg-opacity-50 border border-gray-800 flex flex-col items-center justify-center gap-6 my-10 rounded-[2rem]'>
-                  <img src={facebook} alt="" />
-                  <img src={instagram} alt="" /> 
-                  <img src={linkedin} alt="" />
-                  <img src={youtube} alt="" />
                 </div>
+              </Card>
+              <Card className='bg-gray-900 bg-opacity-50 border py-5 border-gray-800 flex flex-col items-center justify-center gap-6 my-10 rounded-[2rem] w-[180px]'>
+                <img src={facebook} alt="" />
+                <img src={instagram} alt="" />
+                <img src={linkedin} alt="" />
+                <img src={youtube} alt="" />
+              </Card>
 
-                <Card className='bg-gray-900 grid gap-4 bg-opacity-50 border p-5 text-white opacity-90 border-gray-800 my-10  rounded-[2rem]'>
+              <Card className='bg-gray-900 grid py-5 gap-4 bg-opacity-50 border text-white opacity-90 border-gray-800 my-10  rounded-[2rem] w-full'>
+                <div className='px-5 grid gap-4'>
                   <div className='w-full  pt-7 flex items-end -mt-6'>
                     <div className='w-1/12'></div>
                     <p className='text-xl '>Kochi </p>
                   </div>
                   <div className='grid grid-cols-[3rem,1fr]'>
                     <IoLocationSharp className='text-red-500 h-7 w-7 mt-2' />
-                    <p className='text-[1.2rem]'>National Pearl Star, 5Th Floor, High School Jn.Edappally, Kochi, Kerala - 682024</p>
+                    <p className='text-md xl:text-[1.2rem]'>National Pearl Star, 5Th Floor, High School Jn.Edappally, Kochi, Kerala - 682024</p>
                   </div>
                   <div className='grid grid-cols-[3rem,1fr] w-full'>
                     <MdEmail className='text-red-500 h-6 w-6' />
-                    <p className='whitespace-normal w-[80%] text-[1.2rem] break-words'><a href="mailto:marketingkochi@nationalbuilders.in" >marketingkochi@nationalbuilders.in</a></p>
+                    <p className='whitespace-normal  text-md xl:text-[1.2rem] break-words'><a href="mailto:marketingkochi@nationalbuilders.in" >marketingkochi@nationalbuilders.in</a></p>
                   </div>
                   <div className='grid grid-cols-[3rem,1fr] w-full'>
                     <FaPhoneAlt className='text-red-500 h-6 w-6' />
-                    <p className='whitespace-normal text-[1.2rem] break-words'>+91 484 2340781, 2333391, +91 484 2534558</p>
+                    <p className='whitespace-normal text-md xl:text-[1.2rem] break-words'>+91 484 2340781, 2333391, +91 484 2534558</p>
                   </div>
-                </Card>
-              </div>
-              <Card className='rounded-[2rem] flex-row justify-between items-center px-10 py-4 lg:py-0 bg-opacity-50 text-white font-bold text-md xl:text-xl bg-gray-900 border border-gray-800'>
-                <Link to={'/'}>Home</Link>
-                <Link to={'/projects'}>Projects</Link>
-                <Link to={'/rentals'}>Rentals</Link>
-                <Link to={'/about'}>About</Link>
-                <Link to={'/contact'}>Contact</Link>
-                <Link to={'/testimonials'}>Testimonials</Link>
-                <Link to={'/news-and-events'}>News & Events</Link>
-                <Link to={'/blogs'}>Blogs</Link>
-                <Link to={'/key-handover'}>Key handover</Link>
+                </div>
               </Card>
-              <Card className='flex-row justify-between items-center px-20 rounded-[2rem] lg:h-20 mt-10  text-white mb-10 lg:mb-0 xl:text-xl bg-gray-900 bg-opacity-50 border border-gray-800'>
-                <p className='flex justify-center items-center '><MdCopyright className='w-6 h-6' /> National Builders All Rights Reseved
-                </p>
-                <img src={Accoladeslogo} alt="" />
-                <p className='flex justify-center items-center'>Privacy Policy | Terms of Service</p>
-              </Card>
-            </Container>
-          </div>
+            </AddressMedia>
+            <AddressMedia className='rounded-[2rem] mx-auto flex flex-row justify-between w-[96%] xl:w-[70%] items-center  bg-opacity-50 text-white font-bold text-md xl:text-xl bg-gray-900 border border-gray-800 px-10 min-h-[100px]'>
+              <Link to={'/'}>Home</Link>
+              <Link to={'/projects'}>Projects</Link>
+              <Link to={'/rentals'}>Rentals</Link>
+              <Link to={'/about'}>About</Link>
+              <Link to={'/contact'}>Contact</Link>
+              <Link to={'/testimonials'}>Testimonials</Link>
+              <Link to={'/news-and-events'}>News & Events</Link>
+              <Link to={'/blogs'}>Blogs</Link>
+              <Link to={'/key-handover'}>Key handover</Link>
+            </AddressMedia>
+            <AddressMedia className='w-[96%] xl:w-[70%] flex flex-row justify-around items-center rounded-[2rem] lg:h-20 mt-10  text-white mb-10 lg:mb-0 xl:text-xl bg-gray-900 bg-opacity-50 border border-gray-800'>
+              <p className='flex justify-center items-center '><MdCopyright className='w-6 h-6' /> National Builders All Rights Reseved
+              </p>
+              <img src={Accoladeslogo} alt="" />
+              <p className='flex justify-center items-center'>Privacy Policy | Terms of Service</p>
+            </AddressMedia>
+          </MainDiv>
         </div>
       </section>
+      {/* Mobile window */}
       <Section className='lg:hidden block mt-16 mx-auto'>
         <div className='flex justify-center items-center'>
           <img src={logo} className='w-9/12 sm:w-auto' alt="" />
         </div>
-        <div className='grid grid-cols-2 sm:grid-cols-3 text-center gap-3 sm:gap-5 my-8 w-full'>
-          <P>Project</P>
-          <P>Testmonials</P>
-          <P>Rentals</P>
-          <P>New & Events</P>
-          <P>About</P>
-          <P>Blogs</P>
-          <P>Contact</P>
-          <P>key handover</P>
+        <div className='grid grid-cols-2 sm:grid-cols-3 text-center gap-3 sm:gap-5 my-8 w-[80%] mx-auto'>
+          <Link className='links text-start' to={'/projects'}>Projects</Link>
+          <Link className='links text-start' to={'/rentals'}>Rentals</Link>
+          <Link className='links text-start' to={'/about'}>About</Link>
+          <Link className='links text-start' to={'/contact'}>Contact</Link>
+          <Link className='links text-start' to={'/testimonials'}>Testimonials</Link>
+          <Link className='links text-start' to={'/news-and-events'}>News & Events</Link>
+          <Link className='links text-start' to={'/blogs'}>Blogs</Link>
+          <Link className='links text-start' to={'/key-handover'}>Key handover</Link>
         </div>
         <hr className='border border-gray-900' />
         <div className='my-8 grid gap-2 sm:gap-4'>
           <div className='ms-12'>
-            <p className='text-lg opacity-90'>Navi Mumbai</p>
+            <p className='text-lg opacity-60'>Navi Mumbai</p>
           </div>
           <div className='grid grid-cols-[3rem,1fr]'>
             <IoLocationSharp className='text-red-500 h-7 w-7 mt-2' />
@@ -141,7 +139,7 @@ function Footer() {
         <hr className='border border-gray-900' />
         <div className='my-8 grid gap-2 sm:gap-4'>
           <div className='ms-12'>
-            <p className='text-lg opacity-90'>Kochi</p>
+            <p className='text-lg opacity-60'>Kochi</p>
           </div>
           <div className='grid grid-cols-[3rem,1fr]'>
             <IoLocationSharp className='text-red-500 h-7 w-7 mt-2' />
@@ -187,19 +185,19 @@ function Footer() {
 export default Footer
 
 const Section = styled.section`
-    @media(max-width:1400px){
+    @media(max-width:960px){
       width:90%; 
 }
-`
-
-const Container = styled.section`
-    @media(max-width:1400px){
-      width:90%; 
-}
-`
-
-const P = styled.p`
-    font-family: 'popins_semibold';
+.links{
+  font-family: 'popins_semibold';
   font-size: 1rem;
-
+}
+`
+const MainDiv = styled.div`
+  padding-bottom: 80px;
+`
+const AddressMedia = styled.section`
+    @media(max-width:1400px){
+      width:96%;
+}
 `

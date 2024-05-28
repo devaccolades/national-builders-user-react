@@ -27,7 +27,7 @@ api.interceptors.response.use(
         return response
     },
     function (error) {
-        location.assign("/error")
+        // location.assign("/error")
         console.error("Error in response:", error);
         return Promise.reject(error)
     }
