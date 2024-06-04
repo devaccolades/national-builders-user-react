@@ -23,10 +23,12 @@ function Testimonials({ testimonials, animationConfig }) {
     };
   }, []);
 
-  function truncateDescription(description,maxWords=40) {
+  function truncateDescription(description,maxWords=34) {
     // let maxWords = 40;
     if (windowWidth >= 960 && windowWidth <= 1024) {
       maxWords = 40;
+    }else if (windowWidth >= 1140 && windowWidth <= 1264){
+      maxWords = 30;
     }
     const words = description.split(' ');
     const truncatedWords = words.slice(0, maxWords);
@@ -69,25 +71,25 @@ function Testimonials({ testimonials, animationConfig }) {
         </Carousel>
       </Section>
       {/* Laptop */}
-      <Section className='h-[90vh] mx-auto hidden xl:block' {...animationConfig}>
-        <Carousel className="flex rounded-xl text-white" autoplay={true} autoplayInterval={3000} infinite={true}>
+      <Section className=' mx-auto hidden xl:block' {...animationConfig}>
+        <Carousel className="flex rounded-xl text-white overflow-hidden" autoplay={true} autoplayInterval={3000} infinite={true}>
           {testimonials.map((list, index) => (
-            <div key={index} className='flex flex-row h-[100%] w-[70%] mx-auto'>
+            <div key={index} className='testimonial-main flex flex-row h-[46vw] w-[70%] mx-auto'>
               <Card className='first-card rounded-[2rem] lg:p-10 xl:p-14 flex justify-between lg:rounded-[3rem] bg-no-repeat bg-center h-[85%]' style={{ backgroundColor: 'rgba(32,33,45,255)', backgroundImage: `url(${qotesIcon})` }}>
                 <div>
-                  <p className='text-4xl lg:text-5xl xl:text-6xl flex flex-col text-center whitespace-nowrap'><span className='text-red-500'>What they say</span><span className='text-white'> about us?</span></p>
+                  <p className='headding text-4xl lg:text-5xl xl:text-6xl flex flex-col text-center whitespace-nowrap'><span className='text-red-500'>What they say</span><span className='text-white'> about us?</span></p>
                 </div>
-                <p className='flex flex-col text-center gap-2'><span className='text-2xl lg:text-4xl font-bold text-wrap sticky z-10 text-white'>{list?.name}</span><span className='text-xl opacity-70 lg:text-x text-white'>{truncateWords(list?.project, 4)}</span></p>
+                <p className='flex flex-col text-center gap-2'><span className='text-2xl lg:text-[2vw] leading-10 font-bold text-wrap sticky z-10 text-white'>{list?.name}</span><span className='text-xl opacity-70 lg:text-x text-white'>{truncateWords(list?.project, 4)}</span></p>
               </Card>
-              <div className='flex flex-col gap-32 h-[85%]'>
+              <div className='flex flex-col gap-[6.667vw] h-[85%]'>
                 <div className='flex flex-row items-center justify-center -me-20 gap-10'>
                   <img src={roundIcon} alt="" className='w-auto lg:w-20 xl:w-auto' />
                   <p className='opacity-90 lg:text-4xl xl:text-5xl font-extralight'>Testimonials</p>
                 </div>
-                <Card className='flex rounded-[3rem] flex-row bg-gray-900 h-[60%] -ms-20'>
-                  <div className='bg-no-repeat bg-cover bg-center  w-full rounded-s-[3rem]' style={{ backgroundImage: `url(${list?.image})` }} />
-                  <div className='p-10 text-white grid grid-row-[1fr,5rem] w-full'>
-                    <div className='flex justify-center items-center h-[200px] overflow-hidden'>
+                <Card className='grid grid-cols-2 rounded-[3rem]  bg-gray-900 min-h-[60%] -ms-20'>
+                  <div className='bg-no-repeat bg-cover bg-center h-[23.4vw] w-full rounded-s-[3rem]' style={{ backgroundImage: `url(${list?.image})` }} />
+                  <div className='p-[2vw] text-white grid grid-row-[1fr,5rem] w-full'>
+                    <div className='flex justify-center items-center  overflow-hidden'>
                       <Text align='center' text={`${truncateDescription(list?.description)}`} />
                     </div>
                     <div className='flex justify-center items-center'>
@@ -143,6 +145,7 @@ export default Testimonials
 
 const Section = styled(motion.div)`
 margin-top: 8rem;
+
 margin-bottom: 4rem;
 
 @media(max-width:1400px){
@@ -153,6 +156,35 @@ margin-bottom: 4rem;
 }
 .first-card{
   width: 60%;
+}
+
+  @media (min-width: 1140px) and (max-width:1400px){
+    .testimonial-main{
+  /* width: 70%; */
+    width: 96%;
+  }
+  .first-card{
+    width: 45%;
+  }
+  .headding{
+    font-size: 50px;
+  }
+}
+@media (min-width: 1401px) and (max-width:1500px){
+    .testimonial-main{
+  width: 80%;
+  }
+}
+@media (min-width: 1501px) and (max-width:1600px){
+    .testimonial-main{
+  width: 70%;
+  }
+  .first-card{
+    width: 45%;
+  }
+  .headding{
+    font-size: 50px;
+  }
 }
 `;
 

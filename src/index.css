@@ -35,11 +35,11 @@ html{
 
 @font-face {
   font-family: 'popins_medium'; 
-  src: url('./assets/fonts/Poppins-Medium.woff') 
+  src: url('./assets/fonts/GeneralSans-Medium.woff') 
 }
 @font-face {
   font-family: 'popins_bold'; 
-  src: url('./assets/fonts/Poppins-Bold.woff') 
+  src: url('./assets/fonts/GeneralSans-Bold.woff') 
 }
 @font-face {
   font-family: 'popins_light'; 
@@ -47,7 +47,7 @@ html{
 }
 @font-face {
   font-family: 'popins_regular'; 
-  src: url('./assets/fonts/Poppins-Regular.woff') 
+  src: url('./assets/fonts/GeneralSans-Regular.woff') 
 }
 @font-face {
   font-family: 'popins_semibold'; 
@@ -61,6 +61,16 @@ html{
   font-family: 'popins_extralight'; 
   src: url('./assets/fonts/Poppins-ExtraLight.woff')
 }
+@font-face {
+  font-family: 'satoshi_bold'; 
+  src: url('./assets/fonts/Satoshi-Bold.woff')
+}
+
+@font-face {
+  font-family: 'satoshi_light'; 
+  src: url('./assets/fonts/Satoshi-Light.woff')
+}
+
 
 body {
   
@@ -72,6 +82,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   
 }
-/* body::-webkit-scrollbar {
+body::-webkit-scrollbar {
   display: none; 
-} */
+}

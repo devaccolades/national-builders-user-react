@@ -106,7 +106,7 @@ function Ourpresence() {
                 <div className='w-full px-20'>
                     <div className='flex justify-center items-center'>
                         <img src={RoundIcon} className='w-20 lg:w-32' alt="" />
-                        <p className='text-center py-10 text-4xl lg:text-6xl ps-5 lg:ps-10'>Our Presence</p>
+                        <p className='ourpresence text-center py-10 text-4xl lg:text-6xl ps-5 lg:ps-10'>Our Presence</p>
                     </div>
                 </div>
             </motion.div>
@@ -251,7 +251,7 @@ function Ourpresence() {
 
 export default Ourpresence
 
-const Section = styled.div``
+const Section = styled.div``;
 const LapView = styled.div``;
 const MovileView = styled.div``
 const TabView = styled.div``

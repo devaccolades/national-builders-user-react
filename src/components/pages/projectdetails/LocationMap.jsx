@@ -64,6 +64,8 @@ const Section = styled.div`
 margin-top: 2rem;
 margin-bottom: 2rem;
 width: 70%;
+overflow-x: hidden;
+overflow-y: hidden;
     @media(max-width:1400px){
       width:90%; 
  

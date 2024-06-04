@@ -27,14 +27,14 @@ function ContactDetails({ animationConfig }) {
 
     return (
         <Section className='mx-auto'>
-            <Maindiv className='grid grid-flow-row-2 lg:grid-cols-2 gap-16'>
+            <Listing className='grid grid-flow-row-2 lg:grid-cols-2 gap-16'>
                 {branch.length === 0 ? (
                     <div className='bg-gray-900 bg-opacity-60 grid gap-5 text-lg py-10 lg:p-10 rounded-[1.5rem]' {...animationConfig}>
                         <NoDataFound text={"Address Not Found..."} />
                     </div>
                 ) : (
                     branch.map((address, index) => (
-                        <motion.div key={index} className='bg-gray-900 bg-opacity-60 grid gap-5 text-lg py-10 lg:p-10 rounded-[1.5rem]' {...animationConfig}>
+                        <motion.div key={index} className='card bg-gray-900 bg-opacity-60 grid gap-5 text-lg py-10 lg:p-10 rounded-[1.5rem]' {...animationConfig}>
                             <div className='text-center'>
                                 <p className='text-2xl font-bold '>Our <span className='bg-gradient-to-r from-white to-gray-600  text-transparent bg-clip-text'>{address.location} Office</span></p>
                                 <Paragraph className='px-4 md:px-10 lg:px-0'></Paragraph>
@@ -60,7 +60,7 @@ function ContactDetails({ animationConfig }) {
                         </motion.div>
                     ))
                 )}
-            </Maindiv>
+            </Listing>
         </Section>
     )
 }
@@ -75,8 +75,14 @@ width: 70%;
 }
 `;
 
-const Maindiv = styled.section`
+const Listing = styled.section`
 
+@media (min-width: 700px) and (max-width: 959px){
+    .card{
+        margin: auto;
+        width: 70%;
+    }
+}
 `
 const Paragraph = styled.p`
     opacity: 55%;

@@ -11,17 +11,25 @@ import Text from '../../common/Text';
 function ProjectDetailsCarousel({ animationConfig, data, images }) {
     return (
         <Section className='mx-auto flex flex-col gap-6 '>
-            <motion.div className='grid grid-row-3 lg:grid-cols-3 gap-2 lg:gap-0 justify-between lg:items-center w-full' {...animationConfig}>
-                <Heading1 className='hidden lg:block'>{data?.name}</Heading1>
+            <motion.div className='flex flex-col lg:flex-row gap-2 lg:gap-10 justify-between lg:items-center w-full' {...animationConfig}>
+                <Heading1 className='hidden lg:block lg:w-[30%]'>{data?.name}</Heading1>
                 <Paragraph className='flex bg-gray-900 border border-gray-800 rounded-[2rem] p-3 text-center flex-row md:gap-3 justify-center items-center'>
                     <IoLocationSharp className='w-6 h-6' />
                     <span>{data?.location}</span>
                 </Paragraph>
                 <Heading1 className='lg:hidden block'>{data?.name}</Heading1>
+                <div>
+                   {data?.logo && <img src={data?.logo} className='w-[130px] h-[130px]' alt="" />}
+                </div>
                 <p>
                     <Paragraph>
-                        <span className='span2'>RERA Number : </span>
-                        <span>{data?.rera_number}</span>
+                        <div>
+                            <span className='span2'>RERA Number : </span>
+                            <span>{data?.rera_number}</span>
+                        </div>
+                        <div className='flex justify-center items-center mt-3'>
+                            <img src={data.qr_code} className='w-[100px] h-[100px]' alt="" />
+                        </div>
                     </Paragraph>
                 </p>
             </motion.div>
@@ -31,10 +39,10 @@ function ProjectDetailsCarousel({ animationConfig, data, images }) {
                         <NoDataFound text={"Images Not Found"} />
                     </div>
                 ) : (
-                   <>
-                    <CustomLaptopCarousel data={images} />
-                    <CustomMobileCarousel data={images} />
-                   </>
+                    <>
+                        <CustomLaptopCarousel data={images} />
+                        <CustomMobileCarousel data={images} />
+                    </>
                 )}
             </motion.div>
         </Section>

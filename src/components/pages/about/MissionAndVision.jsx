@@ -28,7 +28,7 @@ function MissionAndVision({animationConfig}) {
                             </motion.div>
                         </div>
                     </div>
-                    <Content className='md:flex md:justify-end'>
+                    <Content className='md:flex md:justify-end flex-col-reverse lg:flex-row'>
                         <div className='flex justify-center items-center '>
                             <motion.div className='mt-5 lg:me-10 lg:mt-0 ' {...animationConfig}>
                                 <p className='pb-1 text-center lg:text-start lg:pb-4 bg-gradient-to-r from-white to-gray-600 text-transparent bg-clip-text text-2xl font-bold'>Vision</p>
@@ -65,8 +65,8 @@ width: 70%;
 `
 const Content = styled.div`
 display: flex;
-flex-direction: row;
-    @media(max-width:960px){
-    flex-direction:column-reverse ;
-}
+/* flex-direction: row; */
+    /* @media(max-width:960px){ */
+    /* flex-direction:column-reverse ; */
+/* } */
 `

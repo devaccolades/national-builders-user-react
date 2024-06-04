@@ -20,7 +20,7 @@ function PageName({text}) {
     
     return (
         <Section>
-            <Headding className='font-bold bg-gradient-to-r from-white to-gray-600 text-transparent bg-clip-text' {...animationConfig}>{text}</Headding>
+            <Headding className='bg-gradient-to-r from-white to-gray-600 text-transparent bg-clip-text' {...animationConfig}>{text}</Headding>
         </Section>
     )
 }
@@ -28,6 +28,7 @@ function PageName({text}) {
 export default PageName
 
 const Section = styled.div`
+  font-family: "satoshi_bold";
     display: flex;
     justify-content: center;
     align-items: center;

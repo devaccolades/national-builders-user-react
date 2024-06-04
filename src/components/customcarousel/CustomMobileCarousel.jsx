@@ -128,7 +128,7 @@ const CustomMobileCarousel = ({ data }) => {
             </button>
             <div className='flex flex-row justify-center gap-1 md:px-2'>
               {data.map((image, index) => (
-                <img key={index} src={(data[activeImageIndex].id === image.id) ? RectangleBlue : RectangleWhite} className='w-1/12 md:w-2/12' alt="" />
+                <img key={index} src={(data[activeImageIndex].id === image.id) ? RectangleBlue : RectangleWhite} className='w-1/12' alt="" />
               ))}
             </div>
             <button className='bg-gray-900  p-3 rounded-full' onClick={() => swipeToImage(1)}>
@@ -162,7 +162,7 @@ const SliderContainer = styled.div`
   .image {
     position: absolute;
     height: 100%;
-    width: auto;
+    width: 100%;
 
     @media only screen and (max-width: 375px) {
       width: 286px;

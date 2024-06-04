@@ -1,10 +1,6 @@
-/* .textcontent1 {
-    @media (min-width: 760px) and (max-width: 1100px) {
-      display: flex;
-      margin-left: 10rem;
-    }
-  }
-   */
+.satoshi_light{
+  /* font-familly:"satoshi_light"; */
+}
 
 .LapView{
   @media (max-width: 1160px) {

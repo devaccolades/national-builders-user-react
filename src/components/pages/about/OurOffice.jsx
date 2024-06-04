@@ -25,7 +25,7 @@ function OurOffice({ animationConfig }) {
     return (
         <>
             {branch.length > 0 ? (<Section {...animationConfig}>
-                <div className='grid grid-cols-1 w-[70%] md:grid-cols-2 gap-8 p-4 lg:p-10 mx-auto'>
+                <div className='card grid grid-cols-1 w-[70%] md:grid-cols-2 gap-8 p-4 lg:p-10 mx-auto'>
                     {branch.map((branches, index) => (
                         <motion.div {...animationConfig} whileHover={{ scale: 1.1 }}>
                             <Card whileHover={{ scale: 1.1 }} className='bg-gray-900 my-8 lg:my-0  me-10 w-full hover:shadow-gray-600 hover:shadow-xl'>
@@ -34,12 +34,6 @@ function OurOffice({ animationConfig }) {
                             </Card>
                         </motion.div>
                     ))}
-                    {/* <motion.div {...animationConfig} whileHover={{ scale: 1.1 }}>
-                    <Card whileHover={{ scale: 1.1 }} className='bg-gray-900 my-8 lg:my-0  w-full lg:me-10 hover:shadow-gray-600 hover:shadow-xl'>
-                        <img className='rounded-lg ' src={KochiOffice} alt="" />
-                        <p className='text-center py-5  text-xl font-bold text-white'>Our <span className='text-red-500'>Kochi</span> Office</p>
-                    </Card>
-                </motion.div> */}
                 </div>
             </Section>) : (<></>)}
         </>
@@ -53,4 +47,17 @@ const Section = styled(motion.div)`
 background-color: #20212D;
 padding-top: 2rem;
 padding-bottom: 2rem;
+
+@media (max-width: 1024px) {
+    .card {
+      width: 80%;
+    }
+  }
+  @media (max-width: 576px) {
+    .card {
+      width: 100%;
+    }
+  }
+
+
 `

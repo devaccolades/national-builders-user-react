@@ -113,7 +113,8 @@ margin-bottom: 5rem;
 const Heading = styled.p`
     font-size: 1.6rem;
     padding-bottom: 0.4rem;
-    font-family: 'popins_bold';
+    font-family: 'satoshi_bold';
+    font-weight: 800;
     @media(max-width:1024px){
         text-align: center;
         font-size: 1.6rem;

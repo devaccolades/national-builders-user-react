@@ -45,10 +45,14 @@ function BlogsListing({ animationConfig }) {
         };
         fetchData()
         if (limit.startLimit === 0) {
-            window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+            // window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
       
           } else {
-            window.scrollTo({ top: 200, left: 0, behavior: 'smooth' });
+            // if (mobileView){
+            //     window.scrollTo({ top: 150, left: 0, behavior: 'smooth' });
+            // }else{
+            //     window.scrollTo({ top: 200, left: 0, behavior: 'smooth' });
+            // }
       
           }
     }, [limit])
@@ -160,7 +164,7 @@ useEffect(()=>{
                         }} disabled={limit.startLimit === 0}>
                             <FaArrowLeft />
                         </button>
-                        <div className='flex flex-row justify-center gap-1 md:px-2'>
+                        <div className='flex flex-row justify-center gap-1 md:px-5'>
                             {Array.from({ length: Math.ceil(totalCount / 3) }, (_, index) => (
                                 <img key={index} src={(index * 3 === limit.startLimit) ? RectangleBlue : RectangleWhite} className='w-1/12 md:w-2/12' alt="" />
                             ))}
@@ -181,9 +185,9 @@ useEffect(()=>{
                         }} disabled={limit.startLimit === 0}>
                             <FaArrowLeft />
                         </button>
-                        <div className='flex flex-row justify-center gap-1 md:px-2'>
+                        <div className='flex flex-row justify-center gap-1 md:px-6'>
                             {Array.from({ length: Math.ceil(totalCount / 7) }, (_, index) => (
-                                <img key={index} src={(index * 7 === limit.startLimit) ? RectangleBlue : RectangleWhite} className='w-1/12 md:w-2/12' alt="" />
+                                <img key={index} src={(index * 7 === limit.startLimit) ? RectangleBlue : RectangleWhite} className='w-1/12 md:w-5' alt="" />
                             ))}
                         </div>
                         <button className='bg-gray-900 p-3 rounded-full' onClick={() => {

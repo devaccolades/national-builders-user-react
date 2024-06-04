@@ -13,7 +13,7 @@ export default Text
 
 const Paragraph = styled.p`
     opacity: 55%;
-    font-size: 20px;
+    font-size: 21px;
     font-family: 'popins_regular';
 
   @media (max-width: 768px) {

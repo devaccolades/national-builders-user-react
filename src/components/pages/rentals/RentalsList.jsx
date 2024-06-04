@@ -98,7 +98,7 @@ function RentalsList({ animationConfig, data }) {
                 ) :
                     Filter.map((rental, index) => (
                         <motion.div className='cursor-pointer' whileHover={{ scale: 1.1 }}>
-                            <Card key={index} className="bg-gray-900 bg-opacity-60 p-4 md:p-6 flex flex-col md:flex-row w-full">
+                            <Card key={index} className="card bg-gray-900 bg-opacity-60 p-4 md:p-6 flex flex-col md:flex-row w-full">
                                 <img
                                     className='md:w-5/12 rounded-[.8rem]'
                                     src={rental?.image || "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"}
@@ -166,11 +166,23 @@ const Selection = styled.div`
 `
 
 const Listing = styled(motion.div)`
-
   margin-top: 4rem;
   margin-bottom: 4rem;
-  @media(max-width:1380px){
-    justify-content: center;
 
-}
-`
+  @media (max-width: 1380px) {
+    justify-content: center;
+  }
+
+  @media (min-width: 960px) and (max-width: 1139px) {
+    .card {
+      width: 80%;
+      margin: auto;
+    }
+  }
+  @media (min-width: 576px) and (max-width: 719px) {
+    .card {
+      width: 80%;
+      margin: auto;
+    }
+  }
+`;

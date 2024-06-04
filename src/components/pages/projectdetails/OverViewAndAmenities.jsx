@@ -20,36 +20,36 @@ function OverViewAndAmenities({ animationConfig, data, amenities }) {
                     <Text align='center' text={"Description Not Found"} />
                 )}
                 <div className='flex flex-row justify-between flex-wrap mt-10'>
-                    <div>
+                   {data?.bedrooms && <div>
                         <div className='flex flex-row gap-3 items-center pb-4'>
                             <img src={bedRommsIcon} alt="icons" />
                             <Text text={"Bedrooms"} />
                         </div>
                         <Text align='center' text={data?.bedrooms} />
-                    </div>
-                    <div>
+                    </div>}
+                    {data?.units &&<div>
                         <div className='flex flex-row gap-3 items-center pb-4'>
                             <img src={unitsIcon} className='-mt-[0.5rem]' alt="icons" />
                             <Text text={"Units"} />
                         </div>
-                        <Text align='center' text={data.units} />
-                    </div>
+                        <Text align='center' text={data?.units} />
+                    </div>}
                     <div className='mt-5 md:mt-0'>
-                        <div className='flex flex-row gap-3 items-center pb-4'>
+                        {data?.area_from && <div className='flex flex-row gap-3 items-center pb-4'>
                             <img src={areaIcon} className='-mt-[0.5rem]' alt="icons" />
                             <Text text={"Area"} />
-                        </div>
-                        <div className='flex items-center justify-center'>
+                        </div>}
+                       {data?.area_to && <div className='flex items-center justify-center'>
                             <Text text={data?.area_from} />
                             <hr className='w-5 mx-2' />
                             <Text text={`${data?.area_to} sq. ft.`} />
-                        </div>
+                        </div>}
                     </div>
                 </div>
             </OverView>
             <Amenities className='bg-gray-900 bg-opacity-60 rounded-[1.1rem] p-5 lg:p-8 md:pb-20' {...animationConfig}>
                 <Heading>Amenities</Heading>
-                {amenities.length === 0 ? (<div className='flex -mt-10 justify-center items-center h-full'>
+                {amenities.length === 0 ? (<div className='flex lg:-mt-10 justify-center items-center h-full'>
                     <Text align='center' text={"Description Not Found"} />
                 </div>) : (
                     <div className='grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-10 h-auto max-h-full mt-2'>

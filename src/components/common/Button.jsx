@@ -15,9 +15,9 @@ function  AnimationButton({text,width='',hieght='auto'}) {
     onMouseLeave={() => setHovered(false)}
   >
     <p className='text-center'>{text}</p> {hovered ? (
-      <GoArrowRight className={`ms-2 lg:ms-4 p-1 h-7 md:h-8 w-7 md:w-8 bg-red-500 text-white rounded-full icon-transition`} />
+      <GoArrowRight className={`ms-2 md:ms-3 lg:ms-3 xl:ms-4 p-1 h-7 md:h-8 w-7 md:w-8 bg-red-500 text-white rounded-full icon-transition`} />
     ) : (
-      <GoArrowUpRight className={`ms-2 lg:ms-4 p-1 h-7 md:h-8 w-7 md:w-8 bg-red-500 text-white rounded-full icon-transition`} />
+      <GoArrowUpRight className={`ms-2 md:ms-3 lg:ms-3 xl:ms-4 p-1 h-7 md:h-8 w-7 md:w-8 bg-red-500 text-white rounded-full icon-transition`} />
     )}
   </Buttons>
   )

@@ -15,7 +15,7 @@ import { PostRentalEnquiryApi } from "../../services/services";
 import Swal from "sweetalert2";
 
 export function EnquireModal({ open, handleOpen, rentalsData }) {
-    const [loader,setLoader] = useState(false)
+    const [loader, setLoader] = useState(false)
 
     const initialValues = {
         rentals: rentalsData?.id,
@@ -44,12 +44,12 @@ export function EnquireModal({ open, handleOpen, rentalsData }) {
     const handleSubmitForm = async (values, setSubmitting) => {
         try {
             setLoader(true)
-            if(!values.rentals){
+            if (!values.rentals) {
                 values.rentals = rentalsData.id
             }
             const res = await PostRentalEnquiryApi(values)
-            const {StatusCode} = res.data
-            if (StatusCode===6001){
+            const { StatusCode } = res.data
+            if (StatusCode === 6001) {
                 Swal.fire({
                     title: "We received your enquiry",
                     text: "We will contact you soon. Thank you for your enquiry.",
@@ -58,14 +58,14 @@ export function EnquireModal({ open, handleOpen, rentalsData }) {
                     color: 'white',
                     confirmButtonColor: '#3085d6',
                     customClass: {
-                        popup: 'custom-swal-popup' 
+                        popup: 'custom-swal-popup'
                     },
                     showConfirmButton: false,
                     timer: 3000
                 });
                 resetForm()
                 handleOpen();
-            }else{
+            } else {
                 Swal.fire({
                     position: "top-end",
                     icon: "error",
@@ -75,7 +75,7 @@ export function EnquireModal({ open, handleOpen, rentalsData }) {
                     background: '#2B2B2B',
                     color: 'white',
                     timer: 1500
-                  });
+                });
             }
             handleOpen();
         } catch (error) {
@@ -146,7 +146,7 @@ export function EnquireModal({ open, handleOpen, rentalsData }) {
                             <div className="text-red-500 text-sm ">{errors.message}</div>
                         )}
                     </div>
-                    <div className='md:p-14 md:pt-0 lg:p-14 lg:pt-0 pt-0 p-5 flex justify-between mt-8 items-center flex-col gap-10 md:gap-0 md:flex-row'>
+                    <div className='md:p-14 md:pt-0 lg:p-14 lg:pt-0 pt-0 p-5 flex justify-between mt-4 items-center flex-col gap-10 md:gap-0 md:flex-row'>
                         <div className='flex items-center gap-3'>
                             <input type="checkbox" name='termsAndConditions' className='bg-black -mt-8 border border-2B2B2B  rounded-md' id=""
                                 onChange={handleChange}
@@ -163,11 +163,11 @@ export function EnquireModal({ open, handleOpen, rentalsData }) {
                         </div>
                         <div className='flex justify-between w-full md:justify-end items-center'>
                             <button onClick={handleOpen} className="px-6 py-3 border md:hidden block border-gray-700 rounded-[2rem]">Back</button>
-                            {loader?(
+                            {loader ? (
                                 <div className="justify-between bg-[#343894] items-center rounded-full flex p-3 lg:p-4">
                                     <Spinner />
                                 </div>
-                            ):(<button type='submit'>
+                            ) : (<button type='submit'>
                                 <AnimationButton hieght='' text={"Send Message"} />
                             </button>)}
                         </div>

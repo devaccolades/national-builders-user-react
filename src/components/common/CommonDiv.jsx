@@ -59,6 +59,11 @@ const Container = styled.div`
     @media(max-width:1400px){
       width:90%; 
 }
+@media(max-width:1140px){
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
 @media(max-width:956px){
     flex-direction: column;
     gap: 1rem;

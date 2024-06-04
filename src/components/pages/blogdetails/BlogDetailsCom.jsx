@@ -19,7 +19,6 @@ function BlogDetailsCom({ animationConfig, data, suggestions }) {
       <Backgroundimage className='bg-gray-900 bg-opacity-50 lg:bg-transparent p-6 lg:p-0 rounded-[1.1rem] rounded-b-none lg:rounded-none -mb-5 lg:mb-0'>
         <div className='image rounded-[1.1rem]' style={{ backgroundImage: `url(${data?.image})` }}>
         </div>
-        {/* <img src={image1} className='image h-full w-full rounded-[1.1rem]' alt="" /> */}
       </Backgroundimage>
       <Details className='flex flex-col lg:flex-row items-start gap-6'>
         <div className='w-full flex flex-col-reverse lg:flex-row gap-6'>
@@ -30,12 +29,12 @@ function BlogDetailsCom({ animationConfig, data, suggestions }) {
             <div className='bg-gray-900 bg-opacity-50 flex justify-center items-center rounded-[1.1rem]'>
               <img src={twitterIcon} className='m-5' alt="" />
             </div>
-            <div className='bg-gray-900 bg-opacity-50 flex justify-center items-center rounded-[1.1rem]'>
+            <a href='https://www.linkedin.com/company/national-builders/' target='_blank' className='bg-gray-900 bg-opacity-50 flex justify-center items-center rounded-[1.1rem]'>
               <img src={linkedInIcon} className='m-5' alt="" />
-            </div>
-            <div className='bg-gray-900 bg-opacity-50 flex justify-center items-center rounded-[1.1rem]'>
+            </a>
+            <a href='https://www.youtube.com/channel/UC-LD4K17OCGqmZcGedYTdXA' target='_blank' className='bg-gray-900 bg-opacity-50 flex justify-center items-center rounded-[1.1rem]'>
               <img src={linkIcon} className='m-5' alt="" />
-            </div>
+            </a>
           </Icons>
           {data?.body ? (<TextContent className='bg-gray-900 bg-opacity-50 w-full rounded-[1.1rem] rounded-t-none lg:rounded-t-[1.1rem] p-6' >
             <div className='flex flex-row -mt-5 lg:mt-0'>
@@ -154,4 +153,8 @@ const TextContent = styled.div`
       font-size: 1rem;
     }
   }}
+  img{
+    width: 100%;
+    opacity: 100%;
+  }
 `;

@@ -126,6 +126,7 @@ const CustomLaptopCarousel = ({ data }) => {
             >
               {data.map((image, index) => (
                 <motion.img
+                
                   key={index}
                   src={image?.images}
                   alt={image?.image_alt}
@@ -144,13 +145,13 @@ const CustomLaptopCarousel = ({ data }) => {
             </Thumbnails>
           </div>
           <ArrowButtons className='flex justify-center items-center'>
-            <div className='bg-black flex flex-row p-1 rounded-[1.1rem]'>
-              <button className='bg-gray-900  p-3 rounded-full' onClick={() => swipeToImage(-1)}>
+            <div className="bg-black p-1 flex rounded-[1.1rem] ">
+            <button className='bg-gray-900  p-3 rounded-full' onClick={() => swipeToImage(-1)}>
                 <FaArrowLeft />
               </button>
-              <div className='flex flex-row justify-center gap-1 px-2'>
+              <div className='flex w-auto flex-row justify-center gap-1 px-4'>
                 {data.map((image, index) => (
-                  <img key={index} src={(data[activeImageIndex].id === image.id) ? RectangleBlue : RectangleWhite} className='w-1/12 md:w-2/12' alt="" />
+                  <img key={index} src={(data[activeImageIndex].id === image.id || (data[activeImageIndex + 1] ? data[activeImageIndex + 1].id === image.id:data[0].id === image.id)) ? RectangleBlue : RectangleWhite} className='w-1/12 md:w-5' alt="" />
                 ))}
               </div>
               <button className='bg-gray-900  p-3 rounded-full' onClick={() => swipeToImage(1)}>

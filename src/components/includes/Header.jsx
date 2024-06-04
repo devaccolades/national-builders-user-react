@@ -119,7 +119,7 @@ function Header() {
   );
 
   return (
-    <div className={`top-0 sticky z-10 w-full h-full overflow-x-hidden bg-transparent`}>
+    <div className={`top-0 sticky z-20 w-full h-full overflow-x-hidden bg-transparent`}>
       <Navbar className={`border-0 bg-transparent z-10 h-max max-w-full rounded-none py-5  lg:py-6`}>
         <motion.div className="flex w-full justify-between items-center  text-blue-gray-900 lg:px-20 xl:px-28"
           initial={{ opacity: 0 }}

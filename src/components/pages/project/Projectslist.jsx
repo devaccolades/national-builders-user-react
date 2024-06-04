@@ -105,7 +105,7 @@ function Projectslist({ animationConfig }) {
         </div>
       </motion.div>
       <div>
-        <Listing className='lg:ps-16' {...animationConfig}>
+        <Listing className='lg:ps-16 gap-[2rem] lg:gap-[3rem]' {...animationConfig}>
 
           {projects.length === 0 ? (
             <div className='flex justify-center items-center w-full'>
@@ -118,7 +118,7 @@ function Projectslist({ animationConfig }) {
           ) :
             Filter.map((project, index) => (
               <motion.div className='cursor-pointer' whileHover={{ scale: 1.1 }}>
-                <Card key={index} className="md:w-96 bg-gray-900 bg-opacity-60 ">
+                <Card key={index} className="sm:w-96 bg-gray-900 bg-opacity-60 ">
                   <img
                     className='mt-4 mx-4 lg:mt-5 lg:mx-5 rounded-[.8rem]'
                     src={project?.thumbnail || "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"}
