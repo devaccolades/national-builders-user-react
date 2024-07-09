@@ -1,8 +1,9 @@
 import React, { Suspense } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import Loader from './components/loader/Loader';
 import ErrorPage from './pages/ErrorPage';
 import ScrollTop from './components/utils/ScrollTop'
+import { oldUrlAndNewurl } from './components/data/data';
 
 // Lazy-load components
 const Layout = React.lazy(() => import('./pages/Layout'));
@@ -37,14 +38,17 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/project/:slug" element={<ProjectDetails />} />
+          <Route path="/projects/:slug" element={<ProjectDetails />} />
           <Route path="/rentals" element={<RentalProperties />} />
-          <Route path="/testimonials" element={<Testimonials />} />
+          <Route path="/testimonial" element={<Testimonials />} />
           <Route path="/news-and-events" element={<NewsAndEvents />} />
           <Route path="/news-and-events/:slug" element={<NewsAndEventsDetails />} />
-          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blog" element={<Blogs />} />
           <Route path="/blog/:slug" element={<BlogDetails />} />
           <Route path="/key-handover" element={<KeyHandover />} />
+          {oldUrlAndNewurl.map((item) => (
+          <Route path={item?.old} element={<Navigate to={item?.new} />} />
+        ))}
           <Route path="/*" element={<ErrorPage />} />
         </Route>
       </Routes>

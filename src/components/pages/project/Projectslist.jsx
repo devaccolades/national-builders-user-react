@@ -13,11 +13,13 @@ import { IoIosArrowDown } from "react-icons/io";
 
 import AnimationButton from '../../common/Button';
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { GetBranchDropDownApi, GetProjectApi } from '../../../services/services';
 import NoDataFound from '../../common/NoDataFound';
 
 function Projectslist({ animationConfig }) {
+  const location = useLocation();
+  const locations = location.state && location.state.location;
   const navigate = useNavigate()
   const [selected, setSelected] = useState('All')
   const [sort, setSort] = useState('All')
@@ -71,7 +73,9 @@ function Projectslist({ animationConfig }) {
     fetchData();
     fetchDropDown();
   }, [])
-
+  useEffect(() => {
+    Filtering(locations || 'All', sort);
+  }, [locations, sort, projects]); 
   return (
     <Section className='mx-auto'>
       <motion.div className='lg:flex lg:justify-between'  {...animationConfig}>
@@ -135,7 +139,7 @@ function Projectslist({ animationConfig }) {
                     <Typography className=''>
                       {project?.description.split(' ').slice(0, 20).join(' ')} ...
                     </Typography>
-                    <div className='w-full mt-5' onClick={() => navigate(`/project/${project.slug}`)}>
+                    <div className='w-full mt-5' onClick={() => navigate(`/projects/${project.slug}`)}>
                       <AnimationButton width='full' text={"View Property Details"} />
                     </div>
                   </CardBody>

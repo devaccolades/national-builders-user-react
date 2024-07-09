@@ -129,16 +129,16 @@ useEffect(()=>{
                                             <img
                                                 className='image mt-4 mx-4 lg:mt-5 lg:mx-5 rounded-[.8rem]'
                                                 src={blog?.image || "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"}
-                                                alt={blogs?.image_alt}
+                                                alt={blog?.image_alt}
                                             />
                                             <CardBody>
                                                 <div className='flex mb-4'>
-                                                    <p className='p-2 text-g border border-gray-800 rounded-[2rem]'>{blogs[0].date_added}</p>
+                                                    <p className='p-2 text-g border border-gray-800 rounded-[2rem]'>{blog?.date_added}</p>
                                                 </div>
                                                 <Typography variant="h5" color="blue-gray" className="mb-2 text-white">
                                                     {blog?.title}
                                                 </Typography>
-                                                <Typography className='lg:text-lg' dangerouslySetInnerHTML={{ __html: truncateText2(blogs[0].body) }} />
+                                                <Typography className='lg:text-lg' dangerouslySetInnerHTML={{ __html: truncateText2(blog?.body) }} />
                                             </CardBody>
                                             <CardFooter className=" pt-0 -my-2 lg:my-0 gap-1 cursor-pointer">
                                                 <div className='flex flex-row' onClick={() => navigate(`/blog/${blog?.slug}`)}>

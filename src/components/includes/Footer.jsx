@@ -52,10 +52,10 @@ function Footer() {
                 </div>
               </Card>
               <Card className='bg-gray-900 bg-opacity-50 border py-5 border-gray-800 flex flex-col items-center justify-center gap-6 my-10 rounded-[2rem] w-[180px]'>
-                <img src={facebook} alt="" />
-                <img src={instagram} alt="" />
-                <img src={linkedin} alt="" />
-                <img src={youtube} alt="" />
+               <a href="https://www.facebook.com/nationalbuilderskerala" target='_blank'> <img src={facebook} alt="face-book-icon" /></a>
+               <a href="https://www.instagram.com/nationalbuilderskerala/" target='_blank'> <img src={instagram} alt="instagram-icon" /></a>
+                <a href="https://www.linkedin.com/company/national-builders/" target='_blank'><img src={linkedin} alt="linked-in-icons" /></a>
+               <a href="https://www.youtube.com/channel/UC-LD4K17OCGqmZcGedYTdXA?themeRefresh=1" target='_blank'><img src={youtube} alt="youtube-icon" /></a>
               </Card>
 
               <Card className='bg-gray-900 grid py-5 gap-4 bg-opacity-50 border text-white opacity-90 border-gray-800 my-10  rounded-[2rem] w-full'>
@@ -85,9 +85,9 @@ function Footer() {
               <Link to={'/rentals'}>Rentals</Link>
               <Link to={'/about'}>About</Link>
               <Link to={'/contact'}>Contact</Link>
-              <Link to={'/testimonials'}>Testimonials</Link>
+              <Link to={'/testimonial'}>Testimonials</Link>
               <Link to={'/news-and-events'}>News & Events</Link>
-              <Link to={'/blogs'}>Blogs</Link>
+              <Link to={'/blog'}>Blogs</Link>
               <Link to={'/key-handover'}>Key handover</Link>
             </AddressMedia>
             <AddressMedia className='w-[96%] xl:w-[70%] flex flex-row justify-around items-center rounded-[2rem] lg:h-20 mt-10  text-white mb-10 lg:mb-0 xl:text-xl bg-gray-900 bg-opacity-50 border border-gray-800'>
@@ -109,9 +109,9 @@ function Footer() {
           <Link className='links text-start' to={'/rentals'}>Rentals</Link>
           <Link className='links text-start' to={'/about'}>About</Link>
           <Link className='links text-start' to={'/contact'}>Contact</Link>
-          <Link className='links text-start' to={'/testimonials'}>Testimonials</Link>
+          <Link className='links text-start' to={'/testimonial'}>Testimonials</Link>
           <Link className='links text-start' to={'/news-and-events'}>News & Events</Link>
-          <Link className='links text-start' to={'/blogs'}>Blogs</Link>
+          <Link className='links text-start' to={'/blog'}>Blogs</Link>
           <Link className='links text-start' to={'/key-handover'}>Key handover</Link>
         </div>
         <hr className='border border-gray-900' />
@@ -160,10 +160,10 @@ function Footer() {
         </div>
         <div className='bg-[#262626] bg-opacity-50 border border-gray-800 rounded-[1rem] flex flex-col p-5 mb-10 justify-center items-center'>
           <div className='flex justify-around gap-4'>
-            <img src={facebook} alt="" />
-            <img src={instagram} alt="" />
-            <img src={linkedin} alt="" />
-            <img src={youtube} alt="" />
+          <a href="https://www.facebook.com/nationalbuilderskerala" target='_blank'> <img src={facebook} alt="face-book-icon" /></a>
+               <a href="https://www.instagram.com/nationalbuilderskerala/" target='_blank'> <img src={instagram} alt="instagram-icon" /></a>
+                <a href="https://www.linkedin.com/company/national-builders/" target='_blank'><img src={linkedin} alt="linked-in-icons" /></a>
+               <a href="https://www.youtube.com/channel/UC-LD4K17OCGqmZcGedYTdXA?themeRefresh=1" target='_blank'><img src={youtube} alt="youtube-icon" /></a>
           </div>
           <div className='opacity-65 my-4 sm:my-5 flex flex-row'>
             <MdCopyright className='w-5 sm:w-6 h-5 sm:h-6 sm:me-4' />
@@ -189,7 +189,7 @@ const Section = styled.section`
       width:90%; 
 }
 .links{
-  font-family: 'popins_semibold';
+  font-family: 'popins_bold';
   font-size: 1rem;
 }
 `

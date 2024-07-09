@@ -95,12 +95,12 @@ function Home() {
         ></meta>
       </Helmet>
       <HomeBanner animationConfig={animationConfig} />
-    {homepageData.project_counts && <TextAndCounts animationConfig={animationConfig} data={homepageData.project_counts[0]} />}
+      {homepageData.project_counts && <TextAndCounts animationConfig={animationConfig} data={homepageData.project_counts[0]} />}
       {homepageData.awards && <AwardsAndRecognitions animationConfig={animationConfig} data={homepageData.awards} />}
       <Ourpresence />
       {homepageData.home_page_videos && <VideoTag animationConfig={animationConfig} data={homepageData.home_page_videos[0]} />}
       {homepageData.testimonials.length > 0 && <Testimonials testimonials={homepageData?.testimonials} animationConfig={animationConfig} />}
-        {homepageData.blogs.length > 0 && <NewsAndBlogs data={homepageData?.blogs} animationConfig={animationConfig} />}
+      {homepageData.blogs.length > 0 && <NewsAndBlogs data={homepageData?.blogs} animationConfig={animationConfig} />}
     </>
   )
 }

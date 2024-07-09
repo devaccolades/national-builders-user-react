@@ -6,8 +6,10 @@ import AnimationButton from '../../common/Button';
 // Icons
 import RoundIcon from '../../../assets/icons/round.svg'
 import './demo.css'
+import { useNavigate } from 'react-router-dom';
 
 function Ourpresence() {
+    const navigate = useNavigate()
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
     const animationConfig = {
@@ -118,7 +120,7 @@ function Ourpresence() {
                         <motion.div className='w-full ps-48 lg:ps-0 lg:w-5/6 ' {...animationConfig}>
                             <H1 className='text-7xl opacity-65 font-bold italic heding-font'>Mumbai</H1>
                             <Text text={"In Mumbai, National Builders offers premium building solutions. Rent or buy, we cater to your needs and budget. With over 50 completed projects, trust us to deliver excellence. Make your dreams a reality with National Builders."} />
-                            <div className='flex justify-end items-center mt-10 button'>
+                            <div className='flex justify-end items-center mt-10  button' onClick={()=>navigate('/projects', { state: { location:"43eac59d-e0a3-464c-aaa8-a82612d4b94c" } })}>
                                 <AnimationButton text={"See Projects"} />
                             </div>
                         </motion.div>
@@ -127,7 +129,7 @@ function Ourpresence() {
                         <motion.div className='thane-content w-full ps-14 lg:ps-0 pe-28 -mt-36 lg:mt-0' {...animationConfig}>
                             <H1 className='text-7xl opacity-65 font-bold italic heding-font'>Thane</H1>
                             <Text text={"National Builders, serving the dynamic locale of Thane, presents tailored building solutions. Whether you're in search of rentals or purchases, we accommodate your needs and budget. With our expertise, we've successfully executed 20 landmark projects in Thane. Entrust National Builders to transform your aspirations into architectural marvels."} />
-                            <div className='flex justify-end w-full items-center mt-10 button'>
+                            <div className='flex justify-end w-full items-center mt-10 button' onClick={()=>navigate('/projects', { state: { location:"d10e2ad3-5520-4d17-be88-c3a1ea85a290" } })}>
                                 <AnimationButton text={"See Projects"} />
                             </div>
                         </motion.div>
@@ -139,7 +141,7 @@ function Ourpresence() {
                         <motion.div className='kochi-content w-full ps-14 lg:ps-0 pe-28 lg:pe-0 lg:w-5/6 mt-10' {...animationConfig}>
                             <H1 className=' text-7xl opacity-65 font-bold italic heding-font'>Kochi</H1>
                             <Text text={"Discover National Builders, your premier partner in Kochi's thriving landscape. Offering bespoke building solutions, we cater to your every requirement and budget. With an impressive track record, we've completed 40 prestigious projects in Kochi. Choose National Builders and witness your dreams materialize into magnificent realities."} />
-                            <div className='flex justify-end w-full items-center mt-10 button'>
+                            <div className='flex justify-end w-full items-center mt-10 button' onClick={()=>navigate('/projects', { state: { location:"7ce93fb2-5b16-4b65-bc08-86a13efd5bf4" } })}>
                                 <AnimationButton text={"See Projects"} />
                             </div>
                         </motion.div>
@@ -148,7 +150,7 @@ function Ourpresence() {
                         <motion.div className='w-5/6 -mt-10 ' {...animationConfig}>
                             <H1 className='text-7xl opacity-65 font-bold italic heding-font'>Thiruvalla</H1>
                             <Text text={"Introducing National Builders, your trusted ally in the charming locale of Thiruvalla. Specializing in tailor-made building solutions, we cater to diverse needs and budgets. With a rich history of accomplishments, we've successfully delivered 15 esteemed projects in Thiruvalla. Choose National Builders and watch your visions come to life."} />
-                            <div className='flex justify-end w-full items-center mt-10 button'>
+                            <div className='flex justify-end w-full items-center mt-10 button' onClick={()=>navigate('/projects', { state: { location:"33f49f1e-c3a4-4298-8949-b2e1c93457a3" } })}>
                                 <AnimationButton text={"See Projects"} />
                             </div>
                         </motion.div>
@@ -174,28 +176,28 @@ function Ourpresence() {
                     <motion.div className='h-[36rem] flex flex-col justify-center w-[85%] mx-[auto] -me-[.2rem]' {...animationConfig}>
                         <H1 className='text-5xl opacity-65 font-bold italic heding-font'>Mumbai</H1>
                         <Text text={"In Mumbai, National Builders offers premium building solutions. Rent or buy, we cater to your needs and budget. With over 50 completed projects, trust us to deliver excellence. Make your dreams a reality with National Builders"} />
-                        <div className=' flex justify-center items-center mt-8'>
+                        <div className=' flex justify-center items-center mt-8' onClick={()=>navigate('/projects', { state: { location:"43eac59d-e0a3-464c-aaa8-a82612d4b94c" } })}>
                             <AnimationButton text={"See Projects"} />
                         </div>
                     </motion.div>
                     <motion.div className=' h-[42rem] flex flex-col justify-center w-[85%] mx-[auto] -ms-[.2rem]' {...animationConfig}>
                         <H1 className='text-5xl opacity-65 font-bold italic heding-font'>Thane</H1>
                         <Text text={"National Builders, in Thane, offers custom building solutions. For rentals or purchases, we cater to your needs and budget. With expertise, we've completed 20 projects. Trust us to turn your dreams into reality."} />
-                        <div className=' flex justify-center items-center mt-8'>
+                        <div className=' flex justify-center items-center mt-8' onClick={()=>navigate('/projects', { state: { location:"d10e2ad3-5520-4d17-be88-c3a1ea85a290" } })}>
                             <AnimationButton text={"See Projects"} />
                         </div>
                     </motion.div>
                     <motion.div className='h-[36rem] flex flex-col justify-center w-[85%] mx-[auto] -ms-[.2rem]' {...animationConfig}>
                         <H1 className='text-5xl opacity-65 font-bold italic heding-font'>Kochi</H1>
                         <Text text={"Discover National Builders, your premier partner in Kochi's landscape. Offering bespoke building solutions, we cater to your every requirement and budget. With an impressive track record, we've completed 40 prestigious projects. Choose National Builders for magnificent realities."} />
-                        <div className=' flex justify-center items-center mt-8'>
+                        <div className=' flex justify-center items-center mt-8' onClick={()=>navigate('/projects', { state: { location:"7ce93fb2-5b16-4b65-bc08-86a13efd5bf4" } })}>
                             <AnimationButton text={"See Projects"} />
                         </div>
                     </motion.div>
                     <motion.div className='h-[30rem] flex flex-col justify-center mx-[auto] -me-[.2rem]' {...animationConfig}>
                         <H1 className='text-5xl opacity-65 font-bold italic heding-font'>Thiruvalla</H1>
                         <Text text={"Introducing National Builders, your trusted ally in Thiruvalla. Specializing in tailor-made building solutions, we cater to diverse needs and budgets. With a rich history, we've delivered 15 esteemed projects. Choose National Builders to watch your visions come to life."} />
-                        <div className=' flex justify-center items-center mt-8'>
+                        <div className=' flex justify-center items-center mt-8' onClick={()=>navigate('/projects', { state: { location:"33f49f1e-c3a4-4298-8949-b2e1c93457a3" } })}>
                             <AnimationButton text={"See Projects"} />
                         </div>
                     </motion.div>
@@ -211,28 +213,28 @@ function Ourpresence() {
                     <motion.div className='textconent1 h-[36rem] flex flex-col justify-center w-[85%] lg:w-[60%] mx-auto' {...animationConfig}>
                         <H1 className='text-5xl opacity-65 font-bold italic heding-font'>Mumbai</H1>
                         <Text text={"In Mumbai, National Builders offers premium building solutions. Rent or buy, we cater to your needs and budget. With over 50 completed projects, trust us to deliver excellence. Make your dreams a reality with National Builders"} />
-                        <div className=' flex justify-center items-center mt-8'>
+                        <div className=' flex justify-center items-center mt-8' onClick={()=>navigate('/projects', { state: { location:"43eac59d-e0a3-464c-aaa8-a82612d4b94c" } })}>
                             <AnimationButton text={"See Projects"} />
                         </div>
                     </motion.div>
                     <motion.div className=' h-[40rem] flex flex-col justify-center w-[85%] lg:w-[60%] mx-[auto]' {...animationConfig}>
                         <H1 className='text-5xl opacity-65 font-bold italic heding-font'>Thane</H1>
                         <Text text={"National Builders, in Thane, offers custom building solutions. For rentals or purchases, we cater to your needs and budget. With expertise, we've completed 20 projects. Trust us to turn your dreams into reality."} />
-                        <div className=' flex justify-center items-center mt-8'>
+                        <div className=' flex justify-center items-center mt-8' onClick={()=>navigate('/projects', { state: { location:"d10e2ad3-5520-4d17-be88-c3a1ea85a290" } })}>
                             <AnimationButton text={"See Projects"} />
                         </div>
                     </motion.div>
                     <motion.div className='h-[56rem] flex flex-col justify-center w-[85%] lg:w-[60%] mx-[auto]' {...animationConfig}>
                         <H1 className='text-5xl opacity-65 font-bold italic heding-font'>Kochi</H1>
                         <Text text={"Discover National Builders, your premier partner in Kochi's landscape. Offering bespoke building solutions, we cater to your every requirement and budget. With an impressive track record, we've completed 40 prestigious projects. Choose National Builders for magnificent realities."} />
-                        <div className=' flex justify-center items-center mt-8'>
+                        <div className=' flex justify-center items-center mt-8' onClick={()=>navigate('/projects', { state: { location:"7ce93fb2-5b16-4b65-bc08-86a13efd5bf4" } })}>
                             <AnimationButton text={"See Projects"} />
                         </div>
                     </motion.div>
                     <motion.div className='h-[20rem] flex flex-col justify-center w-[90%] mx-auto' {...animationConfig}>
                         <H1 className='text-5xl opacity-65 font-bold italic heding-font'>Thiruvalla</H1>
                         <Text text={"Introducing National Builders, your trusted ally in Thiruvalla. Specializing in tailor-made building solutions, we cater to diverse needs and budgets. With a rich history, we've delivered 15 esteemed projects. Choose National Builders to watch your visions come to life."} />
-                        <div className=' flex justify-center items-center mt-8'>
+                        <div className=' flex justify-center items-center mt-8' onClick={()=>navigate('/projects', { state: { location:"33f49f1e-c3a4-4298-8949-b2e1c93457a3" } })}>
                             <AnimationButton text={"See Projects"} />
                         </div>
                     </motion.div>

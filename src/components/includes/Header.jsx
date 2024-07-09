@@ -106,10 +106,10 @@ function Header() {
         <MenuList className='bg-black border border-gray-900 text-lg text-white text-opacity-50 rounded-xl'>
           <MenuItem className='my-1' onClick={() => navigate('/projects')}>Project</MenuItem>
           <MenuItem className='my-1' onClick={() => navigate('/rentals')}>Rentals</MenuItem>
-          <MenuItem className='my-1' onClick={() => navigate('/testimonials')}>Testimontials</MenuItem>
-          <MenuItem className='my-1' onClick={() => navigate('/blogs')}>Blogs</MenuItem>
+          <MenuItem className='my-1' onClick={() => navigate('/testimonial')}>Testimontials</MenuItem>
+          <MenuItem className='my-1' onClick={() => navigate('/blog')}>Blogs</MenuItem>
           <MenuItem className='my-1' onClick={() => navigate('/news-and-events')}>News & Events</MenuItem>
-          <MenuItem className='my-1' onClick={() => navigate('/key-handover')}>Key handover</MenuItem>
+          <MenuItem className='my-1' onClick={() => navigate('/key-handover')}>Key Handover</MenuItem>
           <MenuItem className='my-1' onClick={() => navigate('/about')}>About</MenuItem>
           <MenuItem className='my-1' onClick={() => navigate('/contact')}>Contact</MenuItem>
         </MenuList>

@@ -4,8 +4,10 @@ import styled from 'styled-components';
 import Text from '../../common/Text';
 import AnimationButton from '../../common/Button';
 import CounterAnimation from '../../common/CounterAnimation';
+import { useNavigate } from 'react-router-dom';
 
 function TextAndCounts({ animationConfig, data }) {
+    const navigate = useNavigate()
     return (
         <Section className='mx-auto grid grid-rows-[1fr,16rem]'>
             <div className='flex flex-col lg:flex-row lg:items-start pt-32 py-10  lg:mx-5 xl:mx-0' >
@@ -19,7 +21,9 @@ function TextAndCounts({ animationConfig, data }) {
                     <Text text={"The firm has a proven track record of successful real estate development, consistently fulfilling its commitments and exceeding customer expectations. Its stamp of quality and delivery of best-in-class features are visible in each of the 135+ projects of National Builders."} />
                     <div className='hidden lg:block '>
                         <div className='lg:w-3/1 mt-4 h-24 items-center flex justify-center lg:justify-start'>
-                            <AnimationButton text={"Read More"} />
+                           <div onClick={()=>navigate('/about')}>
+                           <AnimationButton text={"Read More"} />
+                           </div>
                         </div>
                     </div>
                 </motion.div>

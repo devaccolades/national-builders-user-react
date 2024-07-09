@@ -12,7 +12,7 @@ function Specifications({ animationConfig,data }) {
                     <div className='grid grid-cols-1 lg:grid-cols-2 gap-y-5 gap-x-10'>
                         {data.map((specific, index) => (
                             <div key={index}>
-                                <Heading2 className='opacity-50'>{specific.title}</Heading2>
+                                <Heading2 className='opacity-50 font-semibold'>{specific.title}</Heading2>
                                 <Text align={window.innerWidth <= 1024 ? 'justify' : ''} text={specific.description} mt="2" />
                             </div>
                         ))}
@@ -56,7 +56,6 @@ const Heading = styled.p`
 
 const Heading2 = styled.p`
     font-size: 1.3rem;
-    font-family: 'popins_semibold';
     opacity: 60%;
     text-transform: capitalize;
     @media(max-width:1024px){

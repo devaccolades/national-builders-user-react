@@ -129,7 +129,7 @@ function NewsAndEventsListing({ animationConfig }) {
                       <CardFooter className=" pt-0 -my-2 lg:my-0 cursor-pointer">
                         <div className='flex flex-row gap-1' onClick={() => navigate(`/news-and-events/${newsevents.slug}`)}>
                           <p className='text-red-500'>Read more</p>
-                          <img src={chevronsrightIcon} alt="" />
+                          <img src={chevronsrightIcon} alt="icon" />
                         </div>
                       </CardFooter>
                     </Card>
