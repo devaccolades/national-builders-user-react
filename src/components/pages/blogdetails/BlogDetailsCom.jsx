@@ -32,7 +32,7 @@ function BlogDetailsCom({ animationConfig, data, suggestions }) {
             <a href='https://www.linkedin.com/company/national-builders/' target='_blank' className='bg-gray-900 bg-opacity-50 flex justify-center items-center rounded-[1.1rem]'>
               <img src={linkedInIcon} className='m-5' alt="" />
             </a>
-            <a href='https://www.youtube.com/channel/UC-LD4K17OCGqmZcGedYTdXA' target='_blank' className='bg-gray-900 bg-opacity-50 flex justify-center items-center rounded-[1.1rem]'>
+            <a href='https://www.youtube.com/channel/UCdoln4D4SlmoqyDeNjS7obA' target='_blank' className='bg-gray-900 bg-opacity-50 flex justify-center items-center rounded-[1.1rem]'>
               <img src={linkIcon} className='m-5' alt="" />
             </a>
           </Icons>

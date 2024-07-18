@@ -43,4 +43,28 @@ export const oldUrlAndNewurl = [
         old:'/flats-in-kochi/',
         new:'/projects/luxury-flats-for-sale-in-kochi/'
     },
+    {
+        old:'/location/flats-for-sale-kochi/page/2/',
+        new:'/projects/ready-to-move-flats-in-kochi'
+    },
+    {
+        old:'/tag/ready-to-occupy-flats//1000',
+        new:'/projects/ready-to-move-flats-in-kochi'
+    },
+    {
+        old:'/projects-in-cochin/embed/',
+        new:'/projects/ready-to-move-flats-in-kochi'
+    },
+    {
+        old:'/location/ernakulam//1000',
+        new:'/projects/ready-to-move-flats-in-kochi'
+    },
+    {
+        old:'/treedom//1000',
+        new:'/projects/ready-to-move-flats-in-kochi'
+    },
+    {
+        old:'/media-and-news',
+        new:'/news-and-events'
+    },
 ]

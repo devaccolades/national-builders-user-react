@@ -55,7 +55,7 @@ function Footer() {
                <a href="https://www.facebook.com/nationalbuilderskerala" target='_blank'> <img src={facebook} alt="face-book-icon" /></a>
                <a href="https://www.instagram.com/nationalbuilderskerala/" target='_blank'> <img src={instagram} alt="instagram-icon" /></a>
                 <a href="https://www.linkedin.com/company/national-builders/" target='_blank'><img src={linkedin} alt="linked-in-icons" /></a>
-               <a href="https://www.youtube.com/channel/UC-LD4K17OCGqmZcGedYTdXA?themeRefresh=1" target='_blank'><img src={youtube} alt="youtube-icon" /></a>
+               <a href="https://www.youtube.com/channel/UCdoln4D4SlmoqyDeNjS7obA" target='_blank'><img src={youtube} alt="youtube-icon" /></a>
               </Card>
 
               <Card className='bg-gray-900 grid py-5 gap-4 bg-opacity-50 border text-white opacity-90 border-gray-800 my-10  rounded-[2rem] w-full'>
@@ -74,7 +74,7 @@ function Footer() {
                   </div>
                   <div className='grid grid-cols-[3rem,1fr] w-full'>
                     <FaPhoneAlt className='text-red-500 h-6 w-6' />
-                    <p className='whitespace-normal text-md xl:text-[1.2rem] break-words'>+91 484 2340781, 2333391, +91 484 2534558</p>
+                    <p className='whitespace-normal text-md xl:text-[1.2rem] break-words'>+91 4842340781,2333391,2534558, +91 98475 33355, +91 98475 44333, +91 98477 17771, +91 9847544222</p>
                   </div>
                 </div>
               </Card>
@@ -91,10 +91,10 @@ function Footer() {
               <Link to={'/key-handover'}>Key handover</Link>
             </AddressMedia>
             <AddressMedia className='w-[96%] xl:w-[70%] flex flex-row justify-around items-center rounded-[2rem] lg:h-20 mt-10  text-white mb-10 lg:mb-0 xl:text-xl bg-gray-900 bg-opacity-50 border border-gray-800'>
-              <p className='flex justify-center items-center '><MdCopyright className='w-6 h-6' /> National Builders All Rights Reseved
+              <p className='paragraph flex justify-center items-center '><MdCopyright className='w-6 h-6' /> National Builders All Rights Reseved
               </p>
-              <img src={Accoladeslogo} alt="" />
-              <p className='flex justify-center items-center'>Privacy Policy | Terms of Service</p>
+             <a href="https://accoladesintegrated.com/" className='paragraph flex flex-row gap-[10px]' target='_blank'>Design And Developed By Accolades Integrated <img src={Accoladeslogo} className='cursor-pointer w-[20px]' alt="" /></a>
+              <p className='paragraph flex justify-center items-center'>Privacy Policy | Terms of Service</p>
             </AddressMedia>
           </MainDiv>
         </div>
@@ -154,7 +154,7 @@ function Footer() {
           <div className='grid grid-cols-[3rem,1fr] w-full'>
             <FaPhoneAlt className='text-red-500 h-6 w-6' />
             <div className=' w-[70vw]'>
-              <p className='text-[1rem] opacity-65 break-words'>+91 484 2340781, 2333391, +91 484 2534558</p>
+              <p className='text-[1rem] opacity-65 break-words'>+91 4842340781,2333391,2534558, +91 98475 33355, +91 98475 44333, +91 98477 17771, +91 9847544222</p>
             </div>
           </div>
         </div>
@@ -163,18 +163,23 @@ function Footer() {
           <a href="https://www.facebook.com/nationalbuilderskerala" target='_blank'> <img src={facebook} alt="face-book-icon" /></a>
                <a href="https://www.instagram.com/nationalbuilderskerala/" target='_blank'> <img src={instagram} alt="instagram-icon" /></a>
                 <a href="https://www.linkedin.com/company/national-builders/" target='_blank'><img src={linkedin} alt="linked-in-icons" /></a>
-               <a href="https://www.youtube.com/channel/UC-LD4K17OCGqmZcGedYTdXA?themeRefresh=1" target='_blank'><img src={youtube} alt="youtube-icon" /></a>
+               <a href="https://www.youtube.com/channel/UCdoln4D4SlmoqyDeNjS7obA" target='_blank'><img src={youtube} alt="youtube-icon" /></a>
           </div>
-          <div className='opacity-65 my-4 sm:my-5 flex flex-row'>
+          <div className='opacity-65 mt-4 sm:mt-5 flex flex-row'>
             <MdCopyright className='w-5 sm:w-6 h-5 sm:h-6 sm:me-4' />
             <p className='text-[0.9rem] sm:text-xl'>National Builders All Rights Reseved</p>
-          </div>
-          <div className='opacity-65'>
-            <img src={Accoladeslogo} className='w-auto ' alt="" />
           </div>
           <div className='opacity-65 my-4 sm:my-5 text-[0.9rem] sm:text-xl'>
             <p>Privacy Policy | Terms of Service</p>
           </div>
+          <div className='opacity-65'>
+           <a href="https://accoladesintegrated.com/" className='flex flex-col md:flex-row gap-[10px]' target='_blank'>Design And Developed By 
+           <span className='flex flex-row gap-[10px]'>
+           Accolades Integrated <img src={Accoladeslogo} className='w-[20px] cursor-pointer' alt="" />
+           </span>
+           </a>
+          </div>
+         
 
         </div>
       </Section>
@@ -197,7 +202,10 @@ const MainDiv = styled.div`
   padding-bottom: 80px;
 `
 const AddressMedia = styled.section`
+  .paragraph{
+    font-size: 16px;
+    }
     @media(max-width:1400px){
       width:96%;
-}
+  }
 `
