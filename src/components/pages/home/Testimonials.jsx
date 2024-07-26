@@ -75,11 +75,12 @@ function Testimonials({ testimonials, animationConfig }) {
         <Carousel className="flex rounded-xl text-white overflow-hidden" autoplay={true} autoplayInterval={3000} infinite={true}>
           {testimonials.map((list, index) => (
             <div key={index} className='testimonial-main flex flex-row h-[46vw] w-[70%] mx-auto'>
-              <Card className='first-card rounded-[2rem] lg:p-10 xl:p-14 flex justify-between lg:rounded-[3rem] bg-no-repeat bg-center h-[85%]' style={{ backgroundColor: 'rgba(32,33,45,255)', backgroundImage: `url(${qotesIcon})` }}>
+              <Card className='first-card rounded-[2rem] lg:p-10 xl:p-14 flex justify-between lg:rounded-[3rem] bg-no-repeat bg-center h-[85%]  bg-[#20212d]' >
                 <div>
                   <p className='headding text-4xl lg:text-5xl xl:text-6xl flex flex-col text-center whitespace-nowrap'><span className='text-red-500'>What they say</span><span className='text-white'> about us?</span></p>
                 </div>
-                <p className='flex flex-col text-center gap-2'><span className='text-2xl lg:text-[2vw] leading-10 font-bold text-wrap sticky z-10 text-white'>{list?.name}</span><span className='text-xl opacity-70 lg:text-x text-white'>{truncateWords(list?.project, 4)}</span></p>
+                <img src={qotesIcon} className='w-[100px] lg:w-[200px] mx-auto'/>
+                <p className='flex flex-col text-center gap-2 w-[90%]'><span className='text-2xl lg:text-[2vw] leading-10 font-bold text-wrap sticky z-10 text-white'>{list?.name}</span><span className='text-xl opacity-70 lg:text-x text-white'>{truncateWords(list?.project, 4)}</span></p>
               </Card>
               <div className='flex flex-col gap-[6.667vw] h-[85%]'>
                 <div className='flex flex-row items-center justify-center -me-20 gap-10'>
@@ -156,6 +157,7 @@ margin-bottom: 4rem;
 }
 .first-card{
   width: 60%;
+  background-image: url();
 }
 
   @media (min-width: 1140px) and (max-width:1400px){

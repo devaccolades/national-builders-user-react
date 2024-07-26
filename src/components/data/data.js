@@ -438,5 +438,101 @@ export const oldUrlAndNewurl = [
       {
         "old": "/what-are-the-popular-options-for-apartments-in-kochi-and-what-are-the-amenities-and-features-national-signature-offer/",
         "new": "/blog/what-are-the-popular-options-for-apartments-in-koc"
+      },
+      {
+        "old": "/residential-builders-kochi/feed/",
+        "new": "/about"
+      },
+      {
+        "old": "/diwali-2021/feed/",
+        "new": "/about"
+      },
+      {
+        "old": "/a-comprehensive-guide-to-apartments-in-kochi-the-ultimate-living-experience/feed/",
+        "new": "/blog/a-comprehensive-guide-to-apartments-in-kochi-"
+      },
+      {
+        "old": "/advantages-buying-home-during-launch/feed/",
+        "new": "/blog/advantages-buying-home-during-launch"
+      },
+      {
+        "old": "/which-are-the-best-residential-areas-and-flats-in-kochi/feed/",
+        "new": "/blog/emerging-real-estate-hotspots-in-kochi-where-to-b"
+      },
+      {
+        "old": "/investing-wisely-considerations-buying-flats-kochi/feed/",
+        "new": "/blog/investing-wisely-considerations-buying-flats-kochi"
+      },
+      {
+        "old": "/custom-home-building/feed/",
+        "new": "/blog/personalized-living-spaces"
+      },
+      {
+        "old": "/ready-to-move-flats-kochi-perfect-first-time-homebuyers/feed/",
+        "new": "/blog/ready-to-move-flats-kochi-perfect-first-time-homeb"
+      },
+      {
+        "old": "/benefits-of-buying-a-ready-to-move-in-apartment/feed/",
+        "new": "/blog/real-estate-investment-in-residential-apartments-w"
+      },
+      {
+        "old": "/real-estate-investment-in-residential-apartments-with-promising-returns/feed/",
+        "new": "/blog/real-estate-investment-in-residential-apartments-w"
+      },
+      {
+        "old": "/sky-villa-apartments-to-make-your-life-elite/feed/",
+        "new": "/blog/sky-villa-apartments-to-make-your-life-elite"
+      },
+      {
+        "old": "/small-space-big-style-transforming-your-2-bhk-flat/feed/",
+        "new": "/blog/small-space-big-style-transforming-your-2-bhk-flat"
+      },
+      {
+        "old": "/mansion-of-supremacy/feed/",
+        "new": "/mansion-of-supremacy/"
+      },
+      {
+        "old": "/onam-the-hues-of-heredity/feed/",
+        "new": "/news-and-events"
+      },
+      {
+        "old": "/flats-in-kochi/feed/",
+        "new": "/projects/luxury-flats-for-sale-in-kochi/"
+      },
+      {
+        "old": "/how-to-calculate-the-total-cost-of-buying-a-flat-in-mumbai/feed/",
+        "new": "/projects/national-harmony-apartments-in-mumbai"
+      },
+      {
+        "old": "/benefits-living-in-2-bhk-flat-in-kochis-suburbs/feed/",
+        "new": "/"
+      },
+      {
+        "old": "/affordable-ready-to-move-in-flats-in-kochi-where-to-find-them/feed/",
+        "new": "/"
+      },
+      {
+        "old": "/is-it-good-to-buy-flats-in-kochi/feed/",
+        "new": "/"
+      },
+      {
+        "old": "/top-5-factors-to-consider-while-purchasing-a-flat-that-you-want-to-resale-in-the-future/feed/",
+        "new": "/"
+      },
+      {
+        "old": "/where-can-we-find-the-best-flats-for-sale-in-kochi/feed/",
+        "new": "/"
+      },
+      {
+        "old": "/?s=%7Bsearch_term_string%7D",
+        "new": "/"
+      },
+      {
+        "old": "/advantages-of-buying-a-home-over-renting/feed/",
+        "new": "/"
+      },
+      {
+        "old": "/kochi-for-beginners-essential-tips-for-buying-your-first-flat/feed/",
+        "new": "/"
       }
 ]

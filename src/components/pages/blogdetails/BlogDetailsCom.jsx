@@ -40,7 +40,7 @@ function BlogDetailsCom({ animationConfig, data, suggestions }) {
             <div className='flex flex-row -mt-5 lg:mt-0'>
               <p className='text-gray-500 p-2 border border-gray-600 rounded-[2rem]'>{data?.date_added}</p>
             </div>
-            <Typography variant="h5" color="white" className="mt-5 mb-3 text-[20px] text-opacity-90">
+            <Typography variant="h1" color="white" className="mt-5 mb-3 text-[20px] text-opacity-90">
               {data?.title}
             </Typography>
             <div className='text-content break-words leading-7 lg:leading-8' dangerouslySetInnerHTML={{ __html: data?.body }} />

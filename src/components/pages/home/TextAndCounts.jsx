@@ -11,14 +11,15 @@ function TextAndCounts({ animationConfig, data }) {
     return (
         <Section className='mx-auto grid grid-rows-[1fr,16rem]'>
             <div className='flex flex-col lg:flex-row lg:items-start pt-32 py-10  lg:mx-5 xl:mx-0' >
-                <motion.div className='w-full maindiv text-white text-2xl md:text-4xl lg:text-5xl xl:text-6xl mb-5 lg:mb-0 -mt-16 lg:mt-0' {...animationConfig}>
+                <motion.div className='px-[10px] md:px-0 w-full maindiv text-white text-2xl md:text-4xl lg:text-5xl xl:text-6xl mb-5 lg:mb-0 -mt-16 lg:mt-0' {...animationConfig}>
                     <div className='h-full'>
-                        <p className='flex lg:flex-col justify-center flex-wrap gap-3'>Best Builders <span className=''>In</span><span className='text-red-500'>Navi Mumbai</span> And <span className='text-red-500 '>Kerala</span></p>
+                        <p className='flex lg:flex-col md:justify-center flex-wrap gap-3'>Best Builders <span className=''>In</span><span className='text-red-500'>Navi Mumbai</span> And <span className='text-red-500 '>Kerala</span></p>
                     </div>
                 </motion.div>
-                <motion.div class='w-full flex flex-col gap-3' {...animationConfig}>
-                    <Text text={"A visionary real estate development firm, National Builders specializes in pioneering architecturally distinct residential and mixed-use projects in India's prime metropolitan markets of Navi Mumbai and Kerala."} />
-                    <Text text={"The firm has a proven track record of successful real estate development, consistently fulfilling its commitments and exceeding customer expectations. Its stamp of quality and delivery of best-in-class features are visible in each of the 135+ projects of National Builders."} />
+                <motion.div class='w-[96%] mx-auto md:w-full flex flex-col gap-3' {...animationConfig}>
+                    <Text align='' text={"A visionary real estate development firm, National Builders specializes in pioneering architecturally distinct residential and mixed-use projects in India's prime metropolitan markets of Navi Mumbai and Kerala."} />
+                    <Text align='' text={"The firm has a proven track record of successful real estate development, consistently fulfilling its commitments and exceeding customer expectations. Its stamp of quality and delivery of best-in-class features are visible in each of the 135+ projects of National Builders."} />
+                    {/* <Para */}
                     <div className='hidden lg:block '>
                         <div className='lg:w-3/1 mt-4 h-24 items-center flex justify-center lg:justify-start'>
                            <div onClick={()=>navigate('/about')}>
